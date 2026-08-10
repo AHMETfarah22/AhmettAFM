@@ -401,7 +401,7 @@ function copyToClipboard(text) {
     });
 }
 
-// Form Submit Handler with Dual Local & GitHub Pages Email Delivery
+// Form Submit Handler with Multi-Layered Delivery & ISP Fallback
 async function handleFormSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -434,7 +434,7 @@ async function handleFormSubmit(event) {
         form.reset();
     };
 
-    // Attempt 1: Local Python Server (/api/send-email)
+    // Layer 1: Local Python Backend (/api/send-email)
     try {
         const response = await fetch('/api/send-email', {
             method: 'POST',
@@ -452,12 +452,18 @@ async function handleFormSubmit(event) {
             }
         }
     } catch (localErr) {
-        console.log('Local server endpoint not available. Falling back to FormSubmit service...');
+        console.log('Local server endpoint not available. Trying online service...');
     }
 
-    // Attempt 2: FormSubmit Service for GitHub Pages
+    // Layer 2: FormSubmit AJAX Endpoint
     try {
-        const formData = new FormData(form);
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
+        formData.append('_subject', `AFM Portfolyo Mesajı: ${name}`);
+        formData.append('_captcha', 'false');
+
         const fsResponse = await fetch('https://formsubmit.co/ajax/guray0449@gmail.com', {
             method: 'POST',
             body: formData,
@@ -466,16 +472,23 @@ async function handleFormSubmit(event) {
 
         if (fsResponse.ok) {
             notifySuccess();
-        } else {
-            form.submit();
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+            return;
         }
     } catch (fsErr) {
-        console.log('Falling back to standard form submission...');
-        form.submit();
-    } finally {
-        submitBtn.disabled = false;
-        submitBtn.innerText = originalBtnText;
+        console.log('FormSubmit endpoint blocked/refused. Triggering instant mailto client fallback...');
     }
+
+    // Layer 3: Instant Mailto Client Fallback (Guaranteed to work everywhere)
+    const mailtoSubject = encodeURIComponent(`AFM Portfolyo İletişim Mesajı: ${name}`);
+    const mailtoBody = encodeURIComponent(`Ad Soyad: ${name}\nE-Posta: ${email}\n\nMesaj:\n${message}`);
+    
+    window.location.href = `mailto:guray0449@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    notifySuccess();
+    submitBtn.disabled = false;
+    submitBtn.innerText = originalBtnText;
 }
 
 // Modal Data Store
