@@ -7,11 +7,11 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
-# Robust .env parser
+# Robust .env / environment parser
 def get_env_credentials():
-    user = "guray0449@gmail.com"
-    app_pass = "cbwlhvihotliulzq"
-    port = 3000
+    user = os.getenv('GMAIL_USER', '').strip()
+    app_pass = os.getenv('GMAIL_APP_PASS', '').strip()
+    port = int(os.getenv('PORT', '3000'))
 
     env_path = os.path.join(os.path.dirname(__file__), '.env')
     if os.path.exists(env_path):
@@ -22,9 +22,9 @@ def get_env_credentials():
                     k, v = line.split('=', 1)
                     k = k.strip()
                     v = v.strip().strip('"').strip("'")
-                    if k == 'GMAIL_USER':
+                    if k == 'GMAIL_USER' and not user:
                         user = v
-                    elif k == 'GMAIL_APP_PASS':
+                    elif k == 'GMAIL_APP_PASS' and not app_pass:
                         app_pass = v
                     elif k == 'PORT':
                         try:
@@ -92,12 +92,50 @@ class AFMHandler(http.server.SimpleHTTPRequestHandler):
 
                 msg.attach(MIMEText(html_content, 'html'))
 
-                # Send via Gmail SMTP
-                smtp_server = smtplib.SMTP('smtp.gmail.com', 587, timeout=15)
-                smtp_server.starttls()
-                smtp_server.login(gmail_user, gmail_pass)
-                smtp_server.sendmail(gmail_user, [gmail_user], msg.as_string())
-                smtp_server.quit()
+                # Send via Gmail SMTP (with robust port fallback and retry)
+                sent = False
+                last_error = None
+
+                # Try Port 465 first
+                try:
+                    smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15)
+                    smtp_server.login(gmail_user, gmail_pass)
+                    smtp_server.sendmail(gmail_user, [gmail_user], msg.as_string())
+                    smtp_server.quit()
+                    sent = True
+                except Exception as e:
+                    last_error = e
+                    print(f"[INFO] SMTP Port 465 failed, attempting Port 587. Error: {e}")
+
+                # Fallback to Port 587
+                if not sent:
+                    try:
+                        smtp_server = smtplib.SMTP('smtp.gmail.com', 587, timeout=15)
+                        smtp_server.starttls()
+                        smtp_server.login(gmail_user, gmail_pass)
+                        smtp_server.sendmail(gmail_user, [gmail_user], msg.as_string())
+                        smtp_server.quit()
+                        sent = True
+                    except Exception as e:
+                        last_error = e
+                        print(f"[INFO] SMTP Port 587 failed. Error: {e}")
+
+                # If both failed, try one more time on Port 465 after a short delay
+                if not sent:
+                    import time
+                    time.sleep(1)
+                    try:
+                        print("[INFO] Retrying SMTP Port 465...")
+                        smtp_server = smtplib.SMTP_SSL('smtp.gmail.com', 465, timeout=15)
+                        smtp_server.login(gmail_user, gmail_pass)
+                        smtp_server.sendmail(gmail_user, [gmail_user], msg.as_string())
+                        smtp_server.quit()
+                        sent = True
+                    except Exception as e:
+                        last_error = e
+
+                if not sent:
+                    raise last_error
 
                 # Send HTTP 200 Response
                 self.send_response(200)

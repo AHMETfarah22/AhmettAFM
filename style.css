@@ -67,6 +67,161 @@ body {
     animation: floatSlow 5s ease-in-out infinite;
 }
 
+.animate-float-slow {
+    animation: floatSlow 6s ease-in-out infinite;
+}
+
+.animate-float-slower {
+    animation: floatSlow 8s ease-in-out infinite;
+    animation-delay: 1.2s;
+}
+
+/* Orbiting Ring Rotation (Hero Visual) */
+@keyframes spinSlow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+    animation: spinSlow 20s linear infinite;
+}
+
+.animate-spin-slower {
+    animation: spinSlow 32s linear infinite reverse;
+}
+
+/* Terminal Cursor Blink (Hero Code Widget) */
+@keyframes blink {
+    0%, 45% { opacity: 1; }
+    50%, 95% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.animate-blink {
+    animation: blink 1s step-end infinite;
+}
+
+/* Respect Reduced Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-slow,
+    .animate-float-slower,
+    .animate-spin-slow,
+    .animate-spin-slower,
+    .animate-blink {
+        animation: none !important;
+    }
+}
+
+/* ============================================= */
+/* Motion & Perception Settings                   */
+/* Ambient Blob Drift (Optic Flow source motion)  */
+/* ============================================= */
+@keyframes blobDrift1 {
+    0%, 100% { transform: translate(0, 0); opacity: 0.7; }
+    50% { transform: translate(50px, 40px); opacity: 0.9; }
+}
+@keyframes blobDrift2 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(-40px, 50px); }
+}
+@keyframes blobDrift3 {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(40px, -40px); }
+}
+.ambient-blob-1 { animation: blobDrift1 16s ease-in-out infinite; }
+.ambient-blob-2 { animation: blobDrift2 20s ease-in-out infinite; }
+.ambient-blob-3 { animation: blobDrift3 24s ease-in-out infinite; }
+
+/* Custom Toggle Switch */
+.motion-switch {
+    position: relative;
+    width: 44px;
+    height: 26px;
+    border-radius: 9999px;
+    background: #E2E8F0;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background-color 0.25s ease, opacity 0.25s ease;
+    flex-shrink: 0;
+}
+
+.motion-switch.is-on {
+    background: linear-gradient(135deg, #6366F1, #0EA5E9);
+}
+
+.motion-switch-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 9999px;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.motion-switch.is-on .motion-switch-knob {
+    transform: translateX(18px);
+}
+
+.motion-switch:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.motion-switch-safe {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.motion-switch-safe.is-on {
+    background: linear-gradient(135deg, #10B981, #059669);
+}
+
+/* Proprioceptive Feedback OFF — disable hover/interaction micro-motion sitewide */
+body.motion-proprio-off [class*="hover:-translate"],
+body.motion-proprio-off [class*="hover:scale"],
+body.motion-proprio-off [class*="hover:rotate"],
+body.motion-proprio-off [class*="group-hover:scale"],
+body.motion-proprio-off [class*="group-hover:rotate"],
+body.motion-proprio-off .hover-lift {
+    transition: none !important;
+}
+body.motion-proprio-off [class*="hover:-translate"]:hover,
+body.motion-proprio-off [class*="hover:scale"]:hover,
+body.motion-proprio-off [class*="hover:rotate"]:hover,
+body.motion-proprio-off .hover-lift:hover {
+    transform: none !important;
+}
+body.motion-proprio-off .group:hover [class*="group-hover:scale"],
+body.motion-proprio-off .group:hover [class*="group-hover:rotate"] {
+    transform: none !important;
+}
+
+/* Optic Flow OFF — freeze ambient background blobs */
+body.motion-optic-off .ambient-blob {
+    animation: none !important;
+}
+
+/* Kinesthetic Sense OFF — freeze floating & orbiting elements */
+body.motion-kinesthetic-off [class*="animate-float"],
+body.motion-kinesthetic-off .animate-spin-slow,
+body.motion-kinesthetic-off .animate-spin-slower {
+    animation: none !important;
+}
+
+/* Motion Sickness Prevention — master override, disables everything sitewide */
+body.motion-safe-mode *,
+body.motion-safe-mode *::before,
+body.motion-safe-mode *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+}
+
 /* Card Hover Lift Effect */
 .hover-lift {
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);

@@ -19,6 +19,7 @@ const i18n = {
         "hero.desc": "AFM-CODING'in kurucusu ve Full-Stack geliştirici. Kurumsal sistem mimarisi, UI/UX tasarımı ve yapay zeka entegrasyonu alanlarında uçtan uca modern çözümler üretiyorum.",
         "hero.btnProjects": "Projeleri İncele",
         "hero.btnDetails": "Hızlı Detaylar",
+        "hero.available": "Yeni Projelere Açığım",
 
         "stats.exp": "Yıl Deneyim",
         "stats.quality": "Kalite & Etki",
@@ -89,7 +90,20 @@ const i18n = {
         "contact.phEmail": "ornek@domain.com",
         "contact.phMsg": "Proje fikrinizi veya sorunuzu yazın...",
         "contact.formBtn": "Mesaj Gönder",
-        "contact.footerRights": "Tüm hakları saklıdır."
+        "contact.footerRights": "Tüm hakları saklıdır.",
+
+        "motion.badge": "DUYUSAL KONFOR",
+        "motion.title": "Hareket & Algı Ayarları",
+        "motion.subtitle": "Bu site, hareket algınıza duyarlı bir deneyim sunmak için tasarım animasyonlarını bilimsel kategorilere göre özelleştirmenize imkân tanır.",
+        "motion.proprio.title": "Proprioseptif Geri Bildirim",
+        "motion.proprio.desc": "Kartların ve butonların dokunuşa tepki verme hissi — hover anındaki mikro hareketler ve yükselme efektleri.",
+        "motion.optic.title": "Optik Akış",
+        "motion.optic.desc": "Arka planda yumuşakça süzülen ışık lekeleri; derinlik ve hareket algısını besleyen görsel akış.",
+        "motion.kinesthetic.title": "Kinestetik Duyu",
+        "motion.kinesthetic.desc": "Yüzen proje kartları ve dönen halkalar gibi sürekli devam eden hareketler.",
+        "motion.safe.title": "Hareket Hastalığı Önleme",
+        "motion.safe.desc": "Tüm animasyonları anında durdurur. İç kulak–görme uyuşmazlığına duyarlıysanız önerilir.",
+        "motion.safe.active": "Güvenli mod aktif — diğer ayarlar kilitlendi."
     },
 
     en: {
@@ -109,6 +123,7 @@ const i18n = {
         "hero.desc": "Passionate Full-Stack Developer and founder of AFM-CODING. Crafting enterprise system architectures, UI/UX designs, and AI integration solutions that don't just work, but wow.",
         "hero.btnProjects": "Explore Work",
         "hero.btnDetails": "Quick Details",
+        "hero.available": "Available for New Projects",
 
         "stats.exp": "Years Exp.",
         "stats.quality": "Quality & Impact",
@@ -179,7 +194,20 @@ const i18n = {
         "contact.phEmail": "example@domain.com",
         "contact.phMsg": "Write your project idea or message...",
         "contact.formBtn": "Send Message",
-        "contact.footerRights": "All rights reserved."
+        "contact.footerRights": "All rights reserved.",
+
+        "motion.badge": "SENSORY COMFORT",
+        "motion.title": "Motion & Perception Settings",
+        "motion.subtitle": "This site lets you fine-tune its design animations across real perceptual categories, so the experience stays comfortable for your senses.",
+        "motion.proprio.title": "Proprioceptive Feedback",
+        "motion.proprio.desc": "The felt response of cards and buttons to touch — hover micro-motions and lift effects.",
+        "motion.optic.title": "Optic Flow",
+        "motion.optic.desc": "Softly drifting light blooms in the background that feed your sense of depth and motion.",
+        "motion.kinesthetic.title": "Kinesthetic Sense",
+        "motion.kinesthetic.desc": "Continuous motion like floating project cards and orbiting rings.",
+        "motion.safe.title": "Motion Sickness Prevention",
+        "motion.safe.desc": "Instantly pauses every animation on the site. Recommended if visual motion affects your balance.",
+        "motion.safe.active": "Safe mode active — other settings are locked."
     },
 
     so: {
@@ -199,6 +227,7 @@ const i18n = {
         "hero.desc": "Aasaasaha AFM-CODING iyo Horumariye Full-Stack ah. Waxaan dhisaa nidaamyo ganacsi oo casri ah, naqshado UI/UX ah iyo tiknoolajiyada AI oo runtii wax ka beddela ganacsiga.",
         "hero.btnProjects": "Eeg Mashaariicda",
         "hero.btnDetails": "Faahfaahin Degdeg Ah",
+        "hero.available": "Diyaar u ah Mashaariic Cusub",
 
         "stats.exp": "Sano Oo Khibrad Ah",
         "stats.quality": "Tayo & Saameyn",
@@ -269,7 +298,20 @@ const i18n = {
         "contact.phEmail": "ornek@domain.com",
         "contact.phMsg": "Qayd fariintaada ama fikradaada...",
         "contact.formBtn": "Dir Fariinta",
-        "contact.footerRights": "Dhamaan xuquuqda waa la dhowray."
+        "contact.footerRights": "Dhamaan xuquuqda waa la dhowray.",
+
+        "motion.badge": "RAAXADA DAREENKA",
+        "motion.title": "Dejinta Dhaqdhaqaaqa & Garashada",
+        "motion.subtitle": "Boggan wuxuu kuu ogolaanayaa inaad hagaajiso dhaqdhaqaaqyada naqshadeynta si ay khibradu ugu sii socoto si raaxo leh dareenkaaga.",
+        "motion.proprio.title": "Jawaabta Proprioceptive",
+        "motion.proprio.desc": "Dareenka jawaabta ee kaararka iyo badhamada marka la taabto — dhaqdhaqaaqyo yaryar iyo saameyn kor u kaca marka la gaaro.",
+        "motion.optic.title": "Socodka Aragga (Optic Flow)",
+        "motion.optic.desc": "Iftiinka si tartiib ah gadaal ugu socda oo horumariya dareenka qoto dheer iyo dhaqdhaqaaqa.",
+        "motion.kinesthetic.title": "Dareenka Kinesthetic",
+        "motion.kinesthetic.desc": "Dhaqdhaqaaq joogto ah sida kaararka mashruuca sabbayn iyo giraanta wareegaysa.",
+        "motion.safe.title": "Ka Hortagga Xanuunka Dhaqdhaqaaqa",
+        "motion.safe.desc": "Wuxuu si degdeg ah u joojiyaa dhammaan dhaqdhaqaaqyada boggan. Waa lagula talinayaa haddii dhaqdhaqaaqu saameeyo dheelitirkaaga.",
+        "motion.safe.active": "Nidaamka amniga ah wuu shaqeynayaa — dejinta kale way xayirantahay."
     }
 };
 
@@ -423,6 +465,12 @@ async function handleFormSubmit(event) {
         return;
     }
 
+    // Check if page is browsed as a local file (file://)
+    if (window.location.protocol === 'file:') {
+        showToast('Form gönderimi yerel HTML dosyalarında (file://) çalışmaz. Lütfen "python server.py" çalıştırıp http://localhost:3000 üzerinden açın.', '⚠️');
+        return;
+    }
+
     if (submitBtn) {
         submitBtn.disabled = true;
         submitBtn.innerText = 'Gönderiliyor...';
@@ -430,89 +478,80 @@ async function handleFormSubmit(event) {
 
     const notifySuccess = () => {
         const msgs = {
-            tr: 'Mesajınız guray0449@gmail.com adresine ulaştırıldı!',
-            en: 'Your message has been sent to guray0449@gmail.com!',
-            so: 'Fariintaada waxaa loo diray guray0449@gmail.com!'
+            tr: 'Mesajınız gönderildi. Teşekkür ederiz!',
+            en: 'Your message has been sent. Thank you!',
+            so: 'Fariintaada waa la diray. Waad ku mahadsan tahay!'
         };
         showToast(msgs[currentLang] || msgs.en, '🚀');
         form.reset();
     };
 
-    const notifyActivationNeeded = () => {
-        showToast('Lütfen guray0449@gmail.com kutunuzdaki 1 defalık onay e-postasına tıklayın!', '✉️');
-        form.reset();
+    // Try the local Python backend first when the site is running locally.
+    let localBackendError = null;
+    let attemptedLocal = false;
+
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+        attemptedLocal = true;
+        try {
+            const response = await fetch('/api/send-email', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, email, message })
+            });
+
+            let result = {};
+            try {
+                result = await response.json();
+            } catch (jsonErr) {
+                result = { error: `Yanıt okunamadı (${response.status})` };
+            }
+
+            if (response.ok && result.success) {
+                notifySuccess();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
+                }
+                return;
+            } else {
+                localBackendError = result.error || `HTTP ${response.status}`;
+            }
+        } catch (err) {
+            console.log('Local backend not running. Falling back to FormSubmit...', err);
+            attemptedLocal = false;
+        }
+    }
+
+    if (attemptedLocal && localBackendError) {
+        showToast(`Hata: ${localBackendError}`, '⚠️');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+        }
+        return;
+    }
+
+    // For GitHub Pages / static hosting, submit the form directly to FormSubmit.
+    const subjectField = form.querySelector('input[name="_subject"]');
+    const replyToField = form.querySelector('input[name="_replyto"]');
+    const nextField = form.querySelector('input[name="_next"]');
+
+    if (subjectField) subjectField.value = `AFM Portfolyo Mesajı: ${name}`;
+    if (replyToField) replyToField.value = email;
+    if (nextField) nextField.value = `${window.location.origin}${window.location.pathname}?sent=1`;
+
+    showToast('Mesaj gönderiliyor, lütfen bekleyin...', '✉️');
+    form.submit();
+}
+
+const successParams = new URLSearchParams(window.location.search);
+if (successParams.get('sent') === '1') {
+    const successMessages = {
+        tr: 'Mesajınız başarıyla gönderildi. Teşekkür ederiz!',
+        en: 'Your message was sent successfully. Thank you!',
+        so: 'Fariintaada si guul leh ayaa loo diray. Waad ku mahadsan tahay!'
     };
-
-    // Attempt 1: Local Python Backend Server (/api/send-email) when running locally
-    try {
-        const response = await fetch('/api/send-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, message })
-        });
-
-        if (response.ok) {
-            const result = await response.json();
-            if (result.success) {
-                notifySuccess();
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
-                }
-                return;
-            }
-        }
-    } catch (err) {
-        console.log('Local backend not running. Trying online AJAX endpoint...');
-    }
-
-    // Attempt 2: FormSubmit Online AJAX Endpoint for GitHub Pages
-    try {
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('message', message);
-        formData.append('_subject', `AFM Portfolyo Mesajı: ${name}`);
-        formData.append('_captcha', 'false');
-
-        const response = await fetch('https://formsubmit.co/ajax/guray0449@gmail.com', {
-            method: 'POST',
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        });
-
-        if (response.ok) {
-            const data = await response.json();
-            if (data.success === "true" || data.success === true) {
-                notifySuccess();
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
-                }
-                return;
-            } else if (data.message && data.message.includes('Activation')) {
-                notifyActivationNeeded();
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
-                }
-                return;
-            }
-        }
-    } catch (apiErr) {
-        console.log('Online FormSubmit AJAX error:', apiErr);
-    }
-
-    // Attempt 3: Direct Mailto Client Trigger (If API fails or is blocked by network)
-    const mailtoSubject = encodeURIComponent(`AFM Portfolyo Mesajı: ${name}`);
-    const mailtoBody = encodeURIComponent(`Gönderen: ${name}\nE-Posta: ${email}\n\nMesaj:\n${message}`);
-    window.location.href = `mailto:guray0449@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
-
-    notifySuccess();
-    if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerText = originalBtnText;
-    }
+    setTimeout(() => showToast(successMessages[currentLang] || successMessages.en, '✅'), 250);
 }
 
 // Modal Data Store
@@ -600,8 +639,137 @@ function closeMobileMenu() {
     if (mobileMenu) mobileMenu.classList.add('hidden');
 }
 
+// Hero Live Code Line — Typewriter Effect (single-line, looping)
+function initHeroTyper() {
+    const el = document.getElementById('hero-typer');
+    if (!el) return;
+
+    const lines = [
+        'const dev = "Ahmed Farah Mohamed";',
+        'stack = ["React", "Laravel", "C# .NET"];',
+        'founder("AFM-CODING");',
+        'status = "Building enterprise apps 🚀";'
+    ];
+
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReducedMotion) {
+        el.textContent = lines[0];
+        return;
+    }
+
+    let lineIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    function tick() {
+        const current = lines[lineIndex];
+
+        if (!deleting) {
+            charIndex++;
+            el.textContent = current.slice(0, charIndex);
+            if (charIndex === current.length) {
+                deleting = true;
+                setTimeout(tick, 1600);
+                return;
+            }
+        } else {
+            charIndex--;
+            el.textContent = current.slice(0, charIndex);
+            if (charIndex === 0) {
+                deleting = false;
+                lineIndex = (lineIndex + 1) % lines.length;
+                setTimeout(tick, 300);
+                return;
+            }
+        }
+
+        setTimeout(tick, deleting ? 28 : 55);
+    }
+
+    tick();
+}
+
+// ===================================================
+// Motion & Perception Settings Panel
+// Functional toggles that actually control site animations
+// ===================================================
+const MOTION_PREFS_KEY = 'afm_motion_prefs';
+const motionDefaults = { proprio: true, optic: true, kinesthetic: true, safeMode: false };
+
+function loadMotionPrefs() {
+    try {
+        const raw = localStorage.getItem(MOTION_PREFS_KEY);
+        return raw ? Object.assign({}, motionDefaults, JSON.parse(raw)) : Object.assign({}, motionDefaults);
+    } catch (e) {
+        return Object.assign({}, motionDefaults);
+    }
+}
+
+function saveMotionPrefs(prefs) {
+    try {
+        localStorage.setItem(MOTION_PREFS_KEY, JSON.stringify(prefs));
+    } catch (e) {
+        // localStorage unavailable (private mode, etc.) — fail silently
+    }
+}
+
+function applyMotionPrefs(prefs) {
+    const body = document.body;
+    body.classList.toggle('motion-proprio-off', !prefs.proprio);
+    body.classList.toggle('motion-optic-off', !prefs.optic);
+    body.classList.toggle('motion-kinesthetic-off', !prefs.kinesthetic);
+    body.classList.toggle('motion-safe-mode', prefs.safeMode);
+
+    ['proprio', 'optic', 'kinesthetic'].forEach((key) => {
+        const el = document.getElementById(`motion-toggle-${key}`);
+        if (!el) return;
+        el.setAttribute('aria-checked', String(prefs[key]));
+        el.classList.toggle('is-on', prefs[key]);
+        el.disabled = prefs.safeMode;
+    });
+
+    const safeEl = document.getElementById('motion-toggle-safe');
+    if (safeEl) {
+        safeEl.setAttribute('aria-checked', String(prefs.safeMode));
+        safeEl.classList.toggle('is-on', prefs.safeMode);
+    }
+
+    const note = document.getElementById('motion-safe-note');
+    if (note) note.classList.toggle('hidden', !prefs.safeMode);
+}
+
+function initMotionPanel() {
+    const prefs = loadMotionPrefs();
+    const hasSaved = localStorage.getItem(MOTION_PREFS_KEY);
+
+    // If the OS has reduced motion on and the user hasn't chosen anything yet, default to safe mode
+    if (!hasSaved && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        prefs.safeMode = true;
+    }
+
+    applyMotionPrefs(prefs);
+
+    function bindToggle(id, key) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('click', () => {
+            if (key !== 'safeMode' && prefs.safeMode) return; // locked while safe mode is active
+            prefs[key] = !prefs[key];
+            applyMotionPrefs(prefs);
+            saveMotionPrefs(prefs);
+        });
+    }
+
+    bindToggle('motion-toggle-proprio', 'proprio');
+    bindToggle('motion-toggle-optic', 'optic');
+    bindToggle('motion-toggle-kinesthetic', 'kinesthetic');
+    bindToggle('motion-toggle-safe', 'safeMode');
+}
+
 // Active Navigation Scroll Spy Listener
 document.addEventListener('DOMContentLoaded', () => {
+    initMotionPanel();
+    initHeroTyper();
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('header nav a[href^="#"]');
 
