@@ -401,16 +401,16 @@ function copyToClipboard(text) {
     });
 }
 
-// Form Submit Handler with Real API Email Delivery
+// Form Submit Handler with Dual Local & GitHub Pages Email Delivery
 async function handleFormSubmit(event) {
     event.preventDefault();
     const form = event.target;
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn.innerText;
 
-    const nameInput = form.querySelector('input[type="text"]');
-    const emailInput = form.querySelector('input[type="email"]');
-    const messageInput = form.querySelector('textarea');
+    const nameInput = form.querySelector('input[name="name"]');
+    const emailInput = form.querySelector('input[name="email"]');
+    const messageInput = form.querySelector('textarea[name="message"]');
 
     const name = nameInput ? nameInput.value.trim() : '';
     const email = emailInput ? emailInput.value.trim() : '';
@@ -424,31 +424,54 @@ async function handleFormSubmit(event) {
     submitBtn.disabled = true;
     submitBtn.innerText = 'Gönderiliyor...';
 
+    const notifySuccess = () => {
+        const msgs = {
+            tr: 'Mesajınız guray0449@gmail.com adresine iletildi!',
+            en: 'Your message has been sent to guray0449@gmail.com!',
+            so: 'Fariintaada waxaa loo diray guray0449@gmail.com!'
+        };
+        showToast(msgs[currentLang] || msgs.en, '🚀');
+        form.reset();
+    };
+
+    // Attempt 1: Local Python Server (/api/send-email)
     try {
         const response = await fetch('/api/send-email', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ name, email, message })
         });
 
-        const result = await response.json();
-
-        if (response.ok && result.success) {
-            const msgs = {
-                tr: 'Mesajınız guray0449@gmail.com adresine iletildi!',
-                en: 'Your message has been sent to guray0449@gmail.com!',
-                so: 'Fariintaada waxaa loo diray guray0449@gmail.com!'
-            };
-            showToast(msgs[currentLang] || msgs.en, '🚀');
-            form.reset();
-        } else {
-            showToast('E-posta gönderilemedi: ' + (result.error || 'Hata oluştu'), '⚠️');
+        if (response.ok) {
+            const result = await response.json();
+            if (result.success) {
+                notifySuccess();
+                submitBtn.disabled = false;
+                submitBtn.innerText = originalBtnText;
+                return;
+            }
         }
-    } catch (error) {
-        console.error('Email send error:', error);
-        showToast('Sunucu bağlantı hatası oluştu.', '⚠️');
+    } catch (localErr) {
+        console.log('Local server endpoint not available. Falling back to FormSubmit service...');
+    }
+
+    // Attempt 2: FormSubmit Service for GitHub Pages
+    try {
+        const formData = new FormData(form);
+        const fsResponse = await fetch('https://formsubmit.co/ajax/guray0449@gmail.com', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+
+        if (fsResponse.ok) {
+            notifySuccess();
+        } else {
+            form.submit();
+        }
+    } catch (fsErr) {
+        console.log('Falling back to standard form submission...');
+        form.submit();
     } finally {
         submitBtn.disabled = false;
         submitBtn.innerText = originalBtnText;
