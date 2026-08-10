@@ -430,9 +430,9 @@ async function handleFormSubmit(event) {
 
     const notifySuccess = () => {
         const msgs = {
-            tr: 'Mesajınız guray0449@gmail.com adresine başarıyla iletildi!',
-            en: 'Your message has been sent to guray0449@gmail.com!',
-            so: 'Fariintaada waxaa loo diray guray0449@gmail.com!'
+            tr: 'Mesaj gönderildi! (İlk gönderimse guray0449@gmail.com Spam/Gelen kutusundaki onaya tıklayın)',
+            en: 'Message sent! (Check guray0449@gmail.com Spam/Inbox for activation if first time)',
+            so: 'Fariinta waa la diray guray0449@gmail.com!'
         };
         showToast(msgs[currentLang] || msgs.en, '🚀');
         form.reset();
