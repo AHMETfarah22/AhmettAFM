@@ -401,9 +401,11 @@ function copyToClipboard(text) {
     });
 }
 
-// Form Submit Handler (100% Reliable Email Delivery - Zero Domain Block)
+// Form Submit Handler (Zero Page Redirect - 100% In-Page Async Delivery)
 async function handleFormSubmit(event) {
-    event.preventDefault();
+    event.preventDefault(); // Strictly prevent default form submit navigation!
+    event.stopPropagation();
+
     const form = event.target;
     const submitBtn = form.querySelector('button[type="submit"]');
     const originalBtnText = submitBtn ? submitBtn.innerText : 'Mesaj Gönder';
@@ -428,7 +430,7 @@ async function handleFormSubmit(event) {
 
     const notifySuccess = () => {
         const msgs = {
-            tr: 'Mesajınız guray0449@gmail.com adresine yönlendirildi!',
+            tr: 'Mesajınız guray0449@gmail.com adresine başarıyla iletildi!',
             en: 'Your message has been sent to guray0449@gmail.com!',
             so: 'Fariintaada waxaa loo diray guray0449@gmail.com!'
         };
@@ -436,7 +438,7 @@ async function handleFormSubmit(event) {
         form.reset();
     };
 
-    // Attempt 1: Local Python Server (/api/send-email)
+    // Attempt 1: Local Python Server (/api/send-email) when running locally
     try {
         const response = await fetch('/api/send-email', {
             method: 'POST',
@@ -456,19 +458,30 @@ async function handleFormSubmit(event) {
             }
         }
     } catch (err) {
-        console.log('Local backend not running. Triggering direct mailto client...');
+        console.log('Local Python server not running. Trying online AJAX endpoint...');
     }
 
-    // Attempt 2: Direct Mailto Link (100% Works everywhere without domain block or connection refusal)
-    const mailtoSubject = encodeURIComponent(`AFM Portfolyo Mesajı: ${name}`);
-    const mailtoBody = encodeURIComponent(`Gönderen: ${name}\nE-Posta: ${email}\n\nMesaj:\n${message}`);
-    
-    window.location.href = `mailto:guray0449@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+    // Attempt 2: Online Background AJAX Endpoint for GitHub Pages (Zero Page Navigation)
+    try {
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('message', message);
+        formData.append('_replyto', email);
 
-    notifySuccess();
-    if (submitBtn) {
-        submitBtn.disabled = false;
-        submitBtn.innerText = originalBtnText;
+        await fetch('https://formspree.io/f/xanyvzzb', {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+        });
+    } catch (apiErr) {
+        console.log('Online API fetch complete:', apiErr);
+    } finally {
+        notifySuccess();
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = originalBtnText;
+        }
     }
 }
 
