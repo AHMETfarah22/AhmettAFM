@@ -562,3 +562,28 @@ function closeMobileMenu() {
     const mobileMenu = document.getElementById('mobile-menu');
     if (mobileMenu) mobileMenu.classList.add('hidden');
 }
+
+// Active Navigation Scroll Spy Listener
+document.addEventListener('DOMContentLoaded', () => {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('header nav a[href^="#"]');
+
+    if (sections.length > 0 && navLinks.length > 0) {
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 140;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('text-indigo-600', 'font-extrabold');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('text-indigo-600', 'font-extrabold');
+                }
+            });
+        });
+    }
+});
