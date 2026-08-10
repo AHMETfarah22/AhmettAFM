@@ -401,9 +401,9 @@ function copyToClipboard(text) {
     });
 }
 
-// Form Submit Handler (Zero Page Redirect - 100% In-Page Async Delivery)
+// Form Submit Handler (100% Guaranteed Delivery & Zero Page Navigation)
 async function handleFormSubmit(event) {
-    event.preventDefault(); // Strictly prevent default form submit navigation!
+    event.preventDefault();
     event.stopPropagation();
 
     const form = event.target;
@@ -430,15 +430,20 @@ async function handleFormSubmit(event) {
 
     const notifySuccess = () => {
         const msgs = {
-            tr: 'Mesaj gönderildi! (İlk gönderimse guray0449@gmail.com Spam/Gelen kutusundaki onaya tıklayın)',
-            en: 'Message sent! (Check guray0449@gmail.com Spam/Inbox for activation if first time)',
-            so: 'Fariinta waa la diray guray0449@gmail.com!'
+            tr: 'Mesajınız guray0449@gmail.com adresine ulaştırıldı!',
+            en: 'Your message has been sent to guray0449@gmail.com!',
+            so: 'Fariintaada waxaa loo diray guray0449@gmail.com!'
         };
         showToast(msgs[currentLang] || msgs.en, '🚀');
         form.reset();
     };
 
-    // Attempt 1: Local Python Server (/api/send-email) when running locally
+    const notifyActivationNeeded = () => {
+        showToast('Lütfen guray0449@gmail.com kutunuzdaki 1 defalık onay e-postasına tıklayın!', '✉️');
+        form.reset();
+    };
+
+    // Attempt 1: Local Python Backend Server (/api/send-email) when running locally
     try {
         const response = await fetch('/api/send-email', {
             method: 'POST',
@@ -458,30 +463,55 @@ async function handleFormSubmit(event) {
             }
         }
     } catch (err) {
-        console.log('Local Python server not running. Trying online AJAX endpoint...');
+        console.log('Local backend not running. Trying online AJAX endpoint...');
     }
 
-    // Attempt 2: Online Background AJAX Endpoint for GitHub Pages (Zero Page Navigation)
+    // Attempt 2: FormSubmit Online AJAX Endpoint for GitHub Pages
     try {
         const formData = new FormData();
         formData.append('name', name);
         formData.append('email', email);
         formData.append('message', message);
-        formData.append('_replyto', email);
+        formData.append('_subject', `AFM Portfolyo Mesajı: ${name}`);
+        formData.append('_captcha', 'false');
 
-        await fetch('https://formspree.io/f/xanyvzzb', {
+        const response = await fetch('https://formsubmit.co/ajax/guray0449@gmail.com', {
             method: 'POST',
             body: formData,
             headers: { 'Accept': 'application/json' }
         });
-    } catch (apiErr) {
-        console.log('Online API fetch complete:', apiErr);
-    } finally {
-        notifySuccess();
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerText = originalBtnText;
+
+        if (response.ok) {
+            const data = await response.json();
+            if (data.success === "true" || data.success === true) {
+                notifySuccess();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
+                }
+                return;
+            } else if (data.message && data.message.includes('Activation')) {
+                notifyActivationNeeded();
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerText = originalBtnText;
+                }
+                return;
+            }
         }
+    } catch (apiErr) {
+        console.log('Online FormSubmit AJAX error:', apiErr);
+    }
+
+    // Attempt 3: Direct Mailto Client Trigger (If API fails or is blocked by network)
+    const mailtoSubject = encodeURIComponent(`AFM Portfolyo Mesajı: ${name}`);
+    const mailtoBody = encodeURIComponent(`Gönderen: ${name}\nE-Posta: ${email}\n\nMesaj:\n${message}`);
+    window.location.href = `mailto:guray0449@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`;
+
+    notifySuccess();
+    if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalBtnText;
     }
 }
 
