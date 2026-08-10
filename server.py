@@ -7,8 +7,12 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from datetime import datetime
 
-# Helper to safely load .env file
-def load_env():
+# Robust .env parser
+def get_env_credentials():
+    user = "guray0449@gmail.com"
+    app_pass = "cbwlhvihotliulzq"
+    port = 3000
+
     env_path = os.path.join(os.path.dirname(__file__), '.env')
     if os.path.exists(env_path):
         with open(env_path, 'r', encoding='utf-8') as f:
@@ -16,15 +20,30 @@ def load_env():
                 line = line.strip()
                 if line and not line.startswith('#') and '=' in line:
                     k, v = line.split('=', 1)
-                    os.environ[k.strip()] = v.strip()
+                    k = k.strip()
+                    v = v.strip().strip('"').strip("'")
+                    if k == 'GMAIL_USER':
+                        user = v
+                    elif k == 'GMAIL_APP_PASS':
+                        app_pass = v
+                    elif k == 'PORT':
+                        try:
+                            port = int(v)
+                        except ValueError:
+                            pass
+    return user, app_pass, port
 
-load_env()
+class AFMHandler(http.server.SimpleHTTPRequestHandler):
+    def send_cors_headers(self):
+        self.send_header('Access-Control-Allow-Origin', '*')
+        self.send_header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+        self.send_header('Access-Control-Allow-Headers', 'Content-Type')
 
-PORT = int(os.environ.get("PORT", 3000))
-GMAIL_USER = os.environ.get("GMAIL_USER", "guray0449@gmail.com")
-GMAIL_APP_PASS = os.environ.get("GMAIL_APP_PASS", "")
+    def do_OPTIONS(self):
+        self.send_response(200)
+        self.send_cors_headers()
+        self.end_headers()
 
-class CustomHandler(http.server.SimpleHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/api/send-email':
             content_length = int(self.headers.get('Content-Length', 0))
@@ -36,14 +55,16 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 visitor_email = data.get('email', 'E-posta Yok')
                 message = data.get('message', '')
 
-                if not GMAIL_APP_PASS:
-                    raise ValueError("GMAIL_APP_PASS is not configured in environment or .env file.")
+                gmail_user, gmail_pass, _ = get_env_credentials()
+
+                if not gmail_pass:
+                    raise ValueError("Gmail App Password bulunamadı. Lütfen .env dosyanızı kontrol edin.")
 
                 # Compose Email
                 msg = MIMEMultipart('alternative')
                 msg['Subject'] = f"AFM Portfolyo - Yeni İletişim Mesajı: {name}"
-                msg['From'] = f"AFM Portfolio <{GMAIL_USER}>"
-                msg['To'] = GMAIL_USER
+                msg['From'] = f"AFM Portfolio <{gmail_user}>"
+                msg['To'] = gmail_user
                 msg['Reply-To'] = visitor_email
 
                 html_content = f"""
@@ -72,21 +93,24 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
                 msg.attach(MIMEText(html_content, 'html'))
 
                 # Send via Gmail SMTP
-                smtp_server = smtplib.SMTP('smtp.gmail.com', 587)
+                smtp_server = smtplib.SMTP('smtp.gmail.com', 587, timeout=15)
                 smtp_server.starttls()
-                smtp_server.login(GMAIL_USER, GMAIL_APP_PASS)
-                smtp_server.sendmail(GMAIL_USER, [GMAIL_USER], msg.as_string())
+                smtp_server.login(gmail_user, gmail_pass)
+                smtp_server.sendmail(gmail_user, [gmail_user], msg.as_string())
                 smtp_server.quit()
 
                 # Send HTTP 200 Response
                 self.send_response(200)
+                self.send_cors_headers()
                 self.send_header('Content-Type', 'application/json')
                 self.end_headers()
                 response = json.dumps({"success": True, "message": "Email sent successfully!"})
                 self.wfile.write(response.encode('utf-8'))
 
             except Exception as e:
+                print(f"[ERROR] Email delivery failed: {e}")
                 self.send_response(500)
+                self.send_cors_headers()
                 self.send_header('Content-Type', 'application/json')
                 self.end_headers()
                 response = json.dumps({"success": False, "error": str(e)})
@@ -95,14 +119,8 @@ class CustomHandler(http.server.SimpleHTTPRequestHandler):
             self.send_error(404, "Endpoint not found")
 
 if __name__ == '__main__':
-    class MultiHandler(http.server.SimpleHTTPRequestHandler):
-        def do_POST(self):
-            if self.path == '/api/send-email':
-                CustomHandler.do_POST(self)
-            else:
-                super().do_POST()
-
+    _, _, port = get_env_credentials()
     socketserver.TCPServer.allow_reuse_address = True
-    with socketserver.TCPServer(("", PORT), MultiHandler) as httpd:
-        print(f"AFM Server running at http://localhost:{PORT}")
+    with socketserver.TCPServer(("", port), AFMHandler) as httpd:
+        print(f"AFM Server running at http://localhost:{port}")
         httpd.serve_forever()
