@@ -96,7 +96,8 @@ const i18n = {
         "contact.phEmail": "ornek@domain.com",
         "contact.phPhone": "+90 5xx xxx xx xx",
         "contact.phSubject": "Proje Teklifi",
-        "contact.phMsg": "Proje fikrinizi veya sorunuzu detaylı yazın..."
+        "contact.phMsg": "Proje fikrinizi veya sorunuzu detaylı yazın...",
+        "modal.close": "Kapat"
     },
 
     en: {
@@ -193,7 +194,8 @@ const i18n = {
         "contact.phEmail": "name@example.com",
         "contact.phPhone": "+1 (555) 000-0000",
         "contact.phSubject": "Project Proposal",
-        "contact.phMsg": "Describe your project idea or question in detail..."
+        "contact.phMsg": "Describe your project idea or question in detail...",
+        "modal.close": "Close"
     },
 
     so: {
@@ -289,8 +291,9 @@ const i18n = {
         "contact.phName": "Ahmed Farah",
         "contact.phEmail": "ornek@domain.com",
         "contact.phPhone": "+252 61 xxx xxxx",
-        "contact.phSubject": "Fikradda Mashruuca",
-        "contact.phMsg": "U qor fikraddaada mashruuca ama su'aashaada si faahfaahsan..."
+        "contact.phSubject": "Mawduuca Fariinta",
+        "contact.phMsg": "Fadlan halkan ku qor fikradahaaga mashruuca ama su'aashaada si faahfaahsan...",
+        "modal.close": "Xir"
     }
 };
 
@@ -424,45 +427,229 @@ function copyToClipboard(text) {
 
 
 
-// Modal Data Store
+// Multilingual Modal Data Store
 const modalData = {
-    hotel: {
-        title: "Hotel Management Platform",
-        subtitle: "Enterprise Software Solution for Business Operations",
-        badge: "Real Business Case",
-        image: "assets/hotel-app.png",
-        techs: ["System Architecture", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
-        body: `
-            <p class="text-sm text-slate-600 leading-relaxed">
-                Bu platform, otel işletmelerinin tüm operasyonel ihtiyaçlarını tek bir panoda birleştirmek amacıyla <b>AFM-CODING</b> standartlarında mimari edilmiştir.
-            </p>
-            <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-600 mt-4">Öne Çıkan Özellikler:</h4>
-            <ul class="text-xs text-slate-600 space-y-2 font-medium list-disc list-inside">
-                <li><b>Canlı Oda & Rezervasyon Takibi:</b> Doluluk oranları, sürükle-bırak oda atamaları.</li>
-                <li><b>Gelir & Analitik Panosu:</b> Aylık ciro, ortalama oda fiyatı (ADR) ve doluluk analitiği.</li>
-                <li><b>Müşteri İlişkileri (CRM):</b> Misafir geçmişi, özel istekler ve otomatik check-in / check-out.</li>
-                <li><b>Çoklu Kullanıcı Yetkilendirmesi:</b> Resepsiyon, kat hizmetleri ve yönetim seviyesi erişim rolleri.</li>
-            </ul>
-        `
+    tr: {
+        hotel: {
+            title: "Otel Yönetim Platformu",
+            subtitle: "Kurumsal İşletme ve Otomasyon Yazılımı",
+            badge: "Gerçek İş Projesi",
+            image: "assets/hotel-app.png",
+            techs: ["Sistem Mimarisi", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
+            body: `
+                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                    Bu platform, otel işletmelerinin tüm operasyonel ihtiyaçlarını tek bir panoda birleştirmek amacıyla <b>AFM-CODING</b> standartlarında mimari edilmiştir.
+                </p>
+                <div class="mt-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 9 0 0118 0z"></path></svg>
+                        Öne Çıkan Özellikler:
+                    </h4>
+                    <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Canlı Oda & Rezervasyon Takibi:</b> Doluluk oranları, sürükle-bırak oda atamaları.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Gelir & Analitik Panosu:</b> Aylık ciro, ortalama oda fiyatı (ADR) ve doluluk analitiği.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Müşteri İlişkileri (CRM):</b> Misafir geçmişi, özel istekler ve otomatik check-in / check-out.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Çoklu Kullanıcı Yetkilendirmesi:</b> Resepsiyon, kat hizmetleri ve yönetim seviyesi erişim rolleri.</span>
+                        </li>
+                    </ul>
+                </div>
+            `
+        },
+        ai: {
+            title: "Yapay Zeka Destekli Çalışma Uygulaması",
+            subtitle: "Akıllı ve Etkileşimli Öğrenme Platformu",
+            badge: "Yapay Zeka İnovasyonu",
+            image: "assets/ai-study-app.png",
+            techs: ["AI Entegrasyonu", "OpenAI / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
+            body: `
+                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                    Öğrencilerin sınav hazırlık süreçlerini yapay zeka algoritmaları ile kişiselleştiren ve verimliliği artıran yenilikçi bir uygulamadır.
+                </p>
+                <div class="mt-4 p-4 rounded-2xl bg-sky-50/60 border border-sky-100">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-sky-700 flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Öne Çıkan Özellikler:
+                    </h4>
+                    <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Otomatik Not Özetleyici:</b> Ders notları veya PDF'lerden saniyeler içinde özet çıkarma.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Akıllı Kart (Flashcard) Üretici:</b> Konu bazlı soru-cevap kartlarının otomatik üretimi.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Uyarlamalı Sınav Modu:</b> Öğrencinin zayıf olduğu konulara odaklanan dinamik testler.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Öğrenme Analitiği:</b> Günlük çalışma süreleri ve hatırlama oranlarının grafiksel takibi.</span>
+                        </li>
+                    </ul>
+                </div>
+            `
+        }
     },
-    ai: {
-        title: "AI-Powered Study Application",
-        subtitle: "Smart Interactive Learning Platform",
-        badge: "AI Innovation",
-        image: "assets/ai-study-app.png",
-        techs: ["AI Integration", "OpenAI API / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
-        body: `
-            <p class="text-sm text-slate-600 leading-relaxed">
-                Öğrencilerin sınav hazırlık süreçlerini yapay zeka algoritmaları ile kişiselleştiren ve verimliliği 3 katına çıkaran yenilikçi bir uygulamadır.
-            </p>
-            <h4 class="text-xs font-extrabold uppercase tracking-wider text-sky-600 mt-4">Öne Çıkan Özellikler:</h4>
-            <ul class="text-xs text-slate-600 space-y-2 font-medium list-disc list-inside">
-                <li><b>Otomatik Not Özetleyici:</b> Ders notları veya PDF'lerden saniyeler içinde özet çıkarma.</li>
-                <li><b>Akıllı Kart (Flashcard) Üretici:</b> Konu bazlı soru-cevap kartlarının otomatik üretimi.</li>
-                <li><b>Uyarlamalı Sınav Modu:</b> Öğrencinin zayıf olduğu konulara odaklanan dinamik testler.</li>
-                <li><b>Öğrenme Analitiği:</b> Günlük çalışma süreleri ve hatırlama oranlarının grafiksel takibi.</li>
-            </ul>
-        `
+    en: {
+        hotel: {
+            title: "Hotel Management Platform",
+            subtitle: "Enterprise Software Solution for Business Operations",
+            badge: "Real Business Case",
+            image: "assets/hotel-app.png",
+            techs: ["System Architecture", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
+            body: `
+                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                    This platform unifies all operational hotel needs into a single dashboard engineered with <b>AFM-CODING</b> standards.
+                </p>
+                <div class="mt-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 9 0 0118 0z"></path></svg>
+                        Key Features:
+                    </h4>
+                    <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Live Room & Booking Tracking:</b> Occupancy rates, drag-and-drop room assignments.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Revenue & Analytics Dashboard:</b> Monthly revenue, ADR, and occupancy analytics.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Guest CRM:</b> Guest history, custom requests, automated check-in/out.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Multi-User Authorization:</b> Reception, housekeeping, and admin access roles.</span>
+                        </li>
+                    </ul>
+                </div>
+            `
+        },
+        ai: {
+            title: "AI-Powered Study Application",
+            subtitle: "Smart Interactive Learning Platform",
+            badge: "AI Innovation",
+            image: "assets/ai-study-app.png",
+            techs: ["AI Integration", "OpenAI API / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
+            body: `
+                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                    An innovative study assistant application that personalizes exam preparation for students using AI algorithms.
+                </p>
+                <div class="mt-4 p-4 rounded-2xl bg-sky-50/60 border border-sky-100">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-sky-700 flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Key Features:
+                    </h4>
+                    <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Auto Note Summarizer:</b> Extracts key summaries from lecture notes or PDFs in seconds.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Smart Flashcard Generator:</b> Automated Q&A card creation for any subject.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Adaptive Quiz Mode:</b> Dynamic tests targeting student weakness areas.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Learning Analytics:</b> Visual tracking of study time and retention metrics.</span>
+                        </li>
+                    </ul>
+                </div>
+            `
+        }
+    },
+    so: {
+        hotel: {
+            title: "Platformka Maamulka Hoteellada",
+            subtitle: "Nidaamka Maamulka Ganacsiga Hoteellada",
+            badge: "Mashruuc Dhab Ah",
+            image: "assets/hotel-app.png",
+            techs: ["Nidaamka Dhismaha", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
+            body: `
+                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                    Platform-kan waxaa loo dhisay in lagu mideeyo dhammaan hawlaha hoteelka hal dashboard oo ku salaysan heerarka <b>AFM-CODING</b>.
+                </p>
+                <div class="mt-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 9 0 0118 0z"></path></svg>
+                        Astaamaha Ugu Muhiimsan:
+                    </h4>
+                    <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Lahaanshaha qolalka & ballansashada tooska ah:</b> Maamulka qolalka iyo xisaabinta buuxda.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Dashboard-ka Dakhliga & falanqaynta:</b> Dakhliga bishii, celceliska qiimaha qolka (ADR).</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Maamulka Martida (CRM):</b> Taariikhda martida, codsiyada gaarka ah iyo check-in/out toos ah.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
+                            <span><b>Awoodaha Isticmaalayaasha Badan:</b> Reception-ka, adeegga qolalka iyo maamulka sare.</span>
+                        </li>
+                    </ul>
+                </div>
+            `
+        },
+        ai: {
+            title: "Codsiga Waxbarashada ee AI-da ee Caqliga Badan",
+            subtitle: "Madal Waxbarasho oo Caqli Badan",
+            badge: "Cusboaysiinta AI-da",
+            image: "assets/ai-study-app.png",
+            techs: ["Isdhexgalka AI", "OpenAI / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
+            body: `
+                <p class="text-sm text-slate-600 leading-relaxed font-normal">
+                    App waxbarasho oo casri ah oo u dhigi kara waxbarashada ardayda mid habaysan iyada oo la isticmaalayo AI.
+                </p>
+                <div class="mt-4 p-4 rounded-2xl bg-sky-50/60 border border-sky-100">
+                    <h4 class="text-xs font-extrabold uppercase tracking-wider text-sky-700 flex items-center gap-2 mb-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        Astaamaha Ugu Muhiimsan:
+                    </h4>
+                    <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Kooban Toos ah:</b> Soo saarista nuxurka casharrada ama PDF-yada ilbiriqsiyo gudahood.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Khadadka Su'aalaha & Jawaabaha (Flashcards):</b> Abuuridda kaadhadhka imtixaanka.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Imtixaanno Habaysan:</b> Imtixaano xoogga saaraya meelaha uu ardaygu ku daciifka yahay.</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="w-1.5 h-1.5 rounded-full bg-sky-600 mt-1.5 shrink-0"></span>
+                            <span><b>Falanqaynta Waxbarashada:</b> Lasocodka waqtiga waxbarashada iyo heerka dib u xusuusashada.</span>
+                        </li>
+                    </ul>
+                </div>
+            `
+        }
     }
 };
 
@@ -470,38 +657,65 @@ const modalData = {
 function openModal(key) {
     const modal = document.getElementById('project-modal');
     const modalContent = document.getElementById('modal-content');
-    const data = modalData[key];
+    const modalHeaderBadge = document.getElementById('modal-header-badge');
+
+    const lang = (typeof currentLang !== 'undefined' && currentLang) ? currentLang : 'tr';
+    const langData = modalData[lang] || modalData['tr'];
+    const data = langData[key] || modalData['tr'][key];
 
     if (!modal || !data) return;
 
+    if (modalHeaderBadge) {
+        modalHeaderBadge.innerHTML = `
+            <span class="px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-[11px] font-extrabold uppercase tracking-wide">${data.badge}</span>
+        `;
+    }
+
     modalContent.innerHTML = `
-        <div class="flex items-center gap-2 mb-2">
-            <span class="px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-700 text-[10px] font-bold uppercase">${data.badge}</span>
-        </div>
-        <h3 class="text-2xl font-bold font-outfit text-slate-900">${data.title}</h3>
-        <p class="text-xs text-slate-500 font-medium">${data.subtitle}</p>
-        
-        <div class="my-4 rounded-2xl overflow-hidden h-48 bg-slate-100 border border-slate-200">
-            <img src="${data.image}" alt="${data.title}" class="w-full h-full object-cover">
+        <div>
+            <h3 class="text-xl sm:text-2xl font-extrabold font-outfit text-slate-900 tracking-tight">${data.title}</h3>
+            <p class="text-xs text-slate-500 font-medium mt-1">${data.subtitle}</p>
         </div>
 
-        <div class="flex flex-wrap gap-2 my-3">
-            ${data.techs.map(t => `<span class="px-2.5 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-semibold">${t}</span>`).join('')}
+        <div class="rounded-2xl overflow-hidden bg-slate-900/5 border border-slate-200/80 shadow-inner group max-h-64 sm:max-h-72 flex items-center justify-center relative">
+            <img src="${data.image}" alt="${data.title}" class="w-full h-auto max-h-64 sm:max-h-72 object-contain rounded-2xl shadow-sm transition-transform duration-500 group-hover:scale-102">
         </div>
 
-        <div class="pt-2">
+        <div class="flex flex-wrap gap-2">
+            ${data.techs.map(t => `<span class="px-3 py-1 rounded-xl bg-slate-100 border border-slate-200/60 text-slate-700 text-xs font-semibold shadow-2xs">${t}</span>`).join('')}
+        </div>
+
+        <div>
             ${data.body}
         </div>
     `;
 
     modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
 }
 
 // Close Project Modal
 function closeModal() {
     const modal = document.getElementById('project-modal');
-    if (modal) modal.classList.add('hidden');
+    if (modal) {
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
 }
+
+// Handle Backdrop Click
+function handleBackdropClick(event) {
+    if (event.target.id === 'project-modal') {
+        closeModal();
+    }
+}
+
+// Add Escape key listener to close modal
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        closeModal();
+    }
+});
 
 // Close Mobile Drawer
 function closeMobileMenu() {

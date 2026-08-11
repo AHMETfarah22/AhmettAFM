@@ -385,74 +385,91 @@
 
         <!-- BIO SECTION -->
         <section id="bio" class="max-w-7xl mx-auto px-4 sm:px-6 scroll-mt-24">
-            <div class="bg-gradient-to-br from-indigo-900 to-slate-900 text-white rounded-3xl p-5 sm:p-8 lg:p-14 shadow-2xl relative overflow-hidden">
+            <div class="bg-gradient-to-br from-white via-indigo-50/30 to-slate-50 rounded-3xl border border-slate-200/90 p-6 sm:p-10 lg:p-12 shadow-xl relative overflow-hidden">
                 
-                <!-- Glowing Accents -->
-                <div class="absolute -top-24 -right-24 w-80 h-80 bg-indigo-500/20 rounded-full blur-3xl"></div>
-                <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-sky-500/20 rounded-full blur-3xl"></div>
+                <!-- Ambient Glowing Accents -->
+                <div class="absolute -top-24 -right-24 w-80 h-80 bg-indigo-400/10 rounded-full blur-3xl pointer-events-none"></div>
+                <div class="absolute -bottom-24 -left-24 w-80 h-80 bg-sky-400/10 rounded-full blur-3xl pointer-events-none"></div>
 
-                <div class="relative z-10 max-w-4xl mx-auto space-y-10">
+                <div class="relative z-10 max-w-4xl mx-auto space-y-8">
                     <!-- Bio Header -->
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-1 bg-gradient-to-r from-indigo-400 to-sky-400 rounded-full"></div>
-                        <h2 class="text-xs font-extrabold uppercase tracking-widest text-indigo-300" data-i18n="bio.title">
-                            BIOGRAPHY & VISION
-                        </h2>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
+                        <div>
+                            <div class="inline-block px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-extrabold tracking-wider uppercase mb-2" data-i18n="bio.title">
+                                BİYOGRAFİ & VİZYON
+                            </div>
+                            <h2 class="text-2xl sm:text-3xl font-extrabold font-outfit text-slate-900 tracking-tight">
+                                BIOGRAPHY & VISION
+                            </h2>
+                        </div>
+                        <div class="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-500 bg-white/80 px-4 py-2 rounded-xl border border-slate-200/80 shadow-xs">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                            AFM-CODING Standards
+                        </div>
                     </div>
 
                     <!-- Dual Quote Callout Cards -->
-                    <div class="space-y-8">
+                    <div class="space-y-6">
                         
                         <!-- Quote 1 -->
-                        <div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/15 shadow-inner">
-                            <div class="text-indigo-400 text-4xl font-serif leading-none mb-2">“</div>
-                            <blockquote class="text-lg lg:text-xl font-medium leading-relaxed text-slate-100 font-sans" data-i18n="bio.quote1">
-                                "I'm a passionate Full-Stack Developer and the founder of AFM-CODING. My expertise spans enterprise system architecture, UI/UX design, and AI integration — delivering solutions that don't just work, but wow."
-                            </blockquote>
+                        <div class="group relative bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-2xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center shrink-0 shadow-xs font-serif text-2xl font-bold">
+                                    “
+                                </div>
+                                <blockquote class="text-base sm:text-lg font-medium leading-relaxed text-slate-700 font-sans" data-i18n="bio.quote1">
+                                    "I'm a passionate Full-Stack Developer and the founder of AFM-CODING. My expertise spans enterprise system architecture, UI/UX design, and AI integration — delivering solutions that don't just work, but wow."
+                                </blockquote>
+                            </div>
                         </div>
 
                         <!-- Quote 2 -->
-                        <div class="relative bg-white/10 backdrop-blur-md rounded-2xl p-6 lg:p-8 border border-white/15 shadow-inner">
-                            <div class="text-sky-400 text-4xl font-serif leading-none mb-2">“</div>
-                            <blockquote class="text-lg lg:text-xl font-medium leading-relaxed text-slate-100 font-sans" data-i18n="bio.quote2">
-                                "From hotel management platforms serving real businesses to AI-powered study applications that transform how students learn — I build software that makes a tangible difference."
-                            </blockquote>
+                        <div class="group relative bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-2xl bg-sky-50 border border-sky-100 text-sky-600 flex items-center justify-center shrink-0 shadow-xs font-serif text-2xl font-bold">
+                                    “
+                                </div>
+                                <blockquote class="text-base sm:text-lg font-medium leading-relaxed text-slate-700 font-sans" data-i18n="bio.quote2">
+                                    "From hotel management platforms serving real businesses to AI-powered study applications that transform how students learn — I build software that makes a tangible difference."
+                                </blockquote>
+                            </div>
                         </div>
 
                     </div>
 
                     <!-- Core Competencies Pillars -->
-                    <div class="pt-6 grid md:grid-cols-3 gap-6 border-t border-white/10">
-                        <div class="flex items-start gap-4">
-                            <div class="p-3 rounded-xl bg-indigo-500/20 text-indigo-300 border border-indigo-400/30">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                    <div class="pt-6 grid md:grid-cols-3 gap-5 border-t border-slate-200/80">
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white/80 border border-slate-200/80 hover:border-indigo-300 hover:bg-indigo-50/40 transition-all shadow-xs">
+                            <div class="p-2.5 rounded-xl bg-indigo-50 text-indigo-600 border border-indigo-100 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-sm font-bold text-white" data-i18n="bio.pillar1Title">Kurumsal Sistemler</h3>
-                                <p class="text-xs text-slate-300 mt-1" data-i18n="bio.pillar1Desc">Yüksek performanslı, ölçeklenebilir altyapı mimarileri.</p>
+                                <h3 class="text-sm font-bold text-slate-900" data-i18n="bio.pillar1Title">Kurumsal Sistemler</h3>
+                                <p class="text-xs text-slate-500 mt-0.5 leading-normal" data-i18n="bio.pillar1Desc">Yüksek performanslı, ölçeklenebilir altyapı mimarileri.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="p-3 rounded-xl bg-sky-500/20 text-sky-300 border border-sky-400/30">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white/80 border border-slate-200/80 hover:border-sky-300 hover:bg-sky-50/40 transition-all shadow-xs">
+                            <div class="p-2.5 rounded-xl bg-sky-50 text-sky-600 border border-sky-100 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-sm font-bold text-white" data-i18n="bio.pillar2Title">UI/UX Tasarımı</h3>
-                                <p class="text-xs text-slate-300 mt-1" data-i18n="bio.pillar2Desc">Estetik, modern ve kullanıcı odaklı dijital deneyimler.</p>
+                                <h3 class="text-sm font-bold text-slate-900" data-i18n="bio.pillar2Title">UI/UX Tasarımı</h3>
+                                <p class="text-xs text-slate-500 mt-0.5 leading-normal" data-i18n="bio.pillar2Desc">Estetik, modern ve kullanıcı odaklı dijital deneyimler.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="p-3 rounded-xl bg-teal-500/20 text-teal-300 border border-teal-400/30">
-                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
+                        <div class="flex items-start gap-3.5 p-4 rounded-2xl bg-white/80 border border-slate-200/80 hover:border-teal-300 hover:bg-teal-50/40 transition-all shadow-xs">
+                            <div class="p-2.5 rounded-xl bg-teal-50 text-teal-600 border border-teal-100 shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path></svg>
                             </div>
                             <div>
-                                <h3 class="text-sm font-bold text-white" data-i18n="bio.pillar3Title">Yapay Zeka Entegrasyonu</h3>
-                                <p class="text-xs text-slate-300 mt-1" data-i18n="bio.pillar3Desc">LLM & Akıllı veri işleme çözümleri.</p>
+                                <h3 class="text-sm font-bold text-slate-900" data-i18n="bio.pillar3Title">Yapay Zeka Entegrasyonu</h3>
+                                <p class="text-xs text-slate-500 mt-0.5 leading-normal" data-i18n="bio.pillar3Desc">LLM & Akıllı veri işleme çözümleri.</p>
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -936,20 +953,31 @@
     </main>
 
     <!-- PROJECT DETAIL MODAL POPUP -->
-    <div id="project-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm">
-        <div class="bg-white rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-slate-200 shadow-2xl relative space-y-6 animate-in fade-in zoom-in duration-200">
-            <!-- Modal Close Button -->
-            <button onclick="closeModal()" class="absolute top-6 right-6 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-500 flex items-center justify-center transition-colors">
-                ✕
-            </button>
+    <div id="project-modal" onclick="handleBackdropClick(event)" class="hidden fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-slate-950/70 backdrop-blur-md transition-all duration-300">
+        <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[85vh] flex flex-col border border-slate-200/90 shadow-2xl relative overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+            <!-- Modal Header -->
+            <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/90 backdrop-blur-sm shrink-0">
+                <div id="modal-header-badge" class="flex items-center gap-2">
+                    <!-- Badge inserted via JS -->
+                </div>
+                <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-slate-200/70 hover:bg-slate-300/80 text-slate-600 flex items-center justify-center font-bold text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                    ✕
+                </button>
+            </div>
 
-            <div id="modal-content" class="space-y-4">
+            <!-- Scrollable Modal Body -->
+            <div id="modal-content" class="p-6 sm:p-8 overflow-y-auto flex-1 space-y-5 custom-scrollbar">
                 <!-- Content inserted dynamically via script.js -->
             </div>
 
-            <div class="pt-4 border-t border-slate-100 flex justify-end">
-                <button onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-indigo-600 transition-colors">
-                    Kapat
+            <!-- Sticky Modal Footer -->
+            <div id="modal-footer" class="px-6 py-4 border-t border-slate-100 flex items-center justify-between bg-slate-50/90 backdrop-blur-sm shrink-0 gap-3">
+                <a href="#contact" onclick="closeModal()" class="px-5 py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 font-bold text-xs transition-colors flex items-center gap-1.5 shadow-xs">
+                    <span data-i18n="nav.cta">İletişime Geç</span>
+                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                </a>
+                <button onclick="closeModal()" class="px-6 py-2.5 rounded-xl bg-slate-900 text-white font-bold text-xs hover:bg-indigo-600 transition-colors shadow-md">
+                    <span data-i18n="modal.close">Kapat</span>
                 </button>
             </div>
         </div>
