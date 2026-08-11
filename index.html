@@ -563,68 +563,173 @@
 
         <!-- SKILLS & EXPERTISE SECTION -->
         <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 scroll-mt-24">
-            <div class="bg-white rounded-3xl border border-slate-200/90 p-5 sm:p-8 lg:p-14 shadow-xl">
-                <div class="max-w-3xl mb-12">
-                    <div class="inline-block px-3 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-xs font-bold tracking-wider uppercase mb-3" data-i18n="skills.badge">
+            <div class="bg-gradient-to-br from-white via-slate-50/80 to-indigo-50/30 rounded-3xl border border-slate-200/90 p-6 sm:p-10 lg:p-14 shadow-xl">
+                
+                <div class="text-center max-w-2xl mx-auto space-y-3 mb-10 sm:mb-14">
+                    <div class="inline-block px-3.5 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-xs font-extrabold tracking-widest uppercase shadow-sm" data-i18n="skills.badge">
                         Yetkinlikler
                     </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="skills.title">
+                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="skills.title">
                         EXPERT SKILLS & ARCHITECTURE
                     </h2>
-                    <p class="text-sm font-medium text-slate-500 mt-2" data-i18n="skills.subtitle">
+                    <p class="text-xs sm:text-sm font-medium text-slate-500 max-w-xl mx-auto" data-i18n="skills.subtitle">
                         Modüler kod prensipleri, uçtan uca mimari tasarımı ve modern teknolojiler
                     </p>
                 </div>
 
-                <!-- Skill Categories Grid -->
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- 4 Distinct Light Skill Cards Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                     
-                    <!-- Skill Box 1 -->
-                    <div class="space-y-4">
-                        <div class="text-xs font-extrabold text-indigo-600 tracking-wider uppercase">01 / Full-Stack Development</div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="skills.s1Title">Uçtan Uca Geliştirme</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 font-medium">
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Modern JavaScript / TypeScript</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> React.js & Vue.js Ecosystem</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> Node.js & RESTful / GraphQL APIs</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span> SQL & NoSQL Veritabanı Mimari</li>
-                        </ul>
+                    <!-- Skill Card 1: Full-Stack (Indigo Theme) -->
+                    <div class="group bg-white rounded-3xl p-6 border-2 border-indigo-100 hover:border-indigo-400 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-4">
+                            <!-- Card Header Icon & Number -->
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-100 text-indigo-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                                </div>
+                                <span class="text-xs font-extrabold font-mono px-2.5 py-1 rounded-full bg-indigo-50 text-indigo-600 border border-indigo-100">01</span>
+                            </div>
+                            
+                            <div>
+                                <div class="text-[10px] font-extrabold text-indigo-600 uppercase tracking-widest">FULL-STACK</div>
+                                <h3 class="text-lg font-bold font-outfit text-slate-900 mt-0.5" data-i18n="skills.s1Title">Uçtan Uca Geliştirme</h3>
+                            </div>
+
+                            <!-- Skill Items Badges -->
+                            <div class="space-y-2 pt-2">
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-indigo-50/50 group-hover:border-indigo-100 transition-colors">
+                                    <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Modern JS / TypeScript</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-indigo-50/50 group-hover:border-indigo-100 transition-colors">
+                                    <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>React & Vue.js Ecosystem</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-indigo-50/50 group-hover:border-indigo-100 transition-colors">
+                                    <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Node.js & REST/GraphQL</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-indigo-50/50 group-hover:border-indigo-100 transition-colors">
+                                    <svg class="w-4 h-4 text-indigo-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>SQL & NoSQL Database</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Skill Box 2 -->
-                    <div class="space-y-4">
-                        <div class="text-xs font-extrabold text-sky-600 tracking-wider uppercase">02 / Architecture & Cloud</div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="skills.s2Title">Sistem Mimarisi</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 font-medium">
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Enterprise System Architecture</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Microservices & Scalability</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Docker & CI/CD Pipelines</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-sky-500"></span> Cloud Infrastructure Management</li>
-                        </ul>
+                    <!-- Skill Card 2: Architecture & Cloud (Sky Theme) -->
+                    <div class="group bg-white rounded-3xl p-6 border-2 border-sky-100 hover:border-sky-400 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-4">
+                            <!-- Card Header Icon & Number -->
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-100 text-sky-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                                </div>
+                                <span class="text-xs font-extrabold font-mono px-2.5 py-1 rounded-full bg-sky-50 text-sky-600 border border-sky-100">02</span>
+                            </div>
+                            
+                            <div>
+                                <div class="text-[10px] font-extrabold text-sky-600 uppercase tracking-widest">ARCHITECTURE</div>
+                                <h3 class="text-lg font-bold font-outfit text-slate-900 mt-0.5" data-i18n="skills.s2Title">Sistem Mimarisi</h3>
+                            </div>
+
+                            <!-- Skill Items Badges -->
+                            <div class="space-y-2 pt-2">
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-sky-50/50 group-hover:border-sky-100 transition-colors">
+                                    <svg class="w-4 h-4 text-sky-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Enterprise Systems Architecture</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-sky-50/50 group-hover:border-sky-100 transition-colors">
+                                    <svg class="w-4 h-4 text-sky-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Microservices & Scalability</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-sky-50/50 group-hover:border-sky-100 transition-colors">
+                                    <svg class="w-4 h-4 text-sky-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Docker & CI/CD Pipelines</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-sky-50/50 group-hover:border-sky-100 transition-colors">
+                                    <svg class="w-4 h-4 text-sky-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Cloud Infrastructure</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Skill Box 3 -->
-                    <div class="space-y-4">
-                        <div class="text-xs font-extrabold text-teal-600 tracking-wider uppercase">03 / UI/UX & Aesthetics</div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="skills.s3Title">Arayüz & Deneyim</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 font-medium">
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Premium High-End Visual Design</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Glassmorphism & Micro-animations</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> Responsive & Adaptive Layouts</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-teal-500"></span> User-Centric Design Thinking</li>
-                        </ul>
+                    <!-- Skill Card 3: UI/UX & Aesthetics (Teal Theme) -->
+                    <div class="group bg-white rounded-3xl p-6 border-2 border-teal-100 hover:border-teal-400 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-4">
+                            <!-- Card Header Icon & Number -->
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100 text-teal-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                                </div>
+                                <span class="text-xs font-extrabold font-mono px-2.5 py-1 rounded-full bg-teal-50 text-teal-600 border border-teal-100">03</span>
+                            </div>
+                            
+                            <div>
+                                <div class="text-[10px] font-extrabold text-teal-600 uppercase tracking-widest">DESIGN & UI/UX</div>
+                                <h3 class="text-lg font-bold font-outfit text-slate-900 mt-0.5" data-i18n="skills.s3Title">Arayüz & Deneyim</h3>
+                            </div>
+
+                            <!-- Skill Items Badges -->
+                            <div class="space-y-2 pt-2">
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-teal-50/50 group-hover:border-teal-100 transition-colors">
+                                    <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>High-End Visual Design</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-teal-50/50 group-hover:border-teal-100 transition-colors">
+                                    <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Glassmorphism & Motion</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-teal-50/50 group-hover:border-teal-100 transition-colors">
+                                    <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Responsive & Adaptive</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-teal-50/50 group-hover:border-teal-100 transition-colors">
+                                    <svg class="w-4 h-4 text-teal-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>User-Centric UX Design</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <!-- Skill Box 4 -->
-                    <div class="space-y-4">
-                        <div class="text-xs font-extrabold text-purple-600 tracking-wider uppercase">04 / AI Integration</div>
-                        <h3 class="text-lg font-bold text-slate-900" data-i18n="skills.s4Title">Yapay Zeka Çözümleri</h3>
-                        <ul class="space-y-2 text-sm text-slate-600 font-medium">
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> LLM API Entegrasyonları</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Smart Study & Flashcard Algoritmaları</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Prompt Engineering & Retrieval</li>
-                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Akıllı İş Süreç Otomasyonu</li>
-                        </ul>
+                    <!-- Skill Card 4: AI Integration (Purple Theme) -->
+                    <div class="group bg-white rounded-3xl p-6 border-2 border-purple-100 hover:border-purple-400 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1.5 flex flex-col justify-between relative overflow-hidden">
+                        <div class="space-y-4">
+                            <!-- Card Header Icon & Number -->
+                            <div class="flex items-center justify-between">
+                                <div class="w-12 h-12 rounded-2xl bg-purple-50 border border-purple-100 text-purple-600 flex items-center justify-center shadow-sm group-hover:scale-110 transition-transform">
+                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                </div>
+                                <span class="text-xs font-extrabold font-mono px-2.5 py-1 rounded-full bg-purple-50 text-purple-600 border border-purple-100">04</span>
+                            </div>
+                            
+                            <div>
+                                <div class="text-[10px] font-extrabold text-purple-600 uppercase tracking-widest">ARTIFICIAL INTELLIGENCE</div>
+                                <h3 class="text-lg font-bold font-outfit text-slate-900 mt-0.5" data-i18n="skills.s4Title">Yapay Zeka Çözümleri</h3>
+                            </div>
+
+                            <!-- Skill Items Badges -->
+                            <div class="space-y-2 pt-2">
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-purple-50/50 group-hover:border-purple-100 transition-colors">
+                                    <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>LLM API Entegrasyonları</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-purple-50/50 group-hover:border-purple-100 transition-colors">
+                                    <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Smart Study Algoritmaları</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-purple-50/50 group-hover:border-purple-100 transition-colors">
+                                    <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Prompt Engineering</span>
+                                </div>
+                                <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-200/80 text-xs font-semibold text-slate-700 flex items-center gap-2 group-hover:bg-purple-50/50 group-hover:border-purple-100 transition-colors">
+                                    <svg class="w-4 h-4 text-purple-600 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"></path></svg>
+                                    <span>Akıllı Süreç Otomasyonu</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
