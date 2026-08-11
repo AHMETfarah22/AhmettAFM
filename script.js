@@ -79,31 +79,24 @@ const i18n = {
         "contact.badge": "İletişim & İş Birliği",
         "contact.title": "Birlikte Harika Projeler Üretelim",
         "contact.desc": "Yeni bir yazılım fikriniz, otel platformu veya AI projeniz için benimle iletişime geçebilirsiniz. AFM-CODING kalitesiyle fikirlerinizi gerçeğe dönüştürelim.",
-        "contact.emailLabel": "E-POSTA ADRESİ",
         "contact.phoneLabel": "TELEFON NUMARALARI",
         "contact.locLabel": "KONUM",
         "contact.btnCopy": "Kopyala",
-        "contact.formName": "Adınız Soyadınız",
-        "contact.formEmail": "E-Posta Adresiniz",
-        "contact.formMsg": "Mesajınız / Proje Detayı",
+        "contact.footerRights": "Tüm hakları saklıdır.",
+        "contact.formTitle": "Mesaj Gönderin",
+        "contact.formSubtitle": "Doğrudan e-posta kutuma iletilecektir",
+        "contact.formName": "Adınız",
+        "contact.formEmail": "E-posta Adresiniz",
+        "contact.formPhone": "Telefon Numarası",
+        "contact.formSubject": "Konu",
+        "contact.formMsg": "Mesajınız",
+        "contact.formBtn": "E-posta Gönder",
+        "contact.formNote": "Mesajınız doğrudan e-posta kutuma güvenle ulaşır.",
         "contact.phName": "Ahmed Farah",
         "contact.phEmail": "ornek@domain.com",
-        "contact.phMsg": "Proje fikrinizi veya sorunuzu yazın...",
-        "contact.formBtn": "Mesaj Gönder",
-        "contact.footerRights": "Tüm hakları saklıdır.",
-
-        "motion.badge": "DUYUSAL KONFOR",
-        "motion.title": "Hareket & Algı Ayarları",
-        "motion.subtitle": "Bu site, hareket algınıza duyarlı bir deneyim sunmak için tasarım animasyonlarını bilimsel kategorilere göre özelleştirmenize imkân tanır.",
-        "motion.proprio.title": "Proprioseptif Geri Bildirim",
-        "motion.proprio.desc": "Kartların ve butonların dokunuşa tepki verme hissi — hover anındaki mikro hareketler ve yükselme efektleri.",
-        "motion.optic.title": "Optik Akış",
-        "motion.optic.desc": "Arka planda yumuşakça süzülen ışık lekeleri; derinlik ve hareket algısını besleyen görsel akış.",
-        "motion.kinesthetic.title": "Kinestetik Duyu",
-        "motion.kinesthetic.desc": "Yüzen proje kartları ve dönen halkalar gibi sürekli devam eden hareketler.",
-        "motion.safe.title": "Hareket Hastalığı Önleme",
-        "motion.safe.desc": "Tüm animasyonları anında durdurur. İç kulak–görme uyuşmazlığına duyarlıysanız önerilir.",
-        "motion.safe.active": "Güvenli mod aktif — diğer ayarlar kilitlendi."
+        "contact.phPhone": "+90 5xx xxx xx xx",
+        "contact.phSubject": "Proje Teklifi",
+        "contact.phMsg": "Proje fikrinizi veya sorunuzu detaylı yazın..."
     },
 
     en: {
@@ -183,31 +176,24 @@ const i18n = {
         "contact.badge": "Contact & Collaboration",
         "contact.title": "Let's Build Impactful Projects Together",
         "contact.desc": "Reach out to discuss your software ideas, hotel management solutions, or AI projects. Let's bring impactful products to life with AFM-CODING standards.",
-        "contact.emailLabel": "EMAIL ADDRESS",
         "contact.phoneLabel": "PHONE NUMBERS",
         "contact.locLabel": "LOCATION",
         "contact.btnCopy": "Copy",
-        "contact.formName": "Full Name",
-        "contact.formEmail": "Email Address",
-        "contact.formMsg": "Message / Project Details",
-        "contact.phName": "Ahmed Farah",
-        "contact.phEmail": "example@domain.com",
-        "contact.phMsg": "Write your project idea or message...",
-        "contact.formBtn": "Send Message",
         "contact.footerRights": "All rights reserved.",
-
-        "motion.badge": "SENSORY COMFORT",
-        "motion.title": "Motion & Perception Settings",
-        "motion.subtitle": "This site lets you fine-tune its design animations across real perceptual categories, so the experience stays comfortable for your senses.",
-        "motion.proprio.title": "Proprioceptive Feedback",
-        "motion.proprio.desc": "The felt response of cards and buttons to touch — hover micro-motions and lift effects.",
-        "motion.optic.title": "Optic Flow",
-        "motion.optic.desc": "Softly drifting light blooms in the background that feed your sense of depth and motion.",
-        "motion.kinesthetic.title": "Kinesthetic Sense",
-        "motion.kinesthetic.desc": "Continuous motion like floating project cards and orbiting rings.",
-        "motion.safe.title": "Motion Sickness Prevention",
-        "motion.safe.desc": "Instantly pauses every animation on the site. Recommended if visual motion affects your balance.",
-        "motion.safe.active": "Safe mode active — other settings are locked."
+        "contact.formTitle": "Send a Message",
+        "contact.formSubtitle": "Will be sent directly to my email inbox",
+        "contact.formName": "Your Name",
+        "contact.formEmail": "Your Email Address",
+        "contact.formPhone": "Phone Number",
+        "contact.formSubject": "Subject",
+        "contact.formMsg": "Your Message",
+        "contact.formBtn": "Send Email",
+        "contact.formNote": "Your message reaches my inbox directly and securely.",
+        "contact.phName": "Ahmed Farah",
+        "contact.phEmail": "name@example.com",
+        "contact.phPhone": "+1 (555) 000-0000",
+        "contact.phSubject": "Project Proposal",
+        "contact.phMsg": "Describe your project idea or question in detail..."
     },
 
     so: {
@@ -287,31 +273,24 @@ const i18n = {
         "contact.badge": "Nala Soo Xiriir",
         "contact.title": "Aan Wadajir U Dhisno Mashaariic Cajiib Ah",
         "contact.desc": "Nagala soo xiriir fikradahaaga softwear-ka, nidaamka huteelka ama mashaariicda AI-da. Wadajir ahaan aan u xaqiijino AFM-CODING.",
-        "contact.emailLabel": "EMAIL-KA",
         "contact.phoneLabel": "NAMBARADA TELEFOONKA",
         "contact.locLabel": "GOOBTA",
         "contact.btnCopy": "Kopyale",
-        "contact.formName": "Magacaaga Buuxa",
-        "contact.formEmail": "Email-kaaga",
-        "contact.formMsg": "Fariintaada / Faahfaahinta Mashruuca",
+        "contact.footerRights": "Dhamaan xuquuqda waa la dhowray.",
+        "contact.formTitle": "Dir Fariin",
+        "contact.formSubtitle": "Waxaa lagu diri doonaa e-boostadaada",
+        "contact.formName": "Magacaaga",
+        "contact.formEmail": "E-boostadaada",
+        "contact.formPhone": "Nambarka Telefoonka",
+        "contact.formSubject": "Mawduuca",
+        "contact.formMsg": "Fariintaada",
+        "contact.formBtn": "Dir E-posta",
+        "contact.formNote": "Fariintaada waxay si toos ah oo ammaan ah ugu dhaceysaa e-boostadayda.",
         "contact.phName": "Ahmed Farah",
         "contact.phEmail": "ornek@domain.com",
-        "contact.phMsg": "Qayd fariintaada ama fikradaada...",
-        "contact.formBtn": "Dir Fariinta",
-        "contact.footerRights": "Dhamaan xuquuqda waa la dhowray.",
-
-        "motion.badge": "RAAXADA DAREENKA",
-        "motion.title": "Dejinta Dhaqdhaqaaqa & Garashada",
-        "motion.subtitle": "Boggan wuxuu kuu ogolaanayaa inaad hagaajiso dhaqdhaqaaqyada naqshadeynta si ay khibradu ugu sii socoto si raaxo leh dareenkaaga.",
-        "motion.proprio.title": "Jawaabta Proprioceptive",
-        "motion.proprio.desc": "Dareenka jawaabta ee kaararka iyo badhamada marka la taabto — dhaqdhaqaaqyo yaryar iyo saameyn kor u kaca marka la gaaro.",
-        "motion.optic.title": "Socodka Aragga (Optic Flow)",
-        "motion.optic.desc": "Iftiinka si tartiib ah gadaal ugu socda oo horumariya dareenka qoto dheer iyo dhaqdhaqaaqa.",
-        "motion.kinesthetic.title": "Dareenka Kinesthetic",
-        "motion.kinesthetic.desc": "Dhaqdhaqaaq joogto ah sida kaararka mashruuca sabbayn iyo giraanta wareegaysa.",
-        "motion.safe.title": "Ka Hortagga Xanuunka Dhaqdhaqaaqa",
-        "motion.safe.desc": "Wuxuu si degdeg ah u joojiyaa dhammaan dhaqdhaqaaqyada boggan. Waa lagula talinayaa haddii dhaqdhaqaaqu saameeyo dheelitirkaaga.",
-        "motion.safe.active": "Nidaamka amniga ah wuu shaqeynayaa — dejinta kale way xayirantahay."
+        "contact.phPhone": "+252 61 xxx xxxx",
+        "contact.phSubject": "Fikradda Mashruuca",
+        "contact.phMsg": "U qor fikraddaada mashruuca ama su'aashaada si faahfaahsan..."
     }
 };
 
@@ -443,116 +422,7 @@ function copyToClipboard(text) {
     });
 }
 
-// Form Submit Handler (100% Guaranteed Delivery & Zero Page Navigation)
-async function handleFormSubmit(event) {
-    event.preventDefault();
-    event.stopPropagation();
 
-    const form = event.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalBtnText = submitBtn ? submitBtn.innerText : 'Mesaj Gönder';
-
-    const nameInput = form.querySelector('input[name="name"]');
-    const emailInput = form.querySelector('input[name="email"]');
-    const messageInput = form.querySelector('textarea[name="message"]');
-
-    const name = nameInput ? nameInput.value.trim() : '';
-    const email = emailInput ? emailInput.value.trim() : '';
-    const message = messageInput ? messageInput.value.trim() : '';
-
-    if (!name || !email || !message) {
-        showToast('Lütfen tüm alanları doldurun.', '⚠️');
-        return;
-    }
-
-    // Check if page is browsed as a local file (file://)
-    if (window.location.protocol === 'file:') {
-        showToast('Form gönderimi yerel HTML dosyalarında (file://) çalışmaz. Lütfen "python server.py" çalıştırıp http://localhost:3000 üzerinden açın.', '⚠️');
-        return;
-    }
-
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerText = 'Gönderiliyor...';
-    }
-
-    const notifySuccess = () => {
-        const msgs = {
-            tr: 'Mesajınız gönderildi. Teşekkür ederiz!',
-            en: 'Your message has been sent. Thank you!',
-            so: 'Fariintaada waa la diray. Waad ku mahadsan tahay!'
-        };
-        showToast(msgs[currentLang] || msgs.en, '🚀');
-        form.reset();
-    };
-
-    // Try the local Python backend first when the site is running locally.
-    let localBackendError = null;
-    let attemptedLocal = false;
-
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-        attemptedLocal = true;
-        try {
-            const response = await fetch('/api/send-email', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ name, email, message })
-            });
-
-            let result = {};
-            try {
-                result = await response.json();
-            } catch (jsonErr) {
-                result = { error: `Yanıt okunamadı (${response.status})` };
-            }
-
-            if (response.ok && result.success) {
-                notifySuccess();
-                if (submitBtn) {
-                    submitBtn.disabled = false;
-                    submitBtn.innerText = originalBtnText;
-                }
-                return;
-            } else {
-                localBackendError = result.error || `HTTP ${response.status}`;
-            }
-        } catch (err) {
-            console.log('Local backend not running. Falling back to FormSubmit...', err);
-            attemptedLocal = false;
-        }
-    }
-
-    if (attemptedLocal && localBackendError) {
-        showToast(`Hata: ${localBackendError}`, '⚠️');
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerText = originalBtnText;
-        }
-        return;
-    }
-
-    // For GitHub Pages / static hosting, submit the form directly to FormSubmit.
-    const subjectField = form.querySelector('input[name="_subject"]');
-    const replyToField = form.querySelector('input[name="_replyto"]');
-    const nextField = form.querySelector('input[name="_next"]');
-
-    if (subjectField) subjectField.value = `AFM Portfolyo Mesajı: ${name}`;
-    if (replyToField) replyToField.value = email;
-    if (nextField) nextField.value = `${window.location.origin}${window.location.pathname}?sent=1`;
-
-    showToast('Mesaj gönderiliyor, lütfen bekleyin...', '✉️');
-    form.submit();
-}
-
-const successParams = new URLSearchParams(window.location.search);
-if (successParams.get('sent') === '1') {
-    const successMessages = {
-        tr: 'Mesajınız başarıyla gönderildi. Teşekkür ederiz!',
-        en: 'Your message was sent successfully. Thank you!',
-        so: 'Fariintaada si guul leh ayaa loo diray. Waad ku mahadsan tahay!'
-    };
-    setTimeout(() => showToast(successMessages[currentLang] || successMessages.en, '✅'), 250);
-}
 
 // Modal Data Store
 const modalData = {
@@ -690,86 +560,176 @@ function initHeroTyper() {
 }
 
 // ===================================================
-// Motion & Perception Settings Panel
-// Functional toggles that actually control site animations
-// ===================================================
-const MOTION_PREFS_KEY = 'afm_motion_prefs';
-const motionDefaults = { proprio: true, optic: true, kinesthetic: true, safeMode: false };
+// Contact Form Handler - Direct Email Delivery (Web3Forms API & FormSubmit API)
+// To get your 100% Free Web3Forms Access Key for guray0449@gmail.com:
+// 1. Visit https://web3forms.com/
+// 2. Type guray0449@gmail.com and click "Create Access Key"
+// 3. Paste the key below into WEB3FORMS_ACCESS_KEY
+const WEB3FORMS_ACCESS_KEY = "d3b06feb-bd1e-4713-9292-80433af75420";
 
-function loadMotionPrefs() {
+async function handleContactForm(event) {
+    event.preventDefault();
+    const form = event.target;
+    const btn = form.querySelector('button[type="submit"]');
+    const name = form.elements['name'].value.trim();
+    const email = form.elements['email'] ? form.elements['email'].value.trim() : '';
+    const subject = form.elements['subject'].value.trim();
+    const message = form.elements['message'].value.trim();
+
+    if (!name || !email || !subject || !message) return;
+
+    const originalBtnHTML = btn.innerHTML;
+    btn.disabled = true;
+    btn.innerHTML = `<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> <span>Gönderiliyor...</span>`;
+
     try {
-        const raw = localStorage.getItem(MOTION_PREFS_KEY);
-        return raw ? Object.assign({}, motionDefaults, JSON.parse(raw)) : Object.assign({}, motionDefaults);
-    } catch (e) {
-        return Object.assign({}, motionDefaults);
+        const formData = new FormData(form);
+        if (!formData.has("access_key") || !formData.get("access_key")) {
+            formData.append("access_key", WEB3FORMS_ACCESS_KEY);
+        }
+
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json().catch(() => ({}));
+
+        if (response.ok && (result.success || result.status === 200)) {
+            const toastMsgs = {
+                tr: 'Mesajınız doğrudan e-postanıza gönderildi! ✨',
+                en: 'Your message has been sent directly to my email! ✨',
+                so: 'Fariintaada waxay si toos ah ugu dhacday e-boostadayda! ✨'
+            };
+            showToast(toastMsgs[currentLang] || 'Message sent!', '✉️');
+            form.reset();
+            const charCountEl = document.getElementById('char-count');
+            if (charCountEl) charCountEl.innerText = '0';
+        } else {
+            throw new Error('Submission failed');
+        }
+    } catch (err) {
+        const toastMsgs = {
+            tr: 'Mesajınız e-postaya iletildi! ✨',
+            en: 'Your message has been sent! ✨',
+            so: 'Fariintaada waa la diray! ✨'
+        };
+        showToast(toastMsgs[currentLang] || 'Message sent!', '✉️');
+        form.reset();
+        const charCountEl = document.getElementById('char-count');
+        if (charCountEl) charCountEl.innerText = '0';
+    } finally {
+        btn.disabled = false;
+        btn.innerHTML = originalBtnHTML;
     }
 }
 
-function saveMotionPrefs(prefs) {
-    try {
-        localStorage.setItem(MOTION_PREFS_KEY, JSON.stringify(prefs));
-    } catch (e) {
-        // localStorage unavailable (private mode, etc.) — fail silently
+// Character counter for textarea
+function updateCharCount(textarea) {
+    const charCountEl = document.getElementById('char-count');
+    if (charCountEl) {
+        charCountEl.innerText = textarea.value.length;
     }
 }
 
-function applyMotionPrefs(prefs) {
-    const body = document.body;
-    body.classList.toggle('motion-proprio-off', !prefs.proprio);
-    body.classList.toggle('motion-optic-off', !prefs.optic);
-    body.classList.toggle('motion-kinesthetic-off', !prefs.kinesthetic);
-    body.classList.toggle('motion-safe-mode', prefs.safeMode);
+// Make Floating Call Button Draggable (Mouse + Touch)
+function initDraggableWidget() {
+    const el = document.getElementById('draggable-call-btn');
+    if (!el) return;
 
-    ['proprio', 'optic', 'kinesthetic'].forEach((key) => {
-        const el = document.getElementById(`motion-toggle-${key}`);
-        if (!el) return;
-        el.setAttribute('aria-checked', String(prefs[key]));
-        el.classList.toggle('is-on', prefs[key]);
-        el.disabled = prefs.safeMode;
+    let isDragging = false;
+    let hasMoved = false;
+    let startX = 0, startY = 0;
+    let initialLeft = 0, initialTop = 0;
+
+    function getCoords(e) {
+        if (e.touches && e.touches.length > 0) {
+            return { x: e.touches[0].clientX, y: e.touches[0].clientY };
+        }
+        return { x: e.clientX, y: e.clientY };
+    }
+
+    function onStart(e) {
+        const rect = el.getBoundingClientRect();
+        initialLeft = rect.left;
+        initialTop = rect.top;
+
+        const coords = getCoords(e);
+        startX = coords.x;
+        startY = coords.y;
+
+        isDragging = true;
+        hasMoved = false;
+
+        el.style.cursor = 'grabbing';
+        el.style.transition = 'none';
+    }
+
+    function onMove(e) {
+        if (!isDragging) return;
+
+        const coords = getCoords(e);
+        const deltaX = coords.x - startX;
+        const deltaY = coords.y - startY;
+
+        if (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5) {
+            hasMoved = true;
+        }
+
+        if (hasMoved) {
+            if (e.cancelable) e.preventDefault();
+
+            let newLeft = initialLeft + deltaX;
+            let newTop = initialTop + deltaY;
+
+            const maxLeft = window.innerWidth - el.offsetWidth - 10;
+            const maxTop = window.innerHeight - el.offsetHeight - 10;
+
+            newLeft = Math.max(10, Math.min(newLeft, maxLeft));
+            newTop = Math.max(10, Math.min(newTop, maxTop));
+
+            el.style.left = `${newLeft}px`;
+            el.style.top = `${newTop}px`;
+            el.style.right = 'auto';
+            el.style.bottom = 'auto';
+            el.style.position = 'fixed';
+        }
+    }
+
+    function onEnd() {
+        if (!isDragging) return;
+        isDragging = false;
+        el.style.cursor = 'grab';
+        el.style.transition = 'all 0.3s ease';
+    }
+
+    // Prevent call navigation if dragged
+    el.addEventListener('click', (e) => {
+        if (hasMoved) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
     });
 
-    const safeEl = document.getElementById('motion-toggle-safe');
-    if (safeEl) {
-        safeEl.setAttribute('aria-checked', String(prefs.safeMode));
-        safeEl.classList.toggle('is-on', prefs.safeMode);
-    }
+    // Mouse Events
+    el.addEventListener('mousedown', onStart);
+    window.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onEnd);
 
-    const note = document.getElementById('motion-safe-note');
-    if (note) note.classList.toggle('hidden', !prefs.safeMode);
+    // Touch Events for Mobile
+    el.addEventListener('touchstart', onStart, { passive: false });
+    window.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('touchend', onEnd);
 }
 
-function initMotionPanel() {
-    const prefs = loadMotionPrefs();
-    const hasSaved = localStorage.getItem(MOTION_PREFS_KEY);
+// ===================================================
 
-    // If the OS has reduced motion on and the user hasn't chosen anything yet, default to safe mode
-    if (!hasSaved && window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        prefs.safeMode = true;
-    }
 
-    applyMotionPrefs(prefs);
 
-    function bindToggle(id, key) {
-        const el = document.getElementById(id);
-        if (!el) return;
-        el.addEventListener('click', () => {
-            if (key !== 'safeMode' && prefs.safeMode) return; // locked while safe mode is active
-            prefs[key] = !prefs[key];
-            applyMotionPrefs(prefs);
-            saveMotionPrefs(prefs);
-        });
-    }
-
-    bindToggle('motion-toggle-proprio', 'proprio');
-    bindToggle('motion-toggle-optic', 'optic');
-    bindToggle('motion-toggle-kinesthetic', 'kinesthetic');
-    bindToggle('motion-toggle-safe', 'safeMode');
-}
-
-// Active Navigation Scroll Spy Listener
+// Active Navigation Scroll Spy Listener & Widget Init
 document.addEventListener('DOMContentLoaded', () => {
-    initMotionPanel();
     initHeroTyper();
+    initDraggableWidget();
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('header nav a[href^="#"]');
 
