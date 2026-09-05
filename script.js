@@ -60,9 +60,9 @@ const i18n = {
         "projects.badge": "Geliştirilen Sistemler",
         "projects.title": "ÖNE ÇIKAN PROJELER",
         "projects.desc": "Gerçek iş süreçlerine değer katan ve öğrenim süreçlerini dönüştüren yenilikçi yazılım çözümleri.",
-        "projects.hotelTitle": "Otel Yönetim Platformu",
+        "projects.hotelTitle": "Pansiyon ve Otel Yönetim Sistemi",
         "projects.hotelTag": "Kurumsal Çözüm",
-        "projects.hotelDesc": "Gerçek işletmeler için geliştirilmiş kurumsal otel yönetim yazılımı. Rezervasyon takibi, oda yönetimi, gelir analitiği ve müşteri ilişkilerini entegre yöneten kapsamlı platform.",
+        "projects.hotelDesc": "Pansiyon, otel ve konaklama tesisleri için geliştirilmiş kurumsal yönetim platformu. Müşteri giriş/çıkış süreçleri, canlı oda doluluk takibi, gelir analitiği ve rezervasyon otomasyonunu entegre yöneten C# mimarili sistem.",
         "projects.aiTitle": "Yapay Zeka Destekli Çalışma Uygulaması",
         "projects.aiTag": "Yapay Zeka İnovasyonu",
         "projects.aiDesc": "Öğrencilerin çalışma alışkanlıklarını değiştiren yapay zeka destekli akıllı öğrenim platformu. Otomatik özet çıkarma, dinamik kart hazırlama ve kişiselleştirilmiş öğrenme analitiği.",
@@ -75,6 +75,11 @@ const i18n = {
         "skills.s2Title": "Sistem Mimarisi & Bulut",
         "skills.s3Title": "Arayüz & Deneyim",
         "skills.s4Title": "Yapay Zeka Çözümleri",
+
+        "languages.badge": "Kod İstatistikleri",
+        "languages.title": "KULLANILAN PROGRAMLAMA DİLLERİ",
+        "languages.subtitle": "Projeler genelinde yazılan kodların dil bazında yüzdesel dağılımı",
+        "languages.other": "Diğer",
 
         "contact.badge": "İletişim & İş Birliği",
         "contact.title": "Birlikte Harika Projeler Üretelim",
@@ -170,9 +175,9 @@ const i18n = {
         "projects.badge": "Built Systems",
         "projects.title": "FEATURED PROJECTS",
         "projects.desc": "Innovative software solutions powering real business operations and transforming education.",
-        "projects.hotelTitle": "Hotel Management Platform",
+        "projects.hotelTitle": "Guesthouse & Hotel Management Platform",
         "projects.hotelTag": "Enterprise Solution",
-        "projects.hotelDesc": "An enterprise hotel management platform built for real-world business operations. Unifies room bookings, inventory management, revenue analytics, and guest relations.",
+        "projects.hotelDesc": "An enterprise management system designed for guesthouses, pensions, and hotels. Unifies guest check-in/out, live room tracking, revenue analytics, and automated reservation management built with C# architecture.",
         "projects.aiTitle": "AI-Powered Study Application",
         "projects.aiTag": "AI Innovation",
         "projects.aiDesc": "An AI-driven learning platform transforming how students study. Features automated summarization, adaptive flashcards, and personalized progress analytics.",
@@ -185,6 +190,11 @@ const i18n = {
         "skills.s2Title": "Architecture & Cloud",
         "skills.s3Title": "UI/UX & Experience",
         "skills.s4Title": "AI Solutions",
+
+        "languages.badge": "Code Statistics",
+        "languages.title": "MOST USED LANGUAGES",
+        "languages.subtitle": "Percentage breakdown of programming languages used across projects",
+        "languages.other": "Other",
 
         "contact.badge": "Contact & Collaboration",
         "contact.title": "Let's Build Impactful Projects Together",
@@ -280,9 +290,9 @@ const i18n = {
         "projects.badge": "Nidaamyada La Dhisay",
         "projects.title": "MASHAARIICDA CAANHA AH",
         "projects.desc": "Softwear-o hal-abuur leh oo caawiya ganacsiyada iyo ardayda wax baranaysa.",
-        "projects.hotelTitle": "Nidaamka Maareynta Huteelada",
+        "projects.hotelTitle": "Nidaamka Maamulka Huteelada & Guryaha Martida",
         "projects.hotelTag": "Xalka Ganacsiga",
-        "projects.hotelDesc": "Nidaamka maareynta huteelada ee loo sameeyay ganacsiyada dhabta ah. Wuxuu maareeyaa ballansashada qolalka, daxliga, iyo macmiilka.",
+        "projects.hotelDesc": "Nidaam maamul oo loo sameeyay guryaha martida (pension) iyo huteelada. Wuxuu maamulaa check-in/out-ka martida, qolalka, dakhliga iyo ballansashada tooska ah oo ku dhisan C#.",
         "projects.aiTitle": "Aapp-ka Waxbarashada AI-da",
         "projects.aiTag": "Hal-abuurka AI-da",
         "projects.aiDesc": "Aapp-ka waxbarashada ee AI-da ku shaqeeya oo beddela habka ardaydu u wax u bartaan. Wuxuu leeyahay faahfaahin toos ah iyo kaararka dib-u-eegista.",
@@ -295,6 +305,11 @@ const i18n = {
         "skills.s2Title": "Nidaamka Dhismaha & Cloud",
         "skills.s3Title": "Arayüz & Deneyim",
         "skills.s4Title": "Xalka AI-da",
+
+        "languages.badge": "Tirokoobka Koodka",
+        "languages.title": "LUUQADAHA LA ISTICMAALAY",
+        "languages.subtitle": "Boqolkiiba koodka lagu qaray mashaariicda oo dhan dil ahaan",
+        "languages.other": "Kuwa Kale",
 
         "contact.badge": "Nala Soo Xiriir",
         "contact.title": "Aan Wadajir U Dhisno Mashaariic Cajiib Ah",
@@ -467,36 +482,59 @@ function copyToClipboard(text) {
 const modalData = {
     tr: {
         hotel: {
-            title: "Otel Yönetim Platformu",
-            subtitle: "Kurumsal İşletme ve Otomasyon Yazılımı",
-            badge: "Gerçek İş Projesi",
+            title: "Pansiyon ve Otel Yönetim Sistemi",
+            subtitle: "Kurumsal Konaklama ve Otomasyon Yazılımı (C# & .NET Mimarisi)",
+            badge: "Kurumsal Çözüm",
             image: "assets/hotel-app.png",
-            techs: ["Sistem Mimarisi", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
+            techs: ["C# (81.7%)", "HTML (8%)", "CSS (6.1%)", "JavaScript (3.8%)", "Other (0.4%)"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
-                    Bu platform, otel işletmelerinin tüm operasyonel ihtiyaçlarını tek bir panoda birleştirmek amacıyla <b>AFM-CODING</b> standartlarında mimari edilmiştir.
+                    Bu platform, pansiyon, otel ve konaklama işletmelerinin tüm operasyonel ihtiyaçlarını tek bir panoda birleştirmek amacıyla <b>C# ve .NET</b> mimarisinde <b>AFM-CODING</b> standartlarıyla geliştirilmiştir.
                 </p>
+
+                <!-- Code Statistics Breakdown Bar -->
+                <div class="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                    <div class="flex items-center justify-between text-xs font-extrabold text-slate-700">
+                        <span>Kullanılan Kod Dağılımı (Languages):</span>
+                        <span class="text-purple-700 font-mono">C# Core %81.7</span>
+                    </div>
+                    <div class="w-full h-3 rounded-full bg-slate-200 overflow-hidden flex shadow-inner">
+                        <div class="h-full bg-purple-600" style="width: 81.7%" title="C#: 81.7%"></div>
+                        <div class="h-full bg-orange-500" style="width: 8%" title="HTML: 8%"></div>
+                        <div class="h-full bg-sky-500" style="width: 6.1%" title="CSS: 6.1%"></div>
+                        <div class="h-full bg-amber-500" style="width: 3.8%" title="JavaScript: 3.8%"></div>
+                        <div class="h-full bg-slate-500" style="width: 0.4%" title="Diğer: 0.4%"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-semibold text-slate-600 pt-1">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-600"></span>C# (81.7%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-orange-500"></span>HTML (8.0%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-sky-500"></span>CSS (6.1%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span>JS (3.8%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-500"></span>Other (0.4%)</span>
+                    </div>
+                </div>
+
                 <div class="mt-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-2 mb-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 9 0 0118 0z"></path></svg>
-                        Öne Çıkan Özellikler:
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Öne Çıkan Gelişmiş Özellikler:
                     </h4>
                     <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Canlı Oda & Rezervasyon Takibi:</b> Doluluk oranları, sürükle-bırak oda atamaları.</span>
+                            <span><b>Pansiyon ve Otel Yönetimi:</b> Oda, yatak ve daire bazlı esnek konaklama ve tarifelendirme modülü.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Gelir & Analitik Panosu:</b> Aylık ciro, ortalama oda fiyatı (ADR) ve doluluk analitiği.</span>
+                            <span><b>Hızlı Müşteri Check-In / Check-Out:</b> Kimlik kayıtları, hızlı giriş-çıkış işlemleri ve hesap kapatma.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Müşteri İlişkileri (CRM):</b> Misafir geçmişi, özel istekler ve otomatik check-in / check-out.</span>
+                            <span><b>Canlı Doluluk & Rezervasyon Panosu:</b> Sürükle-bırak oda takvim görünümü ve anlık doluluk durumları.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Çoklu Kullanıcı Yetkilendirmesi:</b> Resepsiyon, kat hizmetleri ve yönetim seviyesi erişim rolleri.</span>
+                            <span><b>Detaylı Ciro & Analitik Raporlama:</b> Günlük/aylık gelir-gider hesapları, ortalama oda fiyatı (ADR) ve finansal grafikler.</span>
                         </li>
                     </ul>
                 </div>
@@ -506,7 +544,7 @@ const modalData = {
             title: "Yapay Zeka Destekli Çalışma Uygulaması",
             subtitle: "Akıllı ve Etkileşimli Öğrenme Platformu",
             badge: "Yapay Zeka İnovasyonu",
-            image: "assets/ai-study-app.png",
+            image: "assets/ai-study-app.png?v=2",
             techs: ["AI Entegrasyonu", "OpenAI / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -541,36 +579,59 @@ const modalData = {
     },
     en: {
         hotel: {
-            title: "Hotel Management Platform",
-            subtitle: "Enterprise Software Solution for Business Operations",
-            badge: "Real Business Case",
+            title: "Guesthouse & Hotel Management Platform",
+            subtitle: "Enterprise Accommodation System (C# & .NET Architecture)",
+            badge: "Enterprise Solution",
             image: "assets/hotel-app.png",
-            techs: ["System Architecture", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
+            techs: ["C# (81.7%)", "HTML (8%)", "CSS (6.1%)", "JavaScript (3.8%)", "Other (0.4%)"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
-                    This platform unifies all operational hotel needs into a single dashboard engineered with <b>AFM-CODING</b> standards.
+                    An enterprise management platform engineered for guesthouses, pensions, and hotels built with <b>C# and .NET</b> architecture following <b>AFM-CODING</b> standards.
                 </p>
+
+                <!-- Code Statistics Breakdown Bar -->
+                <div class="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                    <div class="flex items-center justify-between text-xs font-extrabold text-slate-700">
+                        <span>Code Language Distribution:</span>
+                        <span class="text-purple-700 font-mono">C# Core %81.7</span>
+                    </div>
+                    <div class="w-full h-3 rounded-full bg-slate-200 overflow-hidden flex shadow-inner">
+                        <div class="h-full bg-purple-600" style="width: 81.7%" title="C#: 81.7%"></div>
+                        <div class="h-full bg-orange-500" style="width: 8%" title="HTML: 8%"></div>
+                        <div class="h-full bg-sky-500" style="width: 6.1%" title="CSS: 6.1%"></div>
+                        <div class="h-full bg-amber-500" style="width: 3.8%" title="JavaScript: 3.8%"></div>
+                        <div class="h-full bg-slate-500" style="width: 0.4%" title="Other: 0.4%"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-semibold text-slate-600 pt-1">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-600"></span>C# (81.7%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-orange-500"></span>HTML (8.0%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-sky-500"></span>CSS (6.1%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span>JS (3.8%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-500"></span>Other (0.4%)</span>
+                    </div>
+                </div>
+
                 <div class="mt-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-2 mb-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 9 0 0118 0z"></path></svg>
-                        Key Features:
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        Key Advanced Features:
                     </h4>
                     <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Live Room & Booking Tracking:</b> Occupancy rates, drag-and-drop room assignments.</span>
+                            <span><b>Pension & Hotel Operations:</b> Flexible room, bed, and suite rates and pricing modules.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Revenue & Analytics Dashboard:</b> Monthly revenue, ADR, and occupancy analytics.</span>
+                            <span><b>Fast Guest Check-In / Check-Out:</b> Automated guest registration, fast processing, and billing.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Guest CRM:</b> Guest history, custom requests, automated check-in/out.</span>
+                            <span><b>Live Occupancy Calendar:</b> Drag-and-drop room schedule and real-time status.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Multi-User Authorization:</b> Reception, housekeeping, and admin access roles.</span>
+                            <span><b>Revenue & Analytics:</b> Daily/monthly revenue reporting, ADR calculations, and insights.</span>
                         </li>
                     </ul>
                 </div>
@@ -580,7 +641,7 @@ const modalData = {
             title: "AI-Powered Study Application",
             subtitle: "Smart Interactive Learning Platform",
             badge: "AI Innovation",
-            image: "assets/ai-study-app.png",
+            image: "assets/ai-study-app.png?v=2",
             techs: ["AI Integration", "OpenAI API / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -615,15 +676,38 @@ const modalData = {
     },
     so: {
         hotel: {
-            title: "Platformka Maamulka Hoteellada",
-            subtitle: "Nidaamka Maamulka Ganacsiga Hoteellada",
-            badge: "Mashruuc Dhab Ah",
+            title: "Nidaamka Maamulka Huteelada & Guryaha Martida",
+            subtitle: "Nidaamka Maamulka Ganacsiga Huteelada (C# & .NET)",
+            badge: "Xalka Ganacsiga",
             image: "assets/hotel-app.png",
-            techs: ["Nidaamka Dhismaha", "Node.js", "React", "PostgreSQL", "Tailwind CSS"],
+            techs: ["C# (81.7%)", "HTML (8%)", "CSS (6.1%)", "JavaScript (3.8%)", "Other (0.4%)"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
-                    Platform-kan waxaa loo dhisay in lagu mideeyo dhammaan hawlaha hoteelka hal dashboard oo ku salaysan heerarka <b>AFM-CODING</b>.
+                    Platform maamul oo loo dhisay guryaha martida (pensions) iyo huteelada oo ku dhisnaa <b>C# iyo .NET</b> iyadoo loo raacay heerarka <b>AFM-CODING</b>.
                 </p>
+
+                <!-- Code Statistics Breakdown Bar -->
+                <div class="mt-4 p-4 rounded-2xl bg-slate-50 border border-slate-200/80 space-y-2">
+                    <div class="flex items-center justify-between text-xs font-extrabold text-slate-700">
+                        <span>Koodka La Isticmaalay (Languages):</span>
+                        <span class="text-purple-700 font-mono">C# Core %81.7</span>
+                    </div>
+                    <div class="w-full h-3 rounded-full bg-slate-200 overflow-hidden flex shadow-inner">
+                        <div class="h-full bg-purple-600" style="width: 81.7%" title="C#: 81.7%"></div>
+                        <div class="h-full bg-orange-500" style="width: 8%" title="HTML: 8%"></div>
+                        <div class="h-full bg-sky-500" style="width: 6.1%" title="CSS: 6.1%"></div>
+                        <div class="h-full bg-amber-500" style="width: 3.8%" title="JavaScript: 3.8%"></div>
+                        <div class="h-full bg-slate-500" style="width: 0.4%" title="Other: 0.4%"></div>
+                    </div>
+                    <div class="flex flex-wrap gap-x-4 gap-y-1 text-[11px] font-semibold text-slate-600 pt-1">
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-purple-600"></span>C# (81.7%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-orange-500"></span>HTML (8.0%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-sky-500"></span>CSS (6.1%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-amber-500"></span>JS (3.8%)</span>
+                        <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-slate-500"></span>Other (0.4%)</span>
+                    </div>
+                </div>
+
                 <div class="mt-4 p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100">
                     <h4 class="text-xs font-extrabold uppercase tracking-wider text-indigo-700 flex items-center gap-2 mb-3">
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 9 0 0118 0z"></path></svg>
@@ -632,19 +716,15 @@ const modalData = {
                     <ul class="text-xs text-slate-700 space-y-2.5 font-medium">
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Lahaanshaha qolalka & ballansashada tooska ah:</b> Maamulka qolalka iyo xisaabinta buuxda.</span>
+                            <span><b>Maamulka Qolalka & Martida:</b> Xisaabinta qolalka, qiimaha iyo soojiidashada martida.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Dashboard-ka Dakhliga & falanqaynta:</b> Dakhliga bishii, celceliska qiimaha qolka (ADR).</span>
+                            <span><b>Check-In / Check-Out Dhakhso Ah:</b> Diandgelinta martida iyo xiridda akoonnada.</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Maamulka Martida (CRM):</b> Taariikhda martida, codsiyada gaarka ah iyo check-in/out toos ah.</span>
-                        </li>
-                        <li class="flex items-start gap-2">
-                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-1.5 shrink-0"></span>
-                            <span><b>Awoodaha Isticmaalayaasha Badan:</b> Reception-ka, adeegga qolalka iyo maamulka sare.</span>
+                            <span><b>Dashboard-ka Dakhliga:</b> Falanqaynta dakhliga bishii iyo maamulka buuxa.</span>
                         </li>
                     </ul>
                 </div>
@@ -654,7 +734,7 @@ const modalData = {
             title: "Codsiga Waxbarashada ee AI-da ee Caqliga Badan",
             subtitle: "Madal Waxbarasho oo Caqli Badan",
             badge: "Cusboaysiinta AI-da",
-            image: "assets/ai-study-app.png",
+            image: "assets/ai-study-app.png?v=2",
             techs: ["Isdhexgalka AI", "OpenAI / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
