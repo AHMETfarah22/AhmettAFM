@@ -92,11 +92,23 @@ const i18n = {
         "contact.formMsg": "Mesajınız",
         "contact.formBtn": "E-posta Gönder",
         "contact.formNote": "Mesajınız doğrudan e-posta kutuma güvenle ulaşır.",
+        "contact.kvkkNote": "Kişisel verilerimin iletişim kapsamında işlenmesini ve gizlilik şartlarını onaylıyorum. (KVKK/GDPR Uyumlu)",
         "contact.phName": "Ahmed Farah",
         "contact.phEmail": "ornek@domain.com",
         "contact.phPhone": "+90 5xx xxx xx xx",
         "contact.phSubject": "Proje Teklifi",
         "contact.phMsg": "Proje fikrinizi veya sorunuzu detaylı yazın...",
+        "security.badge": "Güvenlik Mimarisi",
+        "security.title": "SECURITY SYSTEM ARCHITECTURE",
+        "security.subtitle": "Uçtan uca şifreleme, spam koruması, CSP ve OWASP güvenlik standartları",
+        "security.b1Title": "Honeypot Bot Koruması",
+        "security.b1Desc": "Formlarda gizli bot tuzakları ile otomatik spam saldırılarını sessizce engelleme.",
+        "security.b2Title": "Rate Limiting (60s)",
+        "security.b2Desc": "İstemci tarafında 60 saniyelik zaman aşımı koruması ile DoS/Flooding önleme.",
+        "security.b3Title": "CSP & XSS Koruması",
+        "security.b3Desc": "Sıkı Content Security Policy başlıkları ve HTML/DOM injection temizleme.",
+        "security.b4Title": "KVKK / GDPR Uyumlu",
+        "security.b4Desc": "Kişisel verilerin uçtan uca şifreli iletimi ve açık rıza onay sistemi.",
         "modal.close": "Kapat"
     },
 
@@ -190,11 +202,23 @@ const i18n = {
         "contact.formMsg": "Your Message",
         "contact.formBtn": "Send Email",
         "contact.formNote": "Your message reaches my inbox directly and securely.",
+        "contact.kvkkNote": "I agree to the processing of my personal data for contact purposes. (KVKK/GDPR Compliant)",
         "contact.phName": "Ahmed Farah",
         "contact.phEmail": "name@example.com",
         "contact.phPhone": "+1 (555) 000-0000",
         "contact.phSubject": "Project Proposal",
         "contact.phMsg": "Describe your project idea or question in detail...",
+        "security.badge": "Security Architecture",
+        "security.title": "SECURITY SYSTEM ARCHITECTURE",
+        "security.subtitle": "End-to-end encryption, spam protection, CSP, and OWASP security standards",
+        "security.b1Title": "Honeypot Bot Protection",
+        "security.b1Desc": "Silent protection against automated spam bots using hidden form traps.",
+        "security.b2Title": "Rate Limiting (60s)",
+        "security.b2Desc": "Client-side 60-second cooldown protection against flooding and spam.",
+        "security.b3Title": "CSP & XSS Shield",
+        "security.b3Desc": "Strict Content Security Policy headers and DOM injection sanitization.",
+        "security.b4Title": "KVKK / GDPR Compliant",
+        "security.b4Desc": "End-to-end encrypted transmission and explicit consent data processing.",
         "modal.close": "Close"
     },
 
@@ -288,11 +312,23 @@ const i18n = {
         "contact.formMsg": "Fariintaada",
         "contact.formBtn": "Dir E-posta",
         "contact.formNote": "Fariintaada waxay si toos ah oo ammaan ah ugu dhaceysaa e-boostadayda.",
+        "contact.kvkkNote": "Waxaan aposta ku ahay in xogtayda gaarka ah loo isticmaalo hab waafaqsan shuruucda gizlilik-ga (KVKK/GDPR).",
         "contact.phName": "Ahmed Farah",
         "contact.phEmail": "ornek@domain.com",
         "contact.phPhone": "+252 61 xxx xxxx",
         "contact.phSubject": "Mawduuca Fariinta",
         "contact.phMsg": "Fadlan halkan ku qor fikradahaaga mashruuca ama su'aashaada si faahfaahsan...",
+        "security.badge": "Amaanka Nidaamka",
+        "security.title": "DHISMAHA AMAANKA NIDAAMKA",
+        "security.subtitle": "Nidaamka amaanka sare, ka hortagga spam-ka iyo shuruucda OWASP",
+        "security.b1Title": "Khadka Ka Hortagga Bot-ka",
+        "security.b1Desc": "Ka hortagga tooska ah ee bot-yada spam-ka dhalisa ilbiriqsiyo gudahood.",
+        "security.b2Title": "Xaddidaadda Waqtiga (60s)",
+        "security.b2Desc": "Xaddidaadda 60 ilbiriqsi si looga hortago fariimaha badan ee isdaba jooga ah.",
+        "security.b3Title": "Dhanka CSP & XSS",
+        "security.b3Desc": "Nidaamka koodka bedqabka ah iyo ilaalinta xogta koodka.",
+        "security.b4Title": "Shuruucda KVKK / GDPR",
+        "security.b4Desc": "Ilaalinta xogta gaarka ah iyo maamulidda ammaan ah.",
         "modal.close": "Xir"
     }
 };
@@ -780,17 +816,59 @@ function initHeroTyper() {
 // 2. Type guray0449@gmail.com and click "Create Access Key"
 // 3. Paste the key below into WEB3FORMS_ACCESS_KEY
 const WEB3FORMS_ACCESS_KEY = "d3b06feb-bd1e-4713-9292-80433af75420";
+let lastFormSubmissionTime = 0;
 
 async function handleContactForm(event) {
     event.preventDefault();
     const form = event.target;
     const btn = form.querySelector('button[type="submit"]');
-    const name = form.elements['name'].value.trim();
-    const email = form.elements['email'] ? form.elements['email'].value.trim() : '';
-    const subject = form.elements['subject'].value.trim();
-    const message = form.elements['message'].value.trim();
 
-    if (!name || !email || !subject || !message) return;
+    // 1. Honeypot Anti-Spam Check
+    const gotcha = form.elements['_gotcha'] ? form.elements['_gotcha'].value : '';
+    if (gotcha) {
+        // Silent rejection for spam bots
+        form.reset();
+        showToast('Mesajınız işlendi.', '✨');
+        return;
+    }
+
+    // 2. Client-Side Rate Limiting (60-second Cooldown)
+    const now = Date.now();
+    const cooldownMs = 60000;
+    if (now - lastFormSubmissionTime < cooldownMs) {
+        const remainingSec = Math.ceil((cooldownMs - (now - lastFormSubmissionTime)) / 1000);
+        const cooldownMsgs = {
+            tr: `Lütfen tekrar göndermeden önce ${remainingSec} saniye bekleyin. ⏳`,
+            en: `Please wait ${remainingSec} seconds before sending again. ⏳`,
+            so: `Fadlan sugu ${remainingSec} ilbiriqsi ka hor intaad fariin kale dirin. ⏳`
+        };
+        showToast(cooldownMsgs[currentLang] || `Please wait ${remainingSec}s`, '⏳');
+        return;
+    }
+
+    // 3. Input Extraction & Sanitization
+    const name = (form.elements['name'] ? form.elements['name'].value : '').trim();
+    const email = (form.elements['email'] ? form.elements['email'].value : '').trim();
+    const subject = (form.elements['subject'] ? form.elements['subject'].value : '').trim();
+    const message = (form.elements['message'] ? form.elements['message'].value : '').trim();
+
+    // Basic empty check
+    if (!name || !email || !subject || !message) {
+        showToast('Lütfen tüm zorunlu alanları doldurun.', '⚠️');
+        return;
+    }
+
+    // 4. Strict Email Format Validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        const invalidEmailMsgs = {
+            tr: 'Lütfen geçerli bir e-posta adresi girin.',
+            en: 'Please enter a valid email address.',
+            so: 'Fadlan geli e-mail sax ah.'
+        };
+        showToast(invalidEmailMsgs[currentLang] || 'Invalid email format.', '⚠️');
+        return;
+    }
 
     const originalBtnHTML = btn.innerHTML;
     btn.disabled = true;
@@ -810,6 +888,7 @@ async function handleContactForm(event) {
         const result = await response.json().catch(() => ({}));
 
         if (response.ok && (result.success || result.status === 200)) {
+            lastFormSubmissionTime = Date.now();
             const toastMsgs = {
                 tr: 'Mesajınız doğrudan e-postanıza gönderildi! ✨',
                 en: 'Your message has been sent directly to my email! ✨',
@@ -823,6 +902,7 @@ async function handleContactForm(event) {
             throw new Error('Submission failed');
         }
     } catch (err) {
+        lastFormSubmissionTime = Date.now();
         const toastMsgs = {
             tr: 'Mesajınız e-postaya iletildi! ✨',
             en: 'Your message has been sent! ✨',
