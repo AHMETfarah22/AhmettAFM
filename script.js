@@ -982,16 +982,13 @@ async function handleContactForm(event) {
             throw new Error('Submission failed');
         }
     } catch (err) {
-        lastFormSubmissionTime = Date.now();
         const toastMsgs = {
-            tr: 'Mesajınız e-postaya iletildi! ✨',
-            en: 'Your message has been sent! ✨',
-            so: 'Fariintaada waa la diray! ✨'
+            tr: 'Mesaj gönderilemedi. İnternet bağlantınızı kontrol edip tekrar deneyin.',
+            en: 'Your message could not be sent. Check your connection and try again.',
+            so: 'Fariinta lama diri karin. Hubi xiriirka internetka oo isku day mar kale.'
         };
-        showToast(toastMsgs[currentLang] || 'Message sent!', '✉️');
-        form.reset();
-        const charCountEl = document.getElementById('char-count');
-        if (charCountEl) charCountEl.innerText = '0';
+        console.error('Contact form submission failed:', err);
+        showToast(toastMsgs[currentLang] || 'Your message could not be sent. Please try again.', '⚠️');
     } finally {
         btn.disabled = false;
         btn.innerHTML = originalBtnHTML;
