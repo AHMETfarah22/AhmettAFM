@@ -16,18 +16,6 @@ const AFM_SITES = [
         }
     },
     {
-        name: 'Tercihim ÇOMÜ',
-        url: 'https://tercihim.comu.edu.tr/',
-        image: 'assets/sites/tercihim-comu.webp',
-        tech: ['PHP'],
-        category: { tr: 'Üniversite', en: 'University', so: 'Jaamacad' },
-        desc: {
-            tr: "Çanakkale Onsekiz Mart Üniversitesi'nin aday öğrenciler için tercih sitesi: akademik birimler, puanlar, burslar ve tercih kılavuzu tek yerde.",
-            en: "Çanakkale Onsekiz Mart University's site for prospective students: departments, scores, scholarships and the application guide in one place.",
-            so: 'Websaydhka Jaamacadda Çanakkale Onsekiz Mart ee ardayda cusub: kulliyadaha, dhibcaha, deeqaha waxbarasho iyo hagaha doorashada oo hal meel ku jira.'
-        }
-    },
-    {
         name: '18 Mart Sıraç Koleji',
         url: 'https://18martsirackoleji.k12.tr/',
         image: 'assets/sites/sirac-koleji.webp',
@@ -77,25 +65,16 @@ const AFM_SITES = [
     }
 ];
 
-// En yeniden eskiye.
+// İlkten bugüne: en üstte ilk iş, en altta şu anki iş.
 const AFM_EXPERIENCE = [
     {
         org: 'AFM-CODING',
-        period: { tr: 'Şu an', en: 'Now', so: 'Hadda' },
+        period: { tr: 'Kendi şirketim', en: 'My company', so: 'Shirkaddayda' },
         role: { tr: 'Kurucu, full-stack geliştirici', en: 'Founder, full-stack developer', so: 'Aasaasaha, horumariye full-stack' },
         desc: {
-            tr: 'Restoran, otel, okul ve üniversiteler için web siteleri ve yönetim panelleri; otel yönetim sistemi ve yapay zekâ destekli uygulamalar.',
-            en: 'Websites and admin panels for restaurants, hotels, schools and universities, plus a hotel management system and AI-powered apps.',
-            so: 'Websaydhyo iyo guddiyo maamul oo loogu talagalay makhaayado, huteelo, dugsiyo iyo jaamacado, iyo nidaamka maamulka huteelka iyo barnaamijyo AI ah.'
-        }
-    },
-    {
-        org: 'Mode Akademi',
-        period: { tr: '1 yıl', en: '1 year', so: '1 sano' },
-        desc: {
-            tr: 'Bir yıl boyunca Mode Akademi ekibinde çalıştım.',
-            en: 'Worked on the Mode Akademi team for a year.',
-            so: 'Hal sano ayaan ka shaqeeyay kooxda Mode Akademi.'
+            tr: 'Restoran, otel ve okullar için web siteleri ve yönetim panelleri; otel yönetim sistemi ve yapay zekâ destekli uygulamalar.',
+            en: 'Websites and admin panels for restaurants, hotels and schools, plus a hotel management system and AI-powered apps.',
+            so: 'Websaydhyo iyo guddiyo maamul oo loogu talagalay makhaayado, huteelo iyo dugsiyo, iyo nidaamka maamulka huteelka iyo barnaamijyo AI ah.'
         }
     },
     {
@@ -113,6 +92,18 @@ const AFM_EXPERIENCE = [
         org: 'Çanakkale Onsekiz Mart Üniversitesi',
         period: { tr: 'Staj', en: 'Internship', so: 'Tababar' },
         role: { tr: 'Stajyer', en: 'Intern', so: 'Tababarte' }
+    },
+    {
+        org: 'Mode Academy',
+        period: { tr: 'Şu an', en: 'Now', so: 'Hadda' },
+        role: { tr: 'Yazılım geliştirici ve yönetim mentörü', en: 'Software developer and management mentor', so: 'Horumariye software iyo lataliye maamul' },
+        desc: {
+            tr: 'Şu an çalıştığım şirket. Bir yıldır ekipteyim; yazılım geliştiriyor ve yönetim tarafında mentörlük yapıyorum.',
+            en: "The company I work at now. I've been on the team for a year, building software and mentoring on the management side.",
+            so: 'Shirkadda aan hadda ka shaqeeyo. Hal sano ayaan kooxda la joogay; waxaan dhisaa software, dhinaca maamulkana waxaan ka ahay lataliye.'
+        },
+        url: 'https://modeacademy.tr/',
+        current: true
     }
 ];
 

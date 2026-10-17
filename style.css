@@ -886,6 +886,29 @@ body {
     white-space: nowrap;
 }
 
+.tl-item.is-current .tl-period {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    background: #DCFCE7;
+    color: #15803D;
+}
+
+.tl-item.is-current .tl-period::before {
+    content: "";
+    width: 0.4375rem;
+    height: 0.4375rem;
+    border-radius: 9999px;
+    background: #22C55E;
+    box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.25);
+}
+
+.tl-item.is-current.is-reached .tl-dot {
+    background: #22C55E;
+    border-color: #22C55E;
+    box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.18);
+}
+
 .tl-role {
     margin-top: 0.25rem;
     font-size: 0.9375rem;

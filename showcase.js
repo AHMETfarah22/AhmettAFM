@@ -118,7 +118,7 @@ function renderExperience() {
         const role = pick(item.role);
         const desc = pick(item.desc);
         return `
-        <li class="tl-item">
+        <li class="tl-item${item.current ? ' is-current' : ''}">
             <span class="tl-dot" aria-hidden="true"></span>
             <div class="tl-head">
                 <span class="tl-period">${escapeHTML(pick(item.period))}</span>
