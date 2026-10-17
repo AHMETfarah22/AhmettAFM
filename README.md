@@ -25,3 +25,13 @@ Tailwind CSS is compiled to `assets/tailwind.css` (config: `tailwind.config.js`)
 ```bash
 npx tailwindcss@3.4.17 -i ./tailwind.input.css -o ./assets/tailwind.css --minify
 ```
+
+## Content
+
+Live sites, work experience and programming languages live in `content.js`:
+
+- `AFM_SITES` — one entry per live site (name, URL, screenshot, tech, category and description in tr/en/so). Put the screenshot in `assets/sites/` (1280×800 WebP).
+- `AFM_EXPERIENCE` — newest first; `role`, `desc` and `url` are optional.
+- `AFM_LANGUAGES` — the language cards in the skills section.
+
+`showcase.js` renders them and re-renders when the language changes. The chosen language is remembered in the browser.

@@ -104,7 +104,7 @@ const i18n = {
         "contact.phSubject": "Proje Teklifi",
         "contact.phMsg": "Proje fikrinizi veya sorunuzu detaylı yazın...",
         "security.badge": "Güvenlik Mimarisi",
-        "security.title": "SECURITY SYSTEM ARCHITECTURE",
+        "security.title": "GÜVENLİK SİSTEMİ MİMARİSİ",
         "security.subtitle": "Uçtan uca şifreleme, spam koruması, CSP ve OWASP güvenlik standartları",
         "security.b1Title": "Honeypot Bot Koruması",
         "security.b1Desc": "Formlarda gizli bot tuzakları ile otomatik spam saldırılarını sessizce engelleme.",
@@ -350,10 +350,11 @@ const i18n = {
 
 let currentLang = 'tr';
 
-// Language Switcher Function
-function setLanguage(lang) {
+// Language Switcher Function (silent: apply without the toast, used on page load)
+function setLanguage(lang, silent = false) {
     if (!i18n[lang]) return;
     currentLang = lang;
+    try { localStorage.setItem('afm-lang', lang); } catch (e) { /* storage blocked */ }
 
     // Update HTML lang attribute
     document.documentElement.lang = lang;
@@ -383,6 +384,11 @@ function setLanguage(lang) {
 
     // Close Dropdown
     document.getElementById('lang-dropdown').classList.add('hidden');
+
+    // Let dynamic sections (showcase.js) re-render in the new language
+    document.dispatchEvent(new CustomEvent('afm:language', { detail: lang }));
+
+    if (silent) return;
 
     const toastMsgs = {
         tr: 'Dil Türkçe olarak güncellendi',
