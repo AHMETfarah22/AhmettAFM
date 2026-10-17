@@ -22,6 +22,30 @@ function pick(obj) {
     return obj ? (obj[currentLang] || obj.tr) : '';
 }
 
+// TScan details for the project modal (replaces the old AI study app entry)
+Object.keys(AFM_TSCAN_MODAL).forEach(lang => {
+    const m = AFM_TSCAN_MODAL[lang];
+    const items = AFM_TSCAN_FEATURES[lang].map(([name, text]) => `
+        <li class="flex items-start gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600 mt-1.5 shrink-0"></span>
+            <span><b>${escapeHTML(name)}:</b> ${escapeHTML(text)}</span>
+        </li>`).join('');
+    modalData[lang].ai = {
+        title: m.title,
+        subtitle: m.subtitle,
+        badge: m.badge,
+        image: 'assets/tscan.webp',
+        techs: ['Flutter', 'Dart', 'Android', 'iOS', 'Windows', 'AI'],
+        body: `
+            <p class="text-sm text-slate-600 leading-relaxed">${escapeHTML(m.intro)}</p>
+            <div class="mt-4 p-4 rounded-2xl bg-emerald-50/70 border border-emerald-100">
+                <h4 class="text-xs font-extrabold text-emerald-800 mb-3">${escapeHTML(m.heading)}</h4>
+                <ul class="text-xs text-slate-700 space-y-2.5 font-medium">${items}</ul>
+            </div>
+            <p class="mt-3 text-xs text-slate-500">${escapeHTML(m.platforms)}</p>`
+    };
+});
+
 // ---------- Live sites ----------
 
 function renderSites() {

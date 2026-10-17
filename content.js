@@ -147,7 +147,22 @@ const AFM_UI = {
         'projects.title': 'Öne çıkan projeler',
         'skills.title': 'Uzmanlıklar ve mimari',
         'security.title': 'Güvenlik mimarisi',
-        'contact.title': 'Birlikte harika projeler üretelim'
+        'contact.title': 'Birlikte harika projeler üretelim',
+        'projects.hotelTag': 'Kurumsal çözüm',
+        'projects.btnModal': 'Detaylı incele',
+        'projects.code': 'Kodlar',
+        'projects.hotelF1': 'Oda, yatak ve rezervasyon yönetimi',
+        'projects.hotelF2': 'Hızlı check-in / check-out',
+        'projects.hotelF3': 'Canlı doluluk takvimi',
+        'projects.hotelF4': 'Gelir ve doluluk raporları',
+        'projects.aiTag': 'Mobil uygulama',
+        'projects.aiTitle': 'TScan',
+        'projects.aiSub': 'Yapay zekâ destekli çalışma uygulaması',
+        'projects.aiDesc': 'Telefonu ters çevir, odaklan. PDF\'ini yükle, yapay zekâ senin için quiz hazırlasın. Seviyeli odak sayacı, istatistikler ve rozetlerle çalışmayı alışkanlığa dönüştürür.',
+        'projects.aiF1': 'Seviyeli odak sayacı',
+        'projects.aiF2': 'Telefonu çevir, odak başlasın',
+        'projects.aiF3': 'PDF\'ten yapay zekâ ile quiz',
+        'projects.aiF4': 'İstatistik, seri ve rozetler'
     },
     en: {
         'nav.sites': 'Sites',
@@ -167,7 +182,22 @@ const AFM_UI = {
         'projects.title': 'Featured projects',
         'skills.title': 'Skills and architecture',
         'security.title': 'Security architecture',
-        'contact.title': "Let's build impactful projects together"
+        'contact.title': "Let's build impactful projects together",
+        'projects.hotelTag': 'Enterprise solution',
+        'projects.btnModal': 'View details',
+        'projects.code': 'Code',
+        'projects.hotelF1': 'Rooms, beds and reservations',
+        'projects.hotelF2': 'Fast check-in / check-out',
+        'projects.hotelF3': 'Live occupancy calendar',
+        'projects.hotelF4': 'Revenue and occupancy reports',
+        'projects.aiTag': 'Mobile app',
+        'projects.aiTitle': 'TScan',
+        'projects.aiSub': 'AI-powered study app',
+        'projects.aiDesc': 'Flip your phone face down and focus. Upload a PDF and let AI build a quiz for you. A levelled focus timer, stats and badges turn studying into a habit.',
+        'projects.aiF1': 'Levelled focus timer',
+        'projects.aiF2': 'Flip the phone to start focusing',
+        'projects.aiF3': 'AI quizzes from your PDFs',
+        'projects.aiF4': 'Stats, streaks and badges'
     },
     so: {
         'nav.sites': 'Websaydhada',
@@ -187,6 +217,73 @@ const AFM_UI = {
         'projects.title': 'Mashaariicda caanka ah',
         'skills.title': 'Xirfadaha iyo dhismaha',
         'security.title': 'Dhismaha amaanka nidaamka',
-        'contact.title': 'Aan wadajir u dhisno mashaariic cajiib ah'
+        'contact.title': 'Aan wadajir u dhisno mashaariic cajiib ah',
+        'projects.hotelTag': 'Xalka ganacsiga',
+        'projects.btnModal': 'Akhri faahfaahinta',
+        'projects.code': 'Koodka',
+        'projects.hotelF1': 'Maamulka qolalka, sariiraha iyo ballansashada',
+        'projects.hotelF2': 'Check-in / check-out degdeg ah',
+        'projects.hotelF3': 'Jadwalka buuxsanka ee tooska ah',
+        'projects.hotelF4': 'Warbixinnada dakhliga iyo buuxsanka',
+        'projects.aiTag': 'Barnaamij mobil',
+        'projects.aiTitle': 'TScan',
+        'projects.aiSub': 'Barnaamij waxbarasho oo AI ku shaqeeya',
+        'projects.aiDesc': 'Telefoonka u rog oo diiradda saar. Soo geli PDF, AI-guna ha kuu diyaariyo su\'aalo. Saacad diirad leh oo heerar leh, tirakoob iyo calaamado ayaa waxbarashada ka dhiga caado.',
+        'projects.aiF1': 'Saacadda diiradda oo heerar leh',
+        'projects.aiF2': 'Telefoonka u rog si diiraddu u bilaabato',
+        'projects.aiF3': 'Su\'aalo AI ah oo laga sameeyo PDF-gaaga',
+        'projects.aiF4': 'Tirakoob, joogtayn iyo calaamado'
+    }
+};
+
+// TScan detay penceresi (script.js içindeki modalData.ai yerine geçer).
+const AFM_TSCAN_FEATURES = {
+    tr: [
+        ['Seviyeli odak sayacı', 'Süreyi ve kategoriyi (ders, iş, okuma, meditasyon, egzersiz…) seç; oturumları tamamladıkça seviye atla.'],
+        ['Telefonu çevir, odaklan', 'Sensör telefonun ters çevrildiğini algılar. Telefonu kaldırınca ya da uygulamadan çıkınca uyarır, gelen aramada sayacı durdurur.'],
+        ["PDF'ten yapay zekâ ile quiz", 'Ders notunu ya da dokümanını yükle; yapay zekâ içeriği analiz edip seni test etsin.'],
+        ['İstatistik ve rozetler', 'Tamamlanan oturumlar, quiz ortalaması, günlük seri ve Erkenci Kuş, Maratoncu gibi rozetler.'],
+        ['Geçmiş ve profil', 'Tüm oturumların ve çalıştığın dokümanlar tek yerde.']
+    ],
+    en: [
+        ['Levelled focus timer', 'Pick a duration and a category (study, work, reading, meditation, exercise…) and level up as you finish sessions.'],
+        ['Flip the phone to focus', 'The sensor detects when the phone is face down. It warns you if you pick it up or leave the app, and pauses the timer for incoming calls.'],
+        ['AI quizzes from your PDFs', 'Upload your notes or any document and let AI analyse it and test you.'],
+        ['Stats and badges', 'Completed sessions, quiz average, daily streak and badges such as Early Bird and Marathoner.'],
+        ['History and profile', 'All your sessions and the documents you studied in one place.']
+    ],
+    so: [
+        ['Saacadda diiradda oo heerar leh', 'Dooro waqtiga iyo nooca (waxbarasho, shaqo, akhris, fekerid, jimicsi…) oo heer u gudub markaad dhammaystirto fadhiyada.'],
+        ['Telefoonka u rog, diiradda saar', 'Dareemuhu wuxuu ogaadaa marka telefoonka la rogo. Wuu ku digaa haddii aad qaaddo ama aad ka baxdo barnaamijka, wacitaanka soo galana saacadda wuu joojiyaa.'],
+        ["Su'aalo AI ah oo PDF laga sameeyo", 'Soo geli qoraalkaaga ama dukumenti; AI-gu ha falanqeeyo oo ha ku tijaabiyo.'],
+        ['Tirakoob iyo calaamado', "Fadhiyada la dhammeeyay, celceliska su'aalaha, joogtaynta maalinlaha ah iyo calaamado sida Shimbirta Hore iyo Orodyahanka."],
+        ['Taariikhda iyo profile-ka', 'Dhammaan fadhiyadaada iyo dukumentiyada aad baratay hal meel.']
+    ]
+};
+
+const AFM_TSCAN_MODAL = {
+    tr: {
+        title: 'TScan',
+        subtitle: 'Yapay zekâ destekli çalışma uygulaması (Flutter)',
+        badge: 'Mobil uygulama',
+        intro: 'TScan, odaklanmayı alışkanlığa dönüştürmek için tasarlanmış bir çalışma uygulaması. Telefonu ters çevirince odak başlar; PDF yükleyince yapay zekâ içeriği analiz edip sana quiz hazırlar.',
+        heading: 'Öne çıkan özellikler',
+        platforms: 'Flutter ile Android, iOS, Windows, macOS, Linux ve web için geliştirildi.'
+    },
+    en: {
+        title: 'TScan',
+        subtitle: 'AI-powered study app (Flutter)',
+        badge: 'Mobile app',
+        intro: 'TScan is a study app built to turn focus into a habit. Flip your phone face down to start focusing; upload a PDF and AI analyses it and builds a quiz for you.',
+        heading: 'Key features',
+        platforms: 'Built with Flutter for Android, iOS, Windows, macOS, Linux and the web.'
+    },
+    so: {
+        title: 'TScan',
+        subtitle: 'Barnaamij waxbarasho oo AI ku shaqeeya (Flutter)',
+        badge: 'Barnaamij mobil',
+        intro: "TScan waa barnaamij waxbarasho oo loo sameeyay in diiradda laga dhigo caado. Telefoonka u rog si diiraddu u bilaabato; soo geli PDF, AI-guna wuu falanqeeyaa oo su'aalo kuu diyaariyaa.",
+        heading: 'Astaamaha ugu muhiimsan',
+        platforms: 'Waxaa lagu dhisay Flutter: Android, iOS, Windows, macOS, Linux iyo web.'
     }
 };
