@@ -82,10 +82,10 @@
     <link rel="apple-touch-icon" href="assets/favicon-circle.png?v=20260810">
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261017d">
+    <link rel="stylesheet" href="style.css?v=20261017e">
 
     <!-- Tailwind CSS (derlenmiş; kaynak: tailwind.config.js, GitHub Actions her push'ta yeniden derler) -->
-    <link rel="stylesheet" href="assets/tailwind.css?v=20261017d">
+    <link rel="stylesheet" href="assets/tailwind.css?v=20261017e">
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans selection:bg-indigo-500 selection:text-white">
 
@@ -105,7 +105,7 @@
             </a>
 
             <!-- Navigation Links (Desktop) -->
-            <nav class="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-semibold text-slate-600">
+            <nav class="hidden lg:flex items-center gap-5 xl:gap-7 text-sm font-semibold text-slate-600">
                 <a href="#about" class="hover:text-indigo-600 transition-colors" data-i18n="nav.about">Hakkımda</a>
                 <a href="#sites" class="hover:text-indigo-600 transition-colors" data-i18n="nav.sites">Siteler</a>
                 <a href="#projects" class="hover:text-indigo-600 transition-colors" data-i18n="nav.projects">Projeler</a>
@@ -152,12 +152,12 @@
                     <span class="nav-sites-count" data-site-count>6</span>
                 </a>
 
-                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-sky-500/25 transition-all duration-200" data-i18n="nav.cta">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-sky-500/25 transition-all duration-200" data-i18n="nav.cta">
                     İletişime Geç
                 </a>
 
                 <!-- Mobile Hamburger Toggle Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 hover:bg-indigo-100 transition-colors flex items-center justify-center shadow-sm" aria-label="Menu">
+                <button id="mobile-menu-btn" class="lg:hidden p-2 rounded-xl bg-indigo-50 border border-indigo-200 text-indigo-700 hover:bg-indigo-100 transition-colors flex items-center justify-center shadow-sm" aria-label="Menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
                     </svg>
@@ -166,7 +166,7 @@
         </div>
 
         <!-- Mobile Navigation Drawer -->
-        <div id="mobile-menu" class="hidden md:hidden fixed inset-x-0 top-16 bg-white/95 backdrop-blur-xl border-b border-slate-200 p-5 shadow-2xl z-40 space-y-4 transition-all duration-300">
+        <div id="mobile-menu" class="hidden lg:hidden fixed inset-x-0 top-16 sm:top-20 bg-white/95 backdrop-blur-xl border-b border-slate-200 p-5 shadow-2xl z-40 space-y-4 transition-all duration-300">
             <nav class="flex flex-col space-y-1.5 font-semibold text-slate-700 text-base">
                 <a href="#about" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="nav.about">Hakkımda</a>
                 <a href="#sites" onclick="closeMobileMenu()" class="px-4 py-2.5 rounded-xl hover:bg-indigo-50 hover:text-indigo-600 transition-colors" data-i18n="nav.sites">Siteler</a>
@@ -611,12 +611,20 @@
                 <!-- Project 2: TScan, AI-powered study app -->
                 <article class="proj-card proj--tscan is-reverse">
                     <div class="proj-media">
-                        <img src="assets/tscan.webp" alt="TScan uygulamasının ekranları: odak sayacı, PDF ile çalışma ve istatistikler" width="864" height="1080" loading="lazy" decoding="async">
+                        <picture>
+                            <source media="(max-width: 1023px)" srcset="assets/tscan-phones.webp" width="1080" height="690">
+                            <img src="assets/tscan.webp" alt="TScan uygulamasının ekranları: odak sayacı, PDF ile çalışma ve istatistikler" width="864" height="1080" loading="lazy" decoding="async">
+                        </picture>
                     </div>
                     <div class="proj-body">
                         <p class="proj-kicker" data-i18n="projects.aiTag">Mobil uygulama</p>
-                        <h3 class="proj-title" data-i18n="projects.aiTitle">TScan</h3>
-                        <p class="proj-sub" data-i18n="projects.aiSub">Yapay zekâ destekli çalışma uygulaması</p>
+                        <div class="proj-head">
+                            <img class="proj-icon" src="assets/tscan-icon.webp" alt="" width="56" height="56" loading="lazy" decoding="async">
+                            <div>
+                                <h3 class="proj-title" data-i18n="projects.aiTitle">TScan</h3>
+                                <p class="proj-sub" data-i18n="projects.aiSub">Yapay zekâ destekli çalışma uygulaması</p>
+                            </div>
+                        </div>
                         <p class="proj-desc" data-i18n="projects.aiDesc">Telefonu ters çevir, odaklan. PDF'ini yükle, yapay zekâ senin için quiz hazırlasın. Seviyeli odak sayacı, istatistikler ve rozetlerle çalışmayı alışkanlığa dönüştürür.</p>
                         <ul class="proj-features">
                             <li><span class="proj-check" aria-hidden="true"><svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-8 8a1 1 0 01-1.4 0l-4-4a1 1 0 011.4-1.4L8 12.58l7.3-7.3a1 1 0 011.4 0z" clip-rule="evenodd"/></svg></span><span data-i18n="projects.aiF1">Seviyeli odak sayacı</span></li>
@@ -1118,7 +1126,7 @@
 
     <!-- Custom Script (Cache Busted v3) -->
     <script src="script.js?v=20261017"></script>
-    <script src="content.js?v=20261017d"></script>
-    <script src="showcase.js?v=20261017d"></script>
+    <script src="content.js?v=20261017e"></script>
+    <script src="showcase.js?v=20261017e"></script>
 </body>
 </html>
