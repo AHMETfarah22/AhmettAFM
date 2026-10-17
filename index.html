@@ -344,60 +344,34 @@
 
         <!-- LIVE SITES SECTION (content: content.js) -->
         <section id="sites" class="max-w-7xl mx-auto px-4 sm:px-6 scroll-mt-24" aria-labelledby="sites-title">
-            <div class="sec-head">
-                <div>
-                    <h2 id="sites-title" class="sec-title" data-i18n="sites.title">Yayındaki sitelerim</h2>
-                    <p class="sec-desc" data-i18n="sites.desc">Tasarlayıp geliştirdiğim ve şu an internette açık olan siteler. Bir siteye tıklayın, burada önizleyin.</p>
-                </div>
-                <p class="sec-count"><strong data-site-count>6</strong> <span data-i18n="sites.countLabel">site yayında</span></p>
-            </div>
-
-            <div class="sites-grid">
-                <div id="site-list" class="site-list" role="tablist" aria-orientation="vertical" aria-label="Siteler"></div>
-
-                <div>
-                    <div class="browser">
-                        <div class="browser-tabs">
-                            <div class="browser-dots" aria-hidden="true"><span></span><span></span><span></span></div>
-                            <div class="browser-tab" aria-hidden="true">
-                                <span id="site-tab-mark" class="browser-tab-mark">Ş</span>
-                                <span id="site-tab-label">Şark Köşesi</span>
-                            </div>
-                        </div>
-                        <div class="browser-toolbar">
-                            <div class="browser-nav" aria-hidden="true">
-                                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M12.7 5.3a1 1 0 010 1.4L9.42 10l3.3 3.3a1 1 0 01-1.42 1.4l-4-4a1 1 0 010-1.4l4-4a1 1 0 011.42 0z" clip-rule="evenodd"/></svg>
-                                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.3 14.7a1 1 0 010-1.4L10.58 10 7.3 6.7a1 1 0 011.42-1.4l4 4a1 1 0 010 1.4l-4 4a1 1 0 01-1.42 0z" clip-rule="evenodd"/></svg>
-                                <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M4 2a1 1 0 011 1v2.1a7 7 0 0111.6 2.57 1 1 0 01-1.88.66A5 5 0 006.1 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.06 9.06a1 1 0 011.28.6A5 5 0 0013.9 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.1a7 7 0 01-11.6-2.57 1 1 0 01.66-1.27z" clip-rule="evenodd"/></svg>
-                            </div>
-                            <div class="browser-address">
-                                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"/></svg>
-                                <span id="site-url">sarkkosesi.online</span>
-                            </div>
-                            <a id="site-open" class="browser-open" href="https://sarkkosesi.online/" target="_blank" rel="noopener noreferrer">
-                                <span data-i18n="sites.open">Siteyi aç</span>
-                                <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path d="M11 3a1 1 0 100 2h2.59l-6.3 6.3a1 1 0 101.42 1.4L15 6.42V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"/><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"/></svg>
-                            </a>
-                        </div>
-                        <div id="site-panel" class="browser-view" role="tabpanel">
-                            <div id="site-view" class="contents"></div>
-                        </div>
+            <div class="sites-card">
+                <div class="sites-head">
+                    <div>
+                        <h2 id="sites-title" class="sec-title" data-i18n="sites.title">Yayındaki sitelerim</h2>
+                        <p class="sec-desc" data-i18n="sites.desc">Tasarlayıp geliştirdiğim ve şu an internette açık olan siteler.</p>
                     </div>
-                    <div id="site-caption" class="site-caption" aria-live="polite"></div>
+                    <div class="sites-action">
+                        <div id="sites-peek" class="sites-peek" aria-hidden="true"></div>
+                        <button id="sites-toggle" class="sites-toggle" type="button" aria-expanded="false" aria-controls="sites-panel">
+                            <span class="sites-toggle-count" data-site-count>6</span>
+                            <span id="sites-toggle-label">Sitelerimi göster</span>
+                            <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="sites-panel" class="sites-panel" inert>
+                    <div class="sites-panel-inner">
+                        <ul id="site-list" class="site-grid"></ul>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- QUICK DETAILS SECTION -->
         <section id="details" class="max-w-7xl mx-auto px-4 sm:px-6 scroll-mt-24">
-            <div class="text-center max-w-2xl mx-auto space-y-3 mb-8 sm:mb-12">
-                <div class="inline-block px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-xs font-bold tracking-wider uppercase" data-i18n="details.badge">
-                    Hızlı Bilgiler
-                </div>
-                <h2 class="text-2xl sm:text-3xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="details.title">
-                    QUICK DETAILS
-                </h2>
-                <p class="text-xs sm:text-sm font-medium text-slate-500" data-i18n="details.subtitle">
+            <div class="mb-8 sm:mb-10">
+                <h2 class="sec-title" data-i18n="details.title">Hızlı bilgiler</h2>
+                <p class="sec-desc" data-i18n="details.subtitle">
                     Temel profil bilgileri, rol, lokasyon ve iletişim yetkinlikleri
                 </p>
             </div>
@@ -512,9 +486,7 @@
                     <!-- Bio Header -->
                     <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-200/80 pb-6">
                         <div>
-                            <h2 class="text-2xl sm:text-3xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="bio.title">
-                                BİYOGRAFİ & VİZYON
-                            </h2>
+                            <h2 class="sec-title" data-i18n="bio.title">Biyografi ve vizyon</h2>
                         </div>
                         <div class="hidden sm:flex items-center gap-2 text-xs font-bold text-slate-500 bg-white/80 px-4 py-2 rounded-xl border border-slate-200/80 shadow-xs">
                             <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
@@ -603,14 +575,9 @@
         <section id="projects" class="max-w-7xl mx-auto px-4 sm:px-6 scroll-mt-24">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 sm:mb-12 gap-4 sm:gap-6">
                 <div>
-                    <div class="inline-block px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold tracking-wider uppercase mb-3" data-i18n="projects.badge">
-                        Geliştirilen Sistemler
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="projects.title">
-                        FEATURED PROJECTS
-                    </h2>
+                    <h2 class="sec-title" data-i18n="projects.title">Öne çıkan projeler</h2>
                 </div>
-                <p class="text-sm font-medium text-slate-500 max-w-md" data-i18n="projects.desc">
+                <p class="sec-desc md:mt-0 md:max-w-md" data-i18n="projects.desc">
                     Gerçek iş süreçlerine değer katan ve öğrenim süreçlerini dönüştüren yenilikçi yazılım çözümleri.
                 </p>
             </div>
@@ -712,14 +679,9 @@
         <section id="skills" class="max-w-7xl mx-auto px-4 sm:px-6 scroll-mt-24">
             <div class="bg-gradient-to-br from-white via-slate-50/80 to-indigo-50/30 rounded-3xl border border-slate-200/90 p-6 sm:p-10 lg:p-14 shadow-xl">
                 
-                <div class="text-center max-w-2xl mx-auto space-y-3 mb-10 sm:mb-14">
-                    <div class="inline-block px-3.5 py-1 rounded-full bg-teal-50 border border-teal-100 text-teal-700 text-xs font-extrabold tracking-widest uppercase shadow-sm" data-i18n="skills.badge">
-                        Yetkinlikler
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="skills.title">
-                        EXPERT SKILLS & ARCHITECTURE
-                    </h2>
-                    <p class="text-xs sm:text-sm font-medium text-slate-500 max-w-xl mx-auto" data-i18n="skills.subtitle">
+                <div class="mb-10 sm:mb-12">
+                    <h2 class="sec-title" data-i18n="skills.title">Uzmanlıklar ve mimari</h2>
+                    <p class="sec-desc" data-i18n="skills.subtitle">
                         Modüler kod prensipleri, uçtan uca mimari tasarımı ve modern teknolojiler
                     </p>
                 </div>
@@ -901,14 +863,9 @@
 
                 <div class="relative z-10 space-y-8">
                     <!-- Section Header -->
-                    <div class="text-center max-w-2xl mx-auto space-y-3">
-                        <div class="inline-block px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-extrabold tracking-widest uppercase shadow-xs" data-i18n="security.badge">
-                            Güvenlik Mimarisi
-                        </div>
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="security.title">
-                            SECURITY SYSTEM ARCHITECTURE
-                        </h2>
-                        <p class="text-xs sm:text-sm font-medium text-slate-500 max-w-xl mx-auto" data-i18n="security.subtitle">
+                    <div>
+                        <h2 class="sec-title" data-i18n="security.title">Güvenlik mimarisi</h2>
+                        <p class="sec-desc" data-i18n="security.subtitle">
                             Uçtan uca şifreleme, spam koruması, CSP ve OWASP güvenlik standartları
                         </p>
                     </div>
@@ -970,12 +927,7 @@
 
                     <!-- Left Info Side -->
                     <div class="lg:col-span-5 space-y-6">
-                        <div class="inline-block px-3.5 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-bold tracking-widest uppercase" data-i18n="contact.badge">
-                            İletişim &amp; İş Birliği
-                        </div>
-                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold font-outfit text-slate-900 tracking-tight" data-i18n="contact.title">
-                            Birlikte Harika Projeler Üretelim
-                        </h2>
+                        <h2 class="sec-title" data-i18n="contact.title">Birlikte harika projeler üretelim</h2>
                         <p class="text-sm text-slate-600 leading-relaxed" data-i18n="contact.desc">
                             Yeni bir yazılım fikriniz, otel platformu veya AI projeniz için benimle iletişime geçebilirsiniz. AFM-CODING kalitesiyle fikirlerinizi gerçeğe dönüştürelim.
                         </p>
@@ -1206,7 +1158,7 @@
 
     <!-- Custom Script (Cache Busted v3) -->
     <script src="script.js?v=20261017"></script>
-    <script src="content.js?v=20261017"></script>
-    <script src="showcase.js?v=20261017"></script>
+    <script src="content.js?v=20261017b"></script>
+    <script src="showcase.js?v=20261017b"></script>
 </body>
 </html>

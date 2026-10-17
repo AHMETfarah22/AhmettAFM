@@ -126,7 +126,8 @@ const AFM_LANGUAGES = [
     { name: 'Go', mark: 'Go', color: '#00ADD8', ink: '#fff', use: { tr: 'Sunucu servisleri', en: 'Backend services', so: 'Adeegyada server-ka' } }
 ];
 
-// Yeni bölümlerin arayüz metinleri (script.js içindeki i18n sözlüğüne eklenir).
+// Yeni bölümlerin arayüz metinleri ve sade bölüm başlıkları
+// (script.js içindeki i18n sözlüğüne eklenir, aynı anahtarları ezer).
 const AFM_UI = {
     tr: {
         'nav.sites': 'Siteler',
@@ -134,16 +135,19 @@ const AFM_UI = {
         'nav.sitesBtn': 'Sitelerim',
         'hero.btnSites': 'Sitelerimi gör',
         'sites.title': 'Yayındaki sitelerim',
-        'sites.desc': 'Tasarlayıp geliştirdiğim ve şu an internette açık olan siteler. Bir siteye tıklayın, burada önizleyin.',
-        'sites.countLabel': 'site yayında',
-        'sites.open': 'Siteyi aç',
-        'sites.listLabel': 'Siteler',
+        'sites.desc': 'Tasarlayıp geliştirdiğim ve şu an internette açık olan siteler.',
+        'sites.show': 'Sitelerimi göster',
+        'sites.hide': 'Listeyi gizle',
         'exp.title': 'Deneyim',
         'exp.desc': 'Çalıştığım yerler ve üstlendiğim işler.',
-        'exp.visit': 'Siteyi aç',
-        'languages.badge': 'Diller',
         'languages.title': 'Bildiğim programlama dilleri',
-        'languages.subtitle': 'Projelerimde kullandığım diller ve her birini ne için kullandığım.'
+        'languages.subtitle': 'Projelerimde kullandığım diller ve her birini ne için kullandığım.',
+        'details.title': 'Hızlı bilgiler',
+        'bio.title': 'Biyografi ve vizyon',
+        'projects.title': 'Öne çıkan projeler',
+        'skills.title': 'Uzmanlıklar ve mimari',
+        'security.title': 'Güvenlik mimarisi',
+        'contact.title': 'Birlikte harika projeler üretelim'
     },
     en: {
         'nav.sites': 'Sites',
@@ -151,16 +155,19 @@ const AFM_UI = {
         'nav.sitesBtn': 'My sites',
         'hero.btnSites': 'See my sites',
         'sites.title': 'Live sites I built',
-        'sites.desc': 'Sites I designed and built that are online right now. Pick one to preview it here.',
-        'sites.countLabel': 'sites live',
-        'sites.open': 'Open site',
-        'sites.listLabel': 'Sites',
+        'sites.desc': 'Sites I designed and built that are online right now.',
+        'sites.show': 'Show my sites',
+        'sites.hide': 'Hide the list',
         'exp.title': 'Experience',
         'exp.desc': "Where I've worked and what I did there.",
-        'exp.visit': 'Open site',
-        'languages.badge': 'Languages',
         'languages.title': 'Programming languages I know',
-        'languages.subtitle': 'The languages I use in my projects and what I use each one for.'
+        'languages.subtitle': 'The languages I use in my projects and what I use each one for.',
+        'details.title': 'Quick details',
+        'bio.title': 'Biography and vision',
+        'projects.title': 'Featured projects',
+        'skills.title': 'Skills and architecture',
+        'security.title': 'Security architecture',
+        'contact.title': "Let's build impactful projects together"
     },
     so: {
         'nav.sites': 'Websaydhada',
@@ -168,15 +175,18 @@ const AFM_UI = {
         'nav.sitesBtn': 'Websaydhadayda',
         'hero.btnSites': 'Eeg websaydhadayda',
         'sites.title': 'Websaydhada aan dhisay',
-        'sites.desc': 'Websaydhyo aan naqshadeeyay oo hadda internetka ku jira. Dooro mid si aad halkan ugu aragto.',
-        'sites.countLabel': 'websayd oo shaqaynaya',
-        'sites.open': 'Fur websaydhka',
-        'sites.listLabel': 'Websaydhada',
+        'sites.desc': 'Websaydhyo aan naqshadeeyay oo hadda internetka ku jira.',
+        'sites.show': 'Tus websaydhadayda',
+        'sites.hide': 'Qari liiska',
         'exp.title': 'Khibradda',
         'exp.desc': 'Meelaha aan ka shaqeeyay iyo shaqooyinka aan qabtay.',
-        'exp.visit': 'Fur websaydhka',
-        'languages.badge': 'Luuqadaha',
         'languages.title': 'Luuqadaha barnaamijyada aan aqaan',
-        'languages.subtitle': 'Luuqadaha aan ku isticmaalo mashaariicdayda iyo waxa aan mid walba u isticmaalo.'
+        'languages.subtitle': 'Luuqadaha aan ku isticmaalo mashaariicdayda iyo waxa aan mid walba u isticmaalo.',
+        'details.title': 'Faahfaahin degdeg ah',
+        'bio.title': 'Taariikhda iyo aragtida',
+        'projects.title': 'Mashaariicda caanka ah',
+        'skills.title': 'Xirfadaha iyo dhismaha',
+        'security.title': 'Dhismaha amaanka nidaamka',
+        'contact.title': 'Aan wadajir u dhisno mashaariic cajiib ah'
     }
 };
