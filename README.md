@@ -17,3 +17,11 @@ The custom domain is `afmcoding.com`. To connect it, configure DNS at the provid
 | CNAME | `www` | `AHMETfarah22.github.io` |
 
 Remove any conflicting A, AAAA, or CNAME records for `@` and `www`. DNS changes can take time to propagate. After the domain resolves to GitHub Pages, enable **Enforce HTTPS** under the repository's **Settings > Pages**.
+
+## Styles
+
+Tailwind CSS is compiled to `assets/tailwind.css` (config: `tailwind.config.js`). The deploy workflow rebuilds it on every push, so new Tailwind classes in `index.html` or `script.js` work on the live site automatically. To preview new classes locally, rebuild once:
+
+```bash
+npx tailwindcss@3.4.17 -i ./tailwind.input.css -o ./assets/tailwind.css --minify
+```
