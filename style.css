@@ -996,6 +996,84 @@ body {
 }
 
 /* ============================================= */
+/* Gallery                                       */
+/* ============================================= */
+
+/* Each photo grows by its aspect ratio (--ar), so a row lines up at one height without cropping.
+   Phones/tablets: two rows of two. Desktop: the rows dissolve into a single row of four. */
+.gallery-head {
+    margin-bottom: 2rem;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.gallery-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+    .gallery {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .gallery-row {
+        display: contents;
+    }
+}
+
+.gal-item {
+    position: relative;
+    flex: var(--ar) 1 0%;
+    min-width: 0;
+    aspect-ratio: var(--ar);
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    border: 1px solid #E2E8F0;
+    background: #E2E8F0;
+    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 24px 48px -36px rgba(30, 41, 90, 0.45);
+}
+
+.gal-item--brand {
+    background: #000;
+}
+
+.gal-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gal-item figcaption {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 2.25rem 0.875rem 0.75rem;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.72), rgba(15, 23, 42, 0));
+    color: #FFFFFF;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: 0.01em;
+}
+
+@media (hover: hover) {
+    .gal-item:hover img {
+        transform: scale(1.04);
+    }
+}
+
+/* ============================================= */
 /* Programming languages                         */
 /* ============================================= */
 .lang-grid {
@@ -1097,7 +1175,8 @@ body {
     .site-grid > li,
     .site-thumb-img img,
     .sites-toggle svg,
-    .tl-dot {
+    .tl-dot,
+    .gal-item img {
         transition: none;
     }
 
