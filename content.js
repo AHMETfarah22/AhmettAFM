@@ -4,6 +4,18 @@
 
 const AFM_SITES = [
     {
+        name: 'ilge Academy',
+        url: 'https://ilgeacademy.tr/',
+        image: 'assets/sites/ilge-academy.webp',
+        tech: ['JavaScript', 'REST API', 'AI'],
+        category: { tr: 'Akademi portalı', en: 'Academy portal', so: 'Portal akadeemi' },
+        desc: {
+            tr: 'Yazılım, kodlama ve yapay zekâ eğitimi için uçtan uca akademi portalı. Yönetim, eğitmen, öğretmen, öğrenci ve veli panelleri; yapay zekâ ile ödev puanlama, eğitmen onayıyla açılan dersler, canlı derslerde otomatik yoklama ve doğrulanabilir sertifika.',
+            en: 'An end-to-end academy portal for software, coding and AI training. Panels for admins, instructors, teachers, students and parents, with AI-graded assignments, lessons unlocked by instructor approval, automatic attendance in live classes and verifiable certificates.',
+            so: 'Portal akadeemi oo dhammaystiran oo loogu talagalay waxbarashada software-ka, koodka iyo AI. Guddiyo loogu talagalay maamulka, tababarayaasha, macallimiinta, ardayda iyo waalidiinta, oo leh hawlo uu AI qiimeeyo, casharro furma marka tababaruhu ansixiyo, xaadiris otomaatig ah oo casharrada tooska ah iyo shahaado la xaqiijin karo.'
+        }
+    },
+    {
         name: 'Şark Köşesi',
         url: 'https://sarkkosesi.online/',
         image: 'assets/sites/sark-kosesi.webp',
