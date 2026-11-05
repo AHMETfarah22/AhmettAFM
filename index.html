@@ -146,7 +146,7 @@
     <link rel="apple-touch-icon" href="assets/favicon-circle.png?v=20260810">
 
     <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="style.css?v=20261020">
+    <link rel="stylesheet" href="style.css?v=20261105">
 
     <!-- Tailwind CSS (derlenmiş; kaynak: tailwind.config.js, GitHub Actions her push'ta yeniden derler) -->
     <link rel="stylesheet" href="assets/tailwind.css?v=20261017e">
@@ -213,7 +213,7 @@
                         <span class="relative inline-flex rounded-full w-2 h-2 bg-emerald-500"></span>
                     </span>
                     <span data-i18n="nav.sitesBtn">Sitelerim</span>
-                    <span class="nav-sites-count" data-site-count>6</span>
+                    <span class="nav-sites-count" data-site-count>5</span>
                 </a>
 
                 <a href="#contact" class="hidden sm:inline-flex items-center justify-center whitespace-nowrap px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-600 hover:from-sky-600 hover:to-indigo-700 text-white font-bold text-xs sm:text-sm tracking-wide shadow-lg shadow-sky-500/25 transition-all duration-200" data-i18n="nav.cta">
@@ -336,7 +336,7 @@
 
                 <!-- Hero Profile Card / Visual -->
                 <div class="lg:col-span-5 flex justify-center z-10 order-1 lg:order-2">
-                    <div class="intro-photo relative w-full max-w-md py-4 sm:py-8 pb-4 sm:pb-16" style="--d: 150ms">
+                    <div class="hero-visual intro-photo relative w-full max-w-md py-4 sm:py-8 pb-4 sm:pb-16" style="--d: 150ms">
 
                         <!-- Orbiting Glow Rings -->
                         <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
@@ -387,7 +387,7 @@
                         </div>
 
                         <!-- Live Code Line Widget: Light Headless UI Styling -->
-                        <div class="mt-8 sm:mt-0 sm:absolute sm:-bottom-16 sm:-left-12 z-30 animate-float-slow flex justify-center">
+                        <div class="hero-code mt-8 sm:mt-0 sm:absolute sm:-bottom-16 sm:-left-12 z-30 animate-float-slow flex justify-center">
                             <div class="bg-white/95 backdrop-blur-md rounded-2xl px-4 py-3 shadow-xl shadow-indigo-500/10 border border-slate-200/90 font-mono w-64">
                                 <div class="flex items-center gap-1.5 mb-2">
                                     <span class="w-2.5 h-2.5 rounded-full bg-rose-400"></span>
@@ -417,7 +417,7 @@
                     <div class="sites-action">
                         <div id="sites-peek" class="sites-peek" aria-hidden="true"></div>
                         <button id="sites-toggle" class="sites-toggle" type="button" aria-expanded="false" aria-controls="sites-panel">
-                            <span class="sites-toggle-count" data-site-count>6</span>
+                            <span class="sites-toggle-count" data-site-count>5</span>
                             <span id="sites-toggle-label">Sitelerimi göster</span>
                             <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.17l3.71-3.94a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
                         </button>
@@ -441,7 +441,7 @@
             </div>
 
             <!-- 6 Key Detail Cards Grid (Enhanced Watermark Background Icon Design) -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+            <div class="details-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
                 
                 <!-- Detail Item 1: Name (Indigo Theme) -->
                 <div class="group bg-white p-5 sm:p-7 rounded-3xl border-2 border-indigo-200/80 hover:border-indigo-400 shadow-sm hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 relative overflow-hidden flex flex-col justify-between w-full">
@@ -933,7 +933,7 @@
                     </div>
 
                     <!-- 4 Security Feature Badges Grid (Light Headless UI Style) -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                    <div class="security-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
                         
                         <!-- Badge 1: Honeypot & Anti-Spam -->
                         <div class="bg-white p-5 rounded-2xl border border-slate-200/80 shadow-xs hover:shadow-md hover:border-emerald-300 transition-all space-y-3">
@@ -1004,7 +1004,7 @@
                                     </div>
                                     <div>
                                         <div class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest" data-i18n="contact.phoneLabel">PHONE NUMBERS</div>
-                                        <div class="text-sm font-bold text-slate-900 font-mono space-y-0.5 mt-0.5">
+                                        <div class="phone-list text-sm font-bold text-slate-900 font-mono space-y-0.5 mt-0.5">
                                             <div><a href="tel:+905416264074" class="hover:text-indigo-600 transition-colors">+90 541 626 4074 (TR)</a></div>
                                             <div><a href="tel:+252907554481" class="hover:text-indigo-600 transition-colors">+252 90 755 4481 (SO)</a></div>
                                         </div>
@@ -1220,7 +1220,7 @@
 
     <!-- Custom Script (Cache Busted v3) -->
     <script src="script.js?v=20261017"></script>
-    <script src="content.js?v=20261021"></script>
+    <script src="content.js?v=20261105"></script>
     <script src="showcase.js?v=20261017e"></script>
 </body>
 </html>

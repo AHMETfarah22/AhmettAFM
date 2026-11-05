@@ -1187,3 +1187,84 @@ body {
         animation: none;
     }
 }
+
+/* ============================================= */
+/* Telefon düzeni (≤ 639px)                      */
+/* ============================================= */
+@media (max-width: 639px) {
+    /* Büyük kart kapları: iç boşluğu biraz azalt */
+    #about > div,
+    #bio > div,
+    #skills > div,
+    #security > div,
+    #contact > div {
+        padding: 1.25rem;
+        border-radius: 1.5rem;
+    }
+
+    /* Hero: fotoğraf ekranı kaplamasın, isim daha erken görünsün */
+    #about > div { gap: 1.75rem; }
+    #about .hero-visual {
+        max-width: 16.5rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0;
+    }
+    #about .hero-visual > .relative.z-10 { padding: 0.625rem; border-radius: 1.5rem; }
+    #about .hero-visual > .relative.z-10 > .rounded-2xl { border-radius: 1.1rem; }
+    #about .hero-code { margin-top: 1.75rem; }
+    #about .hero-code > div { width: 15rem; }
+    #about h1 { font-size: 2rem; line-height: 1.12; }
+    #about .intro.grid { gap: 0.625rem; }
+    #about .intro.grid > div { padding: 0.75rem 0.5rem; }
+    #about .intro.flex-wrap.pt-4 > * { flex: 1 1 calc(50% - 0.75rem); justify-content: center; }
+    #about .intro.flex-wrap.pt-4 > *:last-child { flex-basis: 100%; }
+
+    /* Hızlı bilgiler: tek sütun uzun kartlar yerine 2 sütunlu kompakt ızgara */
+    #details .details-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+    }
+    #details .details-grid > div {
+        padding: 1rem;
+        border-radius: 1.25rem;
+        border-width: 1.5px;
+    }
+    #details .details-grid > div > div:first-child > div:first-child {
+        width: 2.25rem;
+        height: 2.25rem;
+        margin-bottom: 0.75rem;
+        border-radius: 0.75rem;
+    }
+    #details .details-grid > div .text-lg {
+        font-size: 0.95rem;
+        line-height: 1.3;
+    }
+    #details .details-grid > div > div:last-of-type { font-size: 0.7rem; margin-top: 0.5rem; }
+    #details .details-grid > div > svg:last-child { width: 5rem; height: 5rem; }
+    #details .details-grid .flex.items-center.gap-2 { display: block; }
+    #details .details-grid .flex.items-center.gap-2 > span:last-child { white-space: nowrap; font-size: 0.8rem; }
+
+    /* Biyografi alıntıları */
+    #bio .rounded-2xl.p-6 { padding: 1.125rem; }
+    #bio .rounded-2xl.p-6 p,
+    #bio .rounded-2xl.p-6 blockquote { font-size: 0.95rem; line-height: 1.6; }
+    #bio .rounded-2xl.p-6 > .flex { gap: 0.75rem; }
+    #bio .rounded-2xl.p-6 > .flex > div:first-child { width: 2rem; height: 2rem; font-size: 1.25rem; border-radius: 0.75rem; }
+
+    /* Yetenek kartları */
+    #skills .grid.gap-6 { gap: 1rem; }
+    #skills .grid.gap-6 > div { padding: 1.125rem; border-radius: 1.25rem; }
+
+    /* Güvenlik: 2 sütunlu kompakt kartlar */
+    #security .security-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.625rem;
+    }
+    #security .security-grid > div { padding: 0.875rem; }
+    #security .security-grid > div > div:first-child { width: 2.25rem; height: 2.25rem; }
+    #security .security-grid h3 { font-size: 0.8rem; line-height: 1.3; }
+    #security .security-grid p { font-size: 0.7rem; }
+
+    /* İletişim: numaralar bölünmesin */
+    #contact .phone-list a { white-space: nowrap; font-size: 0.8rem; }
+}
