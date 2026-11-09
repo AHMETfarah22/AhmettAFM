@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 190 152" role="img" aria-label="AFM-CODING"><defs>
+<linearGradient id="afm-aca" x1="20" y1="150" x2="90" y2="10" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#0E4FB0"/><stop offset="1" stop-color="#37A6FF"/></linearGradient>
+<linearGradient id="afm-acb" x1="80" y1="10" x2="140" y2="150" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#1F2F8F"/><stop offset="1" stop-color="#6A3FD0"/></linearGradient>
+<linearGradient id="afm-acc" x1="96" y1="130" x2="205" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6A3FD0"/><stop offset=".55" stop-color="#C21E6A"/><stop offset="1" stop-color="#F0263A"/></linearGradient>
+<filter id="afm-acs" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="-2.500" dy="2.500" stdDeviation="3.500" flood-color="#0A1636" flood-opacity=".42"/></filter></defs>
+<path d="M186 42A52 52 0 1 0 186 118L168 98A26 26 0 1 1 168 62Z" fill="url(#afm-acc)"/>
+<path d="M72 14H100L150 146H120Z" fill="url(#afm-acb)" filter="url(#afm-acs)"/>
+<path d="M12 146H42L100 14H72Z" fill="url(#afm-aca)" filter="url(#afm-acs)"/>
+<path d="M42 118H128L120 96H52Z" fill="url(#afm-aca)"/></svg>
