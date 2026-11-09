@@ -117,6 +117,7 @@ section[id], .doors { scroll-margin-top: 0; }
 /* Hero */
 .hero {
   position: relative;
+  overflow-x: clip;
   min-height: 100svh;
   display: grid; grid-template-columns: 1.25fr .75fr; align-items: center;
   gap: 32px;
@@ -518,7 +519,16 @@ h1 {
 }
 .contact h2 .l2 { display: block; color: var(--l2); }
 .contact > p:not(.fine) { margin: 24px 0 30px; max-width: 48ch; color: var(--muted); font-size: 19px; }
-.contact-links { display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 56px; }
+.socials { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+.socials a {
+  display: inline-flex; align-items: center; gap: 9px;
+  min-height: 46px; padding: 0 18px;
+  border: 1px solid var(--line); border-radius: 30px;
+  font-weight: 600; text-decoration: none;
+  transition: background .25s, color .25s, border-color .25s;
+}
+.socials a:hover { background: var(--brass); border-color: var(--brass); color: #171C1E; }
+.contact-links { display: flex; flex-wrap: wrap; gap: 8px 32px; margin-top: 40px; }
 .contact-links a { display: inline-block; padding: 8px 0; font-weight: 500; text-underline-offset: 4px; }
 .fine { margin-top: 40px; font-size: 14px; color: var(--muted); }
 
