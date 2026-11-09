@@ -54,7 +54,7 @@ const SITES = {
   sirac: { img: 'sites/sirac-koleji.webp', url: 'https://18martsirackoleji.k12.tr/', link: '18martsirackoleji.k12.tr' },
   marifet: { img: 'sites/marifet-menu.webp', url: 'https://ahmetfarah22.github.io/Yamek-listy/', link: 'ahmetfarah22.github.io/Yamek-listy' },
   sark: { img: 'sites/sark-kosesi.webp', url: 'https://sarkkosesi.online/', link: 'sarkkosesi.online' },
-  mode: { img: 'gallery/ahmed-farah-mohamed-mode-academy.webp', url: 'https://modeacademy.tr/', link: 'modeacademy.tr', pos: 'center 88%' },
+  mode: { img: 'sites/mode-academy.jpg', url: 'https://modeacademy.tr/', link: 'modeacademy.tr' },
 };
 
 function card(id) {
