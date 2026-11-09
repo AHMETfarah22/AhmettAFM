@@ -10,6 +10,7 @@ const I18N = {
     road: { place: 'Yolda', title: 'Yolda', lede: 'Bazı işlerin haritada yeri yok. Telefonda, tarayıcıda ve sunucuda yaşıyorlar.' },
     kirsehir: { place: 'Kırşehir', lede: "Anadolu'nun ortasında bir gözleme ve mantı evi, siparişlerini internetten alıyor." },
     canakkale: { place: 'Çanakkale', lede: "Stajımı Çanakkale Onsekiz Mart Üniversitesi'nde yaptım." },
+    istanbul: { place: 'İstanbul', lede: "Rotanın bugünkü durağı. Mode Academy'de çalışıyorum, şu an portal geliştiriyorum." },
     today: { place: 'Bugün', title: 'Bugün', lede: "AFM-CODING'in kurucusuyum. Mode Academy'de yazılım geliştirici ve yönetim mentörüyüm." },
     intern: { tag: 'Staj', title: 'Çanakkale Onsekiz Mart Üniversitesi', desc: 'Stajyer' },
     cards: {
@@ -20,6 +21,7 @@ const I18N = {
       sirac: { tag: 'Okul', title: '18 Mart Sıraç Koleji', desc: 'Web sitesi ve yönetim paneli: kurumsal sayfalar, etkinlikler, kadro ve ön kayıt.' },
       marifet: { tag: 'Yurt', title: 'Marifet Yurdu Yemek Menüsü', desc: 'Aylık yemek menüsü. Tarihe, güne ya da yemeğe göre arama ve tek dokunuşla bugünün menüsü.' },
       sark: { tag: 'Restoran', title: 'Şark Köşesi', desc: 'Online sipariş sitesi. Menüde arama, sepet ve kapıda ödeme var; üyelik gerekmiyor.' },
+      mode: { tag: 'Şu an', title: 'Mode Academy', desc: 'Yazılım geliştirici ve yönetim mentörü. Bir yıldır ekipteyim; şu an portal geliştiriyorum.' },
     },
     code: "Kodları GitHub'da gör",
     shot: 'ekran görüntüsü',
@@ -40,6 +42,7 @@ const I18N = {
     road: { place: 'On the road', title: 'On the road', lede: "Some work has no place on a map. It lives on phones, in browsers and on servers." },
     kirsehir: { place: 'Kırşehir', lede: 'In the middle of Anatolia, a gözleme and mantı restaurant takes its orders online.' },
     canakkale: { place: 'Çanakkale', lede: 'I did my internship at Çanakkale Onsekiz Mart University.' },
+    istanbul: { place: 'Istanbul', lede: 'Where the route stands today. I work at Mode Academy, currently developing a portal.' },
     today: { place: 'Today', title: 'Today', lede: "I'm the founder of AFM-CODING, and a software developer and management mentor at Mode Academy." },
     intern: { tag: 'Internship', title: 'Çanakkale Onsekiz Mart Üniversitesi', desc: 'Intern' },
     cards: {
@@ -50,6 +53,7 @@ const I18N = {
       sirac: { tag: 'School', title: '18 Mart Sıraç Koleji', desc: 'Website and admin panel: school pages, events, staff and pre-registration.' },
       marifet: { tag: 'Dormitory', title: 'Marifet Yurdu Yemek Menüsü', desc: 'Monthly meal menu, searchable by date, day or dish, with a one-tap view of today.' },
       sark: { tag: 'Restaurant', title: 'Şark Köşesi', desc: 'Online ordering with a searchable menu, cart and pay on delivery. No account needed.' },
+      mode: { tag: 'Now', title: 'Mode Academy', desc: "Software developer and management mentor. I've been on the team for a year and am currently developing a portal." },
     },
     code: 'View the code on GitHub',
     shot: 'screenshot',
@@ -70,6 +74,7 @@ const I18N = {
     road: { place: 'Waddada', title: 'Waddada', lede: 'Shaqooyinka qaar meel khariidadda kuma laha. Waxay ku jiraan telefoonada, browser-ka iyo server-ka.' },
     kirsehir: { place: 'Kırşehir', lede: 'Bartamaha Anatolia, makhaayad gözleme iyo mantı ah ayaa dalabaadkeeda ka qaadata internetka.' },
     canakkale: { place: 'Çanakkale', lede: 'Tababarkayga waxaan ku qaatay Jaamacadda Çanakkale Onsekiz Mart.' },
+    istanbul: { place: 'Istanbul', lede: 'Joogsiga maanta ee waddada. Waxaan ka shaqeeyaa Mode Academy, hadda waxaan horumarinayaa portal.' },
     today: { place: 'Maanta', title: 'Maanta', lede: 'Waxaan ahay aasaasaha AFM-CODING, iyo horumariye software iyo lataliye maamul oo ka tirsan Mode Academy.' },
     intern: { tag: 'Tababar', title: 'Çanakkale Onsekiz Mart Üniversitesi', desc: 'Tababarte' },
     cards: {
@@ -80,6 +85,7 @@ const I18N = {
       sirac: { tag: 'Dugsi', title: '18 Mart Sıraç Koleji', desc: 'Websayd iyo guddiga maamulka: bogagga dugsiga, dhacdooyinka, shaqaalaha iyo is-diiwaangelinta.' },
       marifet: { tag: 'Hoy arday', title: 'Marifet Yurdu Yemek Menüsü', desc: 'Menuga cuntada bisha; ku raadi taariikh, maalin ama cunto, oo hal taabasho ku arag menuga maanta.' },
       sark: { tag: 'Makhaayad', title: 'Şark Köşesi', desc: 'Dalab online: menu la raadin karo, dambiil iyo lacag-bixin marka la keeno, akoon looma baahna.' },
+      mode: { tag: 'Hadda', title: 'Mode Academy', desc: 'Horumariye software iyo lataliye maamul. Hal sano ayaan kooxda la joogay; hadda waxaan horumarinayaa portal.' },
     },
     code: 'Koodka ka eeg GitHub',
     shot: 'sawirka shaashadda',

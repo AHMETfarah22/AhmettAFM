@@ -12,18 +12,21 @@ const ease = (t) => t * t * (3 - 2 * t);
 const WAY = [
   [48.48, 8.40], [49.8, 11.2], [46.5, 12.9], [43.4, 12.6], [38.6, 20.0], [34.4, 27.4],
   [32.6, 30.4], [32.6, 33.0], [33.4, 36.3], [34.17, 39.14], [31.0, 40.6], [26.41, 40.15],
+  [27.7, 40.75], [28.98, 41.01],
 ];
 const CITIES = [
   { lonlat: WAY[0], key: 'garowe' },
   { lonlat: WAY[9], key: 'kirsehir' },
   { lonlat: WAY[11], key: 'canakkale' },
+  { lonlat: WAY[13], key: 'istanbul' },
 ];
-const STOP_WAY = { garowe: 0, road: 4, kirsehir: 9, canakkale: 11 };
+const STOP_WAY = { garowe: 0, road: 4, kirsehir: 9, canakkale: 11, istanbul: 13 };
 const COORD = {
   garowe: '8.40° N, 48.48° E',
   road: '20.00° N, 38.60° E',
   kirsehir: '39.14° N, 34.17° E',
   canakkale: '40.15° N, 26.41° E',
+  istanbul: '41.01° N, 28.98° E',
 };
 
 const SKY = [
@@ -51,13 +54,14 @@ const SITES = {
   sirac: { img: 'sites/sirac-koleji.webp', url: 'https://18martsirackoleji.k12.tr/', link: '18martsirackoleji.k12.tr' },
   marifet: { img: 'sites/marifet-menu.webp', url: 'https://ahmetfarah22.github.io/Yamek-listy/', link: 'ahmetfarah22.github.io/Yamek-listy' },
   sark: { img: 'sites/sark-kosesi.webp', url: 'https://sarkkosesi.online/', link: 'sarkkosesi.online' },
+  mode: { img: 'gallery/ahmed-farah-mohamed-mode-academy.webp', url: 'https://modeacademy.tr/', link: 'modeacademy.tr', pos: 'center 88%' },
 };
 
 function card(id) {
   const s = SITES[id];
   const x = t().cards[id];
   return `<article class="card rv">
-    <img src="${ASSETS}${s.img}" alt="${x.title} ${t().shot}" loading="lazy" width="1280" height="800">
+    <img src="${ASSETS}${s.img}" alt="${x.title} ${t().shot}" loading="lazy" width="1280" height="800"${s.pos ? ` style="object-position:${s.pos}"` : ''}>
     <div class="card-body">
       <p class="tag">${x.tag}</p><h3>${x.title}</h3><p class="desc">${x.desc}</p>
       <a class="go" href="${s.url}" target="_blank" rel="noopener">${s.code ? t().code : s.link}</a>
@@ -107,6 +111,7 @@ function render() {
     ${stopHTML('road', tscanCard() + card('hotel') + card('faro') + card('sirac') + card('marifet'))}
     ${stopHTML('kirsehir', card('sark'))}
     ${stopHTML('canakkale', `<article class="card rv"><div class="card-body"><p class="tag">${i.tag}</p><h3>${i.title}</h3><p class="desc">${i.desc}</p></div></article>`)}
+    ${stopHTML('istanbul', card('mode'))}
     <section class="stop final" data-stop="today" data-place="${x.today.place}" id="iletisim">
       <div class="panel">
         <h2 class="city rv">${x.today.title}</h2>
@@ -365,7 +370,7 @@ function draw(y) {
     ctx.arc(px, py, 5, 0, 6.3);
     ctx.fill();
     const name = t()[c.key].place;
-    const gap = Math.hypot(px - sx, py - sy) < R * 1.6 ? R * 1.3 + 8 : 13;
+    const gap = Math.hypot(px - sx, py - sy) < R * 1.6 ? R * (1.3 + arrive * 0.9) + 8 : 13;
     if (c.key === 'canakkale' && px - gap - ctx.measureText(name).width < 8) {
       ctx.textAlign = 'left';
       ctx.fillText(name, Math.max(8, px - 40), py + R + 14);
