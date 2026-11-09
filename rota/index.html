@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Ahmed Farah Mohamed | AFM-CODING</title>
+<meta name="description" content="">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:opsz,wght@9..40,400..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<canvas id="map" aria-hidden="true"></canvas>
+
+<header class="bar">
+  <a class="logo" href="#top" aria-label="AFM">AFM</a>
+  <p class="here" id="here" aria-live="polite"></p>
+  <div class="lang" id="lang" role="group" aria-label="Dil, Language, Luqad">
+    <button type="button" data-lang="tr" aria-label="Türkçe">TR</button>
+    <button type="button" data-lang="en" aria-label="English">EN</button>
+    <button type="button" data-lang="so" aria-label="Soomaali">SO</button>
+  </div>
+</header>
+
+<main id="stops"></main>
+
+<script src="https://cdn.jsdelivr.net/npm/d3-array@3.2.4/dist/d3-array.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3-geo@3.1.1/dist/d3-geo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
+<script src="i18n.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
