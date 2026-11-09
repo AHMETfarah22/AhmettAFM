@@ -6,7 +6,7 @@ const AFM_SITES = [
     {
         name: 'Şark Köşesi',
         url: 'https://sarkkosesi.online/',
-        image: 'assets/sites/sark-kosesi.webp',
+        image: '../assets/sites/sark-kosesi.webp',
         tech: ['HTML', 'CSS', 'JavaScript'],
         category: { tr: 'Restoran', en: 'Restaurant', so: 'Makhaayad' },
         desc: {
@@ -18,7 +18,7 @@ const AFM_SITES = [
     {
         name: '18 Mart Sıraç Koleji',
         url: 'https://18martsirackoleji.k12.tr/',
-        image: 'assets/sites/sirac-koleji.webp',
+        image: '../assets/sites/sirac-koleji.webp',
         tech: ['Bootstrap', 'CMS'],
         category: { tr: 'Okul', en: 'School', so: 'Dugsi' },
         desc: {
@@ -30,7 +30,7 @@ const AFM_SITES = [
     {
         name: 'Martisoor Hotel',
         url: 'https://martisoorhotel.com/',
-        image: 'assets/sites/martisoor-hotel.webp',
+        image: '../assets/sites/martisoor-hotel.webp',
         tech: ['WordPress'],
         category: { tr: 'Otel', en: 'Hotel', so: 'Huteel' },
         desc: {
@@ -42,7 +42,7 @@ const AFM_SITES = [
     {
         name: 'Faro Perform',
         url: 'https://ahmetfarah22.github.io/faroperfom/',
-        image: 'assets/sites/faro-perform.webp',
+        image: '../assets/sites/faro-perform.webp',
         tech: ['Three.js', 'JavaScript'],
         category: { tr: 'E-ticaret', en: 'E-commerce', so: 'Ganacsi online' },
         desc: {
@@ -54,7 +54,7 @@ const AFM_SITES = [
     {
         name: 'Marifet Yurdu Yemek Menüsü',
         url: 'https://ahmetfarah22.github.io/Yamek-listy/',
-        image: 'assets/sites/marifet-menu.webp',
+        image: '../assets/sites/marifet-menu.webp',
         tech: ['HTML', 'CSS', 'JavaScript'],
         category: { tr: 'Yurt', en: 'Dormitory', so: 'Hoy arday' },
         desc: {

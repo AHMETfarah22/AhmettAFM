@@ -491,7 +491,7 @@ const modalData = {
             title: "Pansiyon ve Otel Yönetim Sistemi",
             subtitle: "Kurumsal Konaklama ve Otomasyon Yazılımı (C# & .NET Mimarisi)",
             badge: "Kurumsal Çözüm",
-            image: "assets/hotel-app.webp",
+            image: "../assets/hotel-app.webp",
             techs: ["C# (81.7%)", "HTML (8%)", "CSS (6.1%)", "JavaScript (3.8%)", "Other (0.4%)"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -550,7 +550,7 @@ const modalData = {
             title: "Yapay Zeka Destekli Çalışma Uygulaması",
             subtitle: "Akıllı ve Etkileşimli Öğrenme Platformu",
             badge: "Yapay Zeka İnovasyonu",
-            image: "assets/ai-study-app.webp",
+            image: "../assets/ai-study-app.webp",
             techs: ["AI Entegrasyonu", "OpenAI / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -588,7 +588,7 @@ const modalData = {
             title: "Guesthouse & Hotel Management Platform",
             subtitle: "Enterprise Accommodation System (C# & .NET Architecture)",
             badge: "Enterprise Solution",
-            image: "assets/hotel-app.webp",
+            image: "../assets/hotel-app.webp",
             techs: ["C# (81.7%)", "HTML (8%)", "CSS (6.1%)", "JavaScript (3.8%)", "Other (0.4%)"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -647,7 +647,7 @@ const modalData = {
             title: "AI-Powered Study Application",
             subtitle: "Smart Interactive Learning Platform",
             badge: "AI Innovation",
-            image: "assets/ai-study-app.webp",
+            image: "../assets/ai-study-app.webp",
             techs: ["AI Integration", "OpenAI API / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -685,7 +685,7 @@ const modalData = {
             title: "Nidaamka Maamulka Huteelada & Guryaha Martida",
             subtitle: "Nidaamka Maamulka Ganacsiga Huteelada (C# & .NET)",
             badge: "Xalka Ganacsiga",
-            image: "assets/hotel-app.webp",
+            image: "../assets/hotel-app.webp",
             techs: ["C# (81.7%)", "HTML (8%)", "CSS (6.1%)", "JavaScript (3.8%)", "Other (0.4%)"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">
@@ -740,7 +740,7 @@ const modalData = {
             title: "Codsiga Waxbarashada ee AI-da ee Caqliga Badan",
             subtitle: "Madal Waxbarasho oo Caqli Badan",
             badge: "Cusboaysiinta AI-da",
-            image: "assets/ai-study-app.webp",
+            image: "../assets/ai-study-app.webp",
             techs: ["Isdhexgalka AI", "OpenAI / LLMs", "TypeScript", "React Native / Web", "Vector DB"],
             body: `
                 <p class="text-sm text-slate-600 leading-relaxed font-normal">

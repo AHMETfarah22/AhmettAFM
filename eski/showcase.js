@@ -34,7 +34,7 @@ Object.keys(AFM_TSCAN_MODAL).forEach(lang => {
         title: m.title,
         subtitle: m.subtitle,
         badge: m.badge,
-        image: 'assets/tscan.webp',
+        image: '../assets/tscan.webp',
         techs: ['Flutter', 'Dart', 'Android', 'iOS', 'Windows', 'AI'],
         body: `
             <p class="text-sm text-slate-600 leading-relaxed">${escapeHTML(m.intro)}</p>
