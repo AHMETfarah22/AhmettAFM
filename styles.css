@@ -262,3 +262,50 @@ h1 {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* İletişim bölümü: geniş cam kartlar, arka plan görünür */
+.final .panel { width: min(780px, 60vw); }
+.final .cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+.final .contact-card { grid-column: 1 / -1; }
+.final .card {
+  --ink: #FFFFFF; --soft: rgba(255, 255, 255, .84);
+  color: var(--ink);
+  background: linear-gradient(140deg, rgba(255, 255, 255, .22), rgba(255, 255, 255, .06));
+  border: 1px solid rgba(255, 255, 255, .42);
+  border-radius: 28px;
+  backdrop-filter: blur(12px) saturate(1.5);
+  -webkit-backdrop-filter: blur(12px) saturate(1.5);
+  box-shadow: 0 24px 60px rgba(9, 20, 40, .28), inset 0 1px 0 rgba(255, 255, 255, .5);
+}
+.final .card:hover { box-shadow: 0 30px 70px rgba(9, 20, 40, .34), inset 0 1px 0 rgba(255, 255, 255, .55); }
+.final .card-body { padding: 22px 26px 26px; }
+.final .me { padding: 24px 26px 0; }
+.final .me img { width: 84px; height: 84px; border: 2px solid rgba(255, 255, 255, .7); }
+.final .card h3 { font-size: 28px; text-shadow: 0 1px 12px rgba(0, 0, 0, .18); }
+.final .card p.desc { font-size: 17px; }
+.final .facts dt { color: var(--soft); }
+.final .contact-card h3 { font-size: clamp(28px, 2.6vw, 36px); }
+.final .lead-title { font-size: 20px; }
+.final .lead label { color: var(--soft); }
+.final .lead input, .final .lead select, .final .lead textarea {
+  color: #10233C; background: rgba(255, 255, 255, .9); border-color: rgba(255, 255, 255, .6);
+}
+.final .lead select option { color: #10233C; }
+.final .wa { background: #FFFFFF; color: #10233C; }
+.final .wa:hover { background: #10233C; color: #FFFFFF; }
+.final .lead-send { min-width: 160px; }
+.final .lead-or { color: var(--soft); }
+.final .links a { color: #FFFFFF; }
+.final .lead-status .err { color: #FFE3E3; background: rgba(120, 0, 10, .35); padding: 8px 12px; border-radius: 10px; }
+.final .fine { color: rgba(255, 255, 255, .85); }
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .final .card { background: rgba(16, 35, 60, .72); }
+}
+@media (max-width: 859px) {
+  .final .panel { width: 100%; }
+}
+@media (max-width: 640px) {
+  .final .cards { grid-template-columns: 1fr; }
+  .final .card-body { padding: 18px 18px 22px; }
+  .final .me { padding: 18px 18px 0; }
+}
