@@ -182,6 +182,31 @@ h1 {
   transition: background .2s;
 }
 .wa:hover { background: var(--red); }
+.lead { margin: 4px 0 16px; }
+.lead-title { font-weight: 700; font-size: 18px; margin-bottom: 10px; }
+.lead-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; margin-bottom: 14px; }
+.lead-grid .full { grid-column: 1 / -1; }
+.lead label { display: grid; gap: 4px; font-size: 13px; font-weight: 600; color: var(--soft); }
+.lead input, .lead select, .lead textarea {
+  width: 100%; min-height: 44px; padding: 10px 12px; border-radius: 12px;
+  border: 1px solid rgba(16, 35, 60, .18); background: rgba(255, 255, 255, .9);
+  color: var(--ink); font: 500 16px/1.35 var(--font);
+}
+.lead textarea { resize: vertical; min-height: 64px; }
+.lead input:focus-visible, .lead select:focus-visible, .lead textarea:focus-visible { outline: 2px solid var(--blue); outline-offset: 1px; }
+.lead [aria-invalid="true"] { border-color: var(--red); }
+.lead .hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; }
+.lead-send { border: 0; cursor: pointer; font: 600 16px var(--font); }
+.lead-send[disabled] { opacity: .6; cursor: progress; }
+.lead-status:empty { display: none; }
+.lead-status { margin-top: 12px; }
+.lead-status .ok { font-weight: 600; margin-bottom: 10px; }
+.lead-status .err { color: var(--red); font-weight: 600; }
+.lead-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.lead-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; text-decoration: none; color: var(--ink); border: 1px solid rgba(16, 35, 60, .2); }
+.lead-actions a.main { background: var(--blue); border-color: var(--blue); color: var(--white); }
+.lead-or { font-size: 14px; color: var(--soft); margin-bottom: 8px; }
+@media (max-width: 560px) { .lead-grid { grid-template-columns: 1fr; } }
 .links { display: flex; flex-wrap: wrap; gap: 2px 20px; margin-top: 12px; }
 .links a { display: inline-block; padding: 7px 0; font-weight: 600; font-size: 15px; color: var(--ink); text-underline-offset: 4px; }
 .fine { margin-top: 18px; font-size: 14px; }

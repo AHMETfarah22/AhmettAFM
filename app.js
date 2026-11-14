@@ -96,6 +96,11 @@ const stopHTML = (key, cards, wide) => {
   </section>`;
 };
 const WHATSAPP = 'https://wa.me/905416264074';
+// Örnek site talep formu: Google Apps Script otomasyonuna gönderir (profil/otomasyon klasörü)
+const AUTOMATION_URL = 'https://script.google.com/macros/s/AKfycbzZRbjUFljFFcwcXFsPXRhw-F0cEgtmdSO5BB8e3lM6akFaS1mg3NHzbUFqcBxGjz3e/exec';
+const DEMO_BASE = 'https://ahmetfarah22.github.io/ornek-siteler/';
+const demoLink = (type) => (type && type !== 'diger' ? `${DEMO_BASE}${type}/` : DEMO_BASE);
+const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function render() {
   const x = t();
@@ -137,6 +142,20 @@ function render() {
             <div class="card-body">
               <h3>${x.contactTitle}</h3>
               <p class="desc">${x.contactDesc}</p>
+              <form class="lead" id="lead" novalidate>
+                <p class="lead-title">${x.lead.title}</p>
+                <div class="lead-grid">
+                  <label>${x.lead.name}<input name="name" required maxlength="80" autocomplete="name"></label>
+                  <label>${x.lead.phone}<input name="phone" type="tel" required maxlength="20" inputmode="tel" autocomplete="tel" placeholder="05xx xxx xx xx"></label>
+                  <label>${x.lead.email}<input name="email" type="email" maxlength="120" autocomplete="email"></label>
+                  <label>${x.lead.type}<select name="type">${Object.entries(x.lead.types).map(([k, v]) => `<option value="${k}">${v}</option>`).join('')}</select></label>
+                  <label class="full">${x.lead.msg}<textarea name="message" rows="2" maxlength="1000"></textarea></label>
+                  <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+                </div>
+                <button class="wa lead-send" type="submit">${x.lead.send}</button>
+                <div class="lead-status" id="lead-status" role="status" aria-live="polite"></div>
+              </form>
+              <p class="lead-or">${x.lead.or}</p>
               <a class="wa" href="${WHATSAPP}" target="_blank" rel="noopener">${x.whatsapp}</a>
               <ul class="links">
                 <li><a href="tel:+905416264074">+90 541 626 4074</a></li>
@@ -545,6 +564,34 @@ document.querySelectorAll('#lang button').forEach((b) => b.addEventListener('cli
 
 // Soru kutusu: yazılan istek WhatsApp mesajı olarak açılır
 const stopsEl = document.getElementById('stops');
+stopsEl.addEventListener('submit', async (e) => {
+  if (e.target.id !== 'lead') return;
+  e.preventDefault();
+  const form = e.target;
+  const L = t().lead;
+  const status = form.querySelector('#lead-status');
+  const f = form.elements;
+  const data = { action: 'lead', name: f.name.value.trim(), phone: f.phone.value.trim(), email: f.email.value.trim(), type: f.type.value, message: f.message.value.trim(), website: f.website.value, lang };
+  const phoneOk = data.phone.replace(/\D/g, '').length >= 10;
+  f.name.setAttribute('aria-invalid', !data.name);
+  f.phone.setAttribute('aria-invalid', !phoneOk);
+  if (!data.name || !phoneOk) { status.innerHTML = `<p class="err">${escapeHtml(L.bad)}</p>`; return; }
+  const btn = form.querySelector('.lead-send');
+  btn.disabled = true;
+  btn.textContent = L.sending;
+  let saved = false;
+  try {
+    const res = await fetch(AUTOMATION_URL, { method: 'POST', headers: { 'Content-Type': 'text/plain;charset=utf-8' }, body: JSON.stringify(data) });
+    saved = !!(await res.json()).ok;
+  } catch (err) { saved = false; }
+  const url = demoLink(data.type);
+  const waText = `Merhaba, ben ${data.name}. Örnek site istiyorum: ${L.types[data.type]}.\n${data.message ? data.message + '\n' : ''}Numaram: ${data.phone}\nGördüğüm örnek: ${url}`;
+  status.innerHTML = `<p class="ok">${escapeHtml(L.ok.replace('{n}', data.name.split(' ')[0]))}</p>
+    <div class="lead-actions"><a class="main" href="${url}" target="_blank" rel="noopener">${escapeHtml(L.open)} →</a><a href="${WHATSAPP}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener">${escapeHtml(L.wa)}</a></div>`;
+  btn.disabled = false;
+  btn.textContent = L.send;
+  if (saved) form.reset();
+});
 stopsEl.addEventListener('submit', (e) => {
   if (e.target.id !== 'ask') return;
   e.preventDefault();

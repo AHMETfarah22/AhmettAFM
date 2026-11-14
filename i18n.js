@@ -37,6 +37,13 @@ const I18N = {
     contactTitle: 'Bir sonraki durak senin projen',
     contactDesc: 'Yeni bir yazılım fikrin, otel platformun, kurmak istediğin portal veya yapay zekâ projen için bana yaz.',
     whatsapp: "WhatsApp'tan yaz",
+    lead: {
+      title: 'Ücretsiz örnek site iste',
+      name: 'Ad Soyad', phone: 'WhatsApp numaran', email: 'E-posta (isteğe bağlı)', type: 'Ne tür bir site?', msg: 'Kısaca işin / notun',
+      types: { profil: 'Profil / kişisel site', 'e-ticaret': 'E-ticaret sitesi', otel: 'Otel sitesi', pansiyon: 'Pansiyon sitesi', restoran: 'Restoran / kafe', klinik: 'Klinik / doktor', guzellik: 'Güzellik salonu', emlak: 'Emlak ofisi', kurumsal: 'Kurumsal / şirket', diger: 'Diğer / emin değilim' },
+      send: 'Örnek siteyi gönder', sending: 'Gönderiliyor…', bad: 'Lütfen adını ve geçerli bir WhatsApp numarası yaz.',
+      ok: "Teşekkürler {n}! Örnek siten hazır. Detayları WhatsApp'tan sana yazacağım.", open: 'Örnek siteyi aç', wa: "WhatsApp'tan devam et", or: 'ya da doğrudan yaz:',
+    },
   },
   en: {
     desc: 'Ahmed Farah Mohamed, founder of AFM-CODING and full-stack developer. A software route from Somalia to Turkey.',
@@ -75,6 +82,13 @@ const I18N = {
     contactTitle: 'The next stop is your project',
     contactDesc: 'Reach out about your software idea, hotel platform, a portal you want to build or AI project.',
     whatsapp: 'Message me on WhatsApp',
+    lead: {
+      title: 'Get a free sample website',
+      name: 'Full name', phone: 'Your WhatsApp number', email: 'Email (optional)', type: 'What kind of site?', msg: 'Your business / a short note',
+      types: { profil: 'Profile / personal site', 'e-ticaret': 'E-commerce site', otel: 'Hotel site', pansiyon: 'Guesthouse site', restoran: 'Restaurant / cafe', klinik: 'Clinic / doctor', guzellik: 'Beauty salon', emlak: 'Real estate agency', kurumsal: 'Corporate / company', diger: 'Other / not sure' },
+      send: 'Send me the sample', sending: 'Sending…', bad: 'Please enter your name and a valid WhatsApp number.',
+      ok: 'Thanks {n}! Your sample site is ready. I will message you on WhatsApp with details.', open: 'Open sample site', wa: 'Continue on WhatsApp', or: 'or message me directly:',
+    },
   },
   so: {
     desc: 'Ahmed Farah Mohamed, aasaasaha AFM-CODING iyo horumariye Full-Stack ah. Waddo software oo ka bilaabata Soomaaliya ilaa Turkiga.',
@@ -113,5 +127,12 @@ const I18N = {
     contactTitle: 'Joogsiga xiga waa mashruucaaga',
     contactDesc: 'Iila soo xiriir fikradaada softwear-ka, nidaamka huteelka, portal aad rabto in la dhiso ama mashruucaaga AI-da.',
     whatsapp: 'Iigu soo qor WhatsApp',
+    lead: {
+      title: 'Codso tusaale website bilaash ah',
+      name: 'Magaca oo buuxa', phone: 'Lambarkaaga WhatsApp', email: 'Iimayl (ikhtiyaari)', type: 'Website noocee ah?', msg: 'Ganacsigaaga / qoraal kooban',
+      types: { profil: 'Bogga shakhsiga', 'e-ticaret': 'Dukaan online ah', otel: 'Website huteel', pansiyon: 'Guri martiqaad', restoran: 'Maqaaxi / makhaayad', klinik: 'Rug caafimaad', guzellik: 'Goob qurxin', emlak: 'Xafiis guryo', kurumsal: 'Shirkad', diger: 'Kale / ma hubo' },
+      send: 'Ii soo dir tusaalaha', sending: 'Waa la dirayaa…', bad: 'Fadlan qor magacaaga iyo lambar WhatsApp sax ah.',
+      ok: 'Mahadsanid {n}! Tusaalahaagu waa diyaar. WhatsApp ayaan kugula soo xiriiri doonaa.', open: 'Fur tusaalaha', wa: 'Ku sii wad WhatsApp', or: 'ama si toos ah iigu qor:',
+    },
   },
 };
