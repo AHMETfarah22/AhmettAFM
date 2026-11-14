@@ -86,7 +86,8 @@ function tscanCard() {
 const STOPS = ['garowe', 'road', 'kirsehir', 'canakkale', 'istanbul'];
 const stopHTML = (key, cards, wide) => {
   const s = t()[key];
-  return `<section class="stop" data-stop="${key}" data-place="${s.place}">
+  const side = STOPS.indexOf(key) % 2 ? ' right' : '';
+  return `<section class="stop${side}" data-stop="${key}" data-place="${s.place}">
     <div class="panel${wide ? ' wide' : ''}">
       <p class="meta rv"><span class="step">${STOPS.indexOf(key) + 1} / ${STOPS.length}</span>${lang === 'tr' ? COORD[key].replace('N', 'K').replace('E', 'D') : COORD[key]}</p>
       <h2 class="city rv">${s.title || s.place}</h2>
@@ -263,9 +264,9 @@ let home = null;
 let somalia = null;
 
 function resize() {
-  const ratio = Math.min(devicePixelRatio || 1, 2);
   W = canvas.clientWidth;
   H = canvas.clientHeight;
+  const ratio = Math.min(devicePixelRatio || 1, W < 860 ? 1.5 : 2);
   canvas.width = Math.round(W * ratio);
   canvas.height = Math.round(H * ratio);
   ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
@@ -312,7 +313,8 @@ function measure() {
     if (key === 'hero') return { y, key, f: 0, k: fit * (small ? 1.5 : 1.15), fit: 0, ax: 0.5, ay: small ? 0.9 : 0.92, lift: 1, place: el.dataset.place };
     if (key === 'today') return { y, key, f: 1, k: fit, fit: 1, ax, ay: fitY, place: el.dataset.place };
     const zoom = key === 'road' ? 1.7 : 3.4;
-    return { y, key, f: fractionOfWay(STOP_WAY[key]), k: fit * zoom, fit: 0, ax, ay: small ? 0.27 : 0.5, place: el.dataset.place };
+    const sax = small ? ax : el.classList.contains('right') ? 1 - ax : ax;
+    return { y, key, f: fractionOfWay(STOP_WAY[key]), k: fit * zoom, fit: 0, ax: sax, ay: small ? 0.27 : 0.5, place: el.dataset.place };
   }).sort((a, b) => a.y - b.y);
 }
 
@@ -387,7 +389,7 @@ function drawClouds(s) {
     // Uçuşta bulutlar yazıların olduğu alanı kapatmaz
     const clear = small
       ? clamp((0.62 - (y + h / 2) / H) / 0.2)
-      : clamp(((x + w / 2) / W - 0.46) / 0.18);
+      : s.ax >= 0.5 ? clamp(((x + w / 2) / W - 0.46) / 0.18) : clamp((0.54 - (x + w / 2) / W) / 0.18);
     ctx.globalAlpha = Math.max(flight * 0.82 * Math.max(clear, 0.12), s.lift * bottom * 0.95);
     ctx.drawImage(c.sprite, x, y, w, h);
   });
@@ -416,6 +418,7 @@ function starPath(x, y, r) {
 const here = document.getElementById('here');
 let lastPlace = '';
 let lastKey = '';
+let lastSky = '';
 
 function draw(y) {
   const s = stateAt(y);
@@ -434,8 +437,12 @@ function draw(y) {
   const labelColor = s.lift > 0.5 ? '#10233C' : '#FFFFFF';
   ctx.fillStyle = `rgb(${sky})`;
   ctx.fillRect(0, 0, W, H);
-  html.style.background = `rgb(${sky})`;
-  html.style.setProperty('--sky', sky.join(' '));
+  const skyKey = sky.join(' ');
+  if (skyKey !== lastSky) {
+    lastSky = skyKey;
+    html.style.background = `rgb(${sky})`;
+    html.style.setProperty('--sky', skyKey);
+  }
 
   const sx = toX(star.x);
   const sy = toY(star.y);
@@ -473,14 +480,16 @@ function draw(y) {
 
   // Gidilen yol
   ctx.save();
-  ctx.lineWidth = 4;
-  ctx.strokeStyle = '#FFFFFF';
-  ctx.shadowColor = 'rgba(255,255,255,.7)';
-  ctx.shadowBlur = 14;
+  ctx.lineJoin = 'round';
   ctx.beginPath();
   ctx.moveTo(toX(points[0][0]), toY(points[0][1]));
   for (let i = 1; i <= star.index; i++) ctx.lineTo(toX(points[i][0]), toY(points[i][1]));
   ctx.lineTo(toX(star.x), toY(star.y));
+  ctx.strokeStyle = 'rgba(255,255,255,.18)';
+  ctx.lineWidth = 14;
+  ctx.stroke();
+  ctx.strokeStyle = '#FFFFFF';
+  ctx.lineWidth = 4;
   ctx.stroke();
   ctx.restore();
 
@@ -511,8 +520,10 @@ function draw(y) {
 
   // Yıldız, sonda hilalle buluşur
   ctx.save();
-  ctx.shadowColor = 'rgba(255,255,255,.75)';
-  ctx.shadowBlur = 24;
+  ctx.fillStyle = 'rgba(255,255,255,.16)';
+  ctx.beginPath();
+  ctx.arc(sx, sy, R * 1.25, 0, Math.PI * 2);
+  ctx.fill();
   ctx.fillStyle = '#FFFFFF';
   const offset = arrive * R * 1.15;
   starPath(sx + offset, sy, R * (1 - arrive * 0.45));
