@@ -147,7 +147,7 @@ function render() {
     ${stopHTML('kirsehir', card('sark'))}
     ${stopHTML('canakkale', `<article class="card rv"><div class="card-body"><p class="tag">${i.tag}</p><h3>${i.title}</h3><p class="desc">${i.desc}</p></div></article>`)}
     ${stopHTML('istanbul', card('mode'))}
-    <section class="stop final" data-stop="today" data-place="${x.today.place}" id="iletisim">
+    <section class="stop final right" data-stop="today" data-place="${x.today.place}" id="iletisim">
       <div class="panel">
         <h2 class="city rv">${x.today.title}</h2>
         <p class="lede rv">${x.today.lede}</p>
@@ -311,7 +311,7 @@ function measure() {
       ? Math.min(maxY, top + 80)
       : clamp(top + el.offsetHeight / 2 - innerHeight / 2 - (small ? innerHeight * 0.25 : 0), 0, maxY);
     if (key === 'hero') return { y, key, f: 0, k: fit * (small ? 1.5 : 1.15), fit: 0, ax: 0.5, ay: small ? 0.9 : 0.92, lift: 1, place: el.dataset.place };
-    if (key === 'today') return { y, key, f: 1, k: fit, fit: 1, ax, ay: fitY, place: el.dataset.place };
+    if (key === 'today') return { y, key, f: 1, k: fit, fit: 1, ax: !small && el.classList.contains('right') ? 1 - ax : ax, ay: fitY, place: el.dataset.place };
     const zoom = key === 'road' ? 1.7 : 3.4;
     const sax = small ? ax : el.classList.contains('right') ? 1 - ax : ax;
     return { y, key, f: fractionOfWay(STOP_WAY[key]), k: fit * zoom, fit: 0, ax: sax, ay: small ? 0.27 : 0.5, place: el.dataset.place };
