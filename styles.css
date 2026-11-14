@@ -205,6 +205,22 @@ h1 {
 .lead-actions { display: flex; flex-wrap: wrap; gap: 8px; }
 .lead-actions a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 600; text-decoration: none; color: var(--ink); border: 1px solid rgba(16, 35, 60, .2); }
 .lead-actions a.main { background: var(--blue); border-color: var(--blue); color: var(--white); }
+#lead-pop { border: 0; padding: 0; border-radius: 26px; width: min(420px, calc(100vw - 32px)); background: var(--white); color: var(--ink); box-shadow: 0 30px 80px rgba(9, 30, 66, .35); }
+#lead-pop::backdrop { background: rgba(16, 35, 60, .55); backdrop-filter: blur(4px); }
+#lead-pop[open] { animation: pop-in .35s cubic-bezier(.2, .85, .2, 1); }
+@keyframes pop-in { from { opacity: 0; transform: translateY(18px) scale(.96); } }
+.pop { display: grid; justify-items: center; gap: 12px; padding: 30px 26px 22px; text-align: center; }
+.pop h3 { font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
+.pop p { color: var(--soft); font-size: 16px; line-height: 1.45; }
+.pop-tick { width: 76px; height: 76px; }
+.pop-tick circle { fill: #E7F6EC; stroke: #1E9E5A; stroke-width: 2.5; }
+.pop-tick path { fill: none; stroke: #1E9E5A; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 40; stroke-dashoffset: 40; animation: tick .5s .25s ease-out forwards; }
+@keyframes tick { to { stroke-dashoffset: 0; } }
+.pop-main, .pop-wa { display: flex; align-items: center; justify-content: center; width: 100%; min-height: 50px; border-radius: 14px; font-weight: 600; text-decoration: none; }
+.pop-main { background: var(--blue); color: var(--white); margin-top: 6px; }
+.pop-wa { background: #1E9E5A; color: var(--white); }
+.pop-close { margin-top: 2px; padding: 8px 14px; border: 0; background: none; color: var(--soft); font: 600 15px var(--font); cursor: pointer; }
+@media (prefers-reduced-motion: reduce) { #lead-pop[open] { animation: none; } .pop-tick path { animation: none; stroke-dashoffset: 0; } }
 .lead-or { font-size: 14px; color: var(--soft); margin-bottom: 8px; }
 @media (max-width: 560px) { .lead-grid { grid-template-columns: 1fr; } }
 .links { display: flex; flex-wrap: wrap; gap: 2px 20px; margin-top: 12px; }

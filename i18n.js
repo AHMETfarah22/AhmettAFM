@@ -42,7 +42,7 @@ const I18N = {
       name: 'Ad Soyad', phone: 'WhatsApp numaran', email: 'E-posta (isteğe bağlı)', type: 'Ne tür bir site?', msg: 'Kısaca işin / notun',
       types: { profil: 'Profil / kişisel site', 'e-ticaret': 'E-ticaret sitesi', otel: 'Otel sitesi', pansiyon: 'Pansiyon sitesi', restoran: 'Restoran / kafe', klinik: 'Klinik / doktor', guzellik: 'Güzellik salonu', emlak: 'Emlak ofisi', kurumsal: 'Kurumsal / şirket', diger: 'Diğer / emin değilim' },
       send: 'Gönder', sending: 'Gönderiliyor…', bad: 'Lütfen adını ve geçerli bir WhatsApp numarası yaz.',
-      ok: "Teşekkürler {n}! Örnek siten hazır. Detayları WhatsApp'tan sana yazacağım. E-posta yazdıysan Spam klasörüne de bak.", open: 'Örnek siteyi aç', wa: "WhatsApp'tan devam et", or: 'ya da doğrudan yaz:',
+      ok: "Teşekkürler {n}! Talebin bize ulaştı, en kısa zamanda WhatsApp'tan sana dönüş yapacağız. İstediğin siteye benzer örneğimiz hazır:", done: 'Talebin alındı', close: 'Kapat', open: 'Örnek siteyi aç', wa: "WhatsApp'tan devam et", or: 'ya da doğrudan yaz:',
     },
   },
   en: {
@@ -87,7 +87,7 @@ const I18N = {
       name: 'Full name', phone: 'Your WhatsApp number', email: 'Email (optional)', type: 'What kind of site?', msg: 'Your business / a short note',
       types: { profil: 'Profile / personal site', 'e-ticaret': 'E-commerce site', otel: 'Hotel site', pansiyon: 'Guesthouse site', restoran: 'Restaurant / cafe', klinik: 'Clinic / doctor', guzellik: 'Beauty salon', emlak: 'Real estate agency', kurumsal: 'Corporate / company', diger: 'Other / not sure' },
       send: 'Send', sending: 'Sending…', bad: 'Please enter your name and a valid WhatsApp number.',
-      ok: 'Thanks {n}! Your sample site is ready. I will message you on WhatsApp with details. If you left an email, also check your spam folder.', open: 'Open sample site', wa: 'Continue on WhatsApp', or: 'or message me directly:',
+      ok: 'Thanks {n}! We got your request and will get back to you on WhatsApp soon. Here is a sample like the site you want:', done: 'Request received', close: 'Close', open: 'Open sample site', wa: 'Continue on WhatsApp', or: 'or message me directly:',
     },
   },
   so: {
@@ -132,7 +132,7 @@ const I18N = {
       name: 'Magaca oo buuxa', phone: 'Lambarkaaga WhatsApp', email: 'Iimayl (ikhtiyaari)', type: 'Website noocee ah?', msg: 'Ganacsigaaga / qoraal kooban',
       types: { profil: 'Bogga shakhsiga', 'e-ticaret': 'Dukaan online ah', otel: 'Website huteel', pansiyon: 'Guri martiqaad', restoran: 'Maqaaxi / makhaayad', klinik: 'Rug caafimaad', guzellik: 'Goob qurxin', emlak: 'Xafiis guryo', kurumsal: 'Shirkad', diger: 'Kale / ma hubo' },
       send: 'Dir', sending: 'Waa la dirayaa…', bad: 'Fadlan qor magacaaga iyo lambar WhatsApp sax ah.',
-      ok: 'Mahadsanid {n}! Tusaalahaagu waa diyaar. WhatsApp ayaan kugula soo xiriiri doonaa. Haddii aad iimayl qortay, eeg galka spam-ka.', open: 'Fur tusaalaha', wa: 'Ku sii wad WhatsApp', or: 'ama si toos ah iigu qor:',
+      ok: 'Mahadsanid {n}! Codsigaaga waa nala soo gaarsiiyay, dhowaan WhatsApp ayaan kugula soo xiriiri doonaa. Waa kan tusaale la mid ah:', done: 'Codsiga waa la helay', close: 'Xir', open: 'Fur tusaalaha', wa: 'Ku sii wad WhatsApp', or: 'ama si toos ah iigu qor:',
     },
   },
 };

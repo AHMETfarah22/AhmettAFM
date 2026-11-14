@@ -100,6 +100,26 @@ const WHATSAPP = 'https://wa.me/905416264074';
 const AUTOMATION_URL = 'https://script.google.com/macros/s/AKfycbzZRbjUFljFFcwcXFsPXRhw-F0cEgtmdSO5BB8e3lM6akFaS1mg3NHzbUFqcBxGjz3e/exec';
 const DEMO_BASE = 'https://ahmetfarah22.github.io/ornek-siteler/';
 const demoLink = (type) => (type && type !== 'diger' ? `${DEMO_BASE}${type}/` : DEMO_BASE);
+function showLeadPopup(L, first, url, wa) {
+  let dlg = document.getElementById('lead-pop');
+  if (!dlg) {
+    dlg = document.createElement('dialog');
+    dlg.id = 'lead-pop';
+    dlg.setAttribute('aria-labelledby', 'lead-pop-title');
+    document.body.appendChild(dlg);
+    dlg.addEventListener('click', (e) => { if (e.target === dlg || e.target.closest('[data-close]')) dlg.close(); });
+  }
+  dlg.innerHTML = `
+    <div class="pop">
+      <svg class="pop-tick" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24"/><path d="M15 27l7 7 15-16"/></svg>
+      <h3 id="lead-pop-title">${escapeHtml(L.done)}</h3>
+      <p>${escapeHtml(L.ok.replace('{n}', first))}</p>
+      <a class="pop-main" href="${url}" target="_blank" rel="noopener">${escapeHtml(L.open)} →</a>
+      <a class="pop-wa" href="${wa}" target="_blank" rel="noopener">${escapeHtml(L.wa)}</a>
+      <button type="button" class="pop-close" data-close>${escapeHtml(L.close)}</button>
+    </div>`;
+  dlg.showModal();
+}
 const escapeHtml = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
 function render() {
@@ -586,8 +606,8 @@ stopsEl.addEventListener('submit', async (e) => {
   } catch (err) { saved = false; }
   const url = demoLink(data.type);
   const waText = `Merhaba, ben ${data.name}. Örnek site istiyorum: ${L.types[data.type]}.\n${data.message ? data.message + '\n' : ''}Numaram: ${data.phone}\nGördüğüm örnek: ${url}`;
-  status.innerHTML = `<p class="ok">${escapeHtml(L.ok.replace('{n}', data.name.split(' ')[0]))}</p>
-    <div class="lead-actions"><a class="main" href="${url}" target="_blank" rel="noopener">${escapeHtml(L.open)} →</a><a href="${WHATSAPP}?text=${encodeURIComponent(waText)}" target="_blank" rel="noopener">${escapeHtml(L.wa)}</a></div>`;
+  status.innerHTML = '';
+  showLeadPopup(L, data.name.split(' ')[0], url, `${WHATSAPP}?text=${encodeURIComponent(waText)}`);
   btn.disabled = false;
   btn.textContent = L.send;
   if (saved) form.reset();
